@@ -1,5 +1,8 @@
-.vscode
+.venv
 .DS_Store
-work/*
 .idea
-results/*
+.vscode
+__pycache__
+.ruff_cache
+work/*
+!work/.gitkeep

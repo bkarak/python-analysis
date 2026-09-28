@@ -1,33 +1,37 @@
-default:
-	@echo "Just a small Makefile to automate some stuff"
-	@echo "Try one of the following targets!"
-	@echo "run-analysis => download Python versions and analyze with ruff"
-	@echo "uniq-violated-rules => scan files and get distinct violated PEP8 rules"
-	@echo "average-error-count => calculate the average error count per major version"
+# One point per minor release, plus patch releases as a sensitivity check.
+SERIES      := 3.0 3.1 3.2 3.3.0 3.4.0 3.5.0 3.6.0 3.7.0 3.8.0 3.9.0 3.10.0 3.11.0 3.12.0 3.13.0 3.14.0
+SENSITIVITY := 3.0.1 3.1.1 3.2.1 3.12.11 3.13.9
+VERSIONS    ?= $(SERIES) $(SENSITIVITY)
+JOBS        ?= 12
 
-run-analysis:
-	@echo "Downloading and scanning Python versions"
-	@uv run gather_version_data.py
+default: help
 
-uniq-violated-rules:
-	@echo "Find unique violated rules"
-	@echo results/* | xargs grep ^E | cut -d : -f 2 | cut -d " " -f 1 | sort | uniq
+help:            ## this list
+	awk 'BEGIN{FS=":.*## "} /^[a-z-]+:.*## /{printf "  %-16s %s\n", $$1, $$2}' $(MAKEFILE_LIST)
+	echo "  VERSIONS=... selects releases (default: the series + the sensitivity set)"
 
-average-error-count:
-	@echo "Calculate average errors per file"
-	@ls results/Python-3.0.*.text | xargs grep ^Found | awk '{sum += $$2; count++} END {print "3.0.*: avg Errors:", sum}'
-	@ls results/Python-3.1.*.text | xargs grep ^Found | awk '{sum += $$2; count++} END {print "3.1.*: avg Errors:", sum / count}'
-	@ls results/Python-3.2.*.text | xargs grep ^Found | awk '{sum += $$2; count++} END {print "3.2.*: avg Errors:", sum / count}'
-	@ls results/Python-3.3.*.text | xargs grep ^Found | awk '{sum += $$2; count++} END {print "3.3.*: avg Errors:", sum / count}'
-	@ls results/Python-3.4.*.text | xargs grep ^Found | awk '{sum += $$2; count++} END {print "3.4.*: avg Errors:", sum / count}'
-	@ls results/Python-3.5.*.text | xargs grep ^Found | awk '{sum += $$2; count++} END {print "3.5.*: avg Errors:", sum / count}'
-	@ls results/Python-3.6.*.text | xargs grep ^Found | awk '{sum += $$2; count++} END {print "3.6.*: avg Errors:", sum / count}'
-	@ls results/Python-3.7.*.text | xargs grep ^Found | awk '{sum += $$2; count++} END {print "3.7.*: avg Errors:", sum / count}'
-	@ls results/Python-3.8.*.text | xargs grep ^Found | awk '{sum += $$2; count++} END {print "3.8.*: avg Errors:", sum / count}'
-	@ls results/Python-3.9.*.text | xargs grep ^Found | awk '{sum += $$2; count++} END {print "3.9.*: avg Errors:", sum / count}'
-	@ls results/Python-3.10.*.text | xargs grep ^Found | awk '{sum += $$2; count++} END {print "3.10.*: avg Errors:", sum / count}'
-	@ls results/Python-3.11.*.text | xargs grep ^Found | awk '{sum += $$2; count++} END {print "3.11.*: avg Errors:", sum / count}'
-	@ls results/Python-3.12.*.text | xargs grep ^Found | awk '{sum += $$2; count++} END {print "3.12.*: avg Errors:", sum / count}'
-	@ls results/Python-3.13.*.text | xargs grep ^Found | awk '{sum += $$2; count++} END {print "3.13.*: avg Errors:", sum / count}'
-	@ls results/Python-3.14.*.text | xargs grep ^Found | awk '{sum += $$2; count++} END {print "3.14.*: avg Errors:", sum}'
+setup:           ## create .venv with the pinned instruments (uv)
+	uv sync
 
+list-releases:   ## every release directory on python.org, with its date
+	uv run harness/releases.py list
+
+fetch:           ## download + extract $(VERSIONS) into work/ (skips what is there), record SHA-256s
+	uv run harness/releases.py fetch $(VERSIONS)
+
+measure:         ## run both instruments on $(VERSIONS) -> data/measurements/<v>.json
+	uv run harness/measure.py --jobs $(JOBS) $(VERSIONS)
+
+results:         ## print the RESULTS.md tables from data/measurements/
+	uv run harness/results.py
+
+generated:       ## list the files the classifier calls generated, per release (eyeball this after changing it)
+	for v in $(VERSIONS); do echo "== $$v"; uv run harness/classify.py work/Python-$$v/Lib; done
+
+validation:      ## re-run the check of the November 2025 post (17 releases, see validation/README.md)
+	uv run validation/breakdown.py && uv run validation/isolated.py
+
+clean-work:      ## delete the extracted trees, tarballs and raw diagnostics (not the measurements)
+	rm -rf work/Python-* work/raw
+
+.PHONY: default help setup list-releases fetch measure results generated validation clean-work

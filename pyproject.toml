@@ -1,10 +1,16 @@
 [project]
 name = "python-analysis"
-version = "0.1.0"
-description = "Add your description here"
+version = "0.2.0"
+description = "Does CPython's standard library follow PEP 8? A fixed-instrument measurement across releases."
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "requests>=2.32.5",
-    "ruff>=0.14.4",
+    "pycodestyle==2.15.0",
+    "ruff==0.14.4",
 ]
+
+# No [tool.ruff] section, on purpose. The harness runs ruff with --isolated, so
+# nothing here can reach a measurement; and validation/ reproduces the November
+# 2025 numbers, which depended on ruff inferring its target version from the
+# requires-python line above. Keep that line at ">=3.13" for as long as the
+# validation is expected to reproduce.
