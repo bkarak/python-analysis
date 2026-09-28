@@ -9,8 +9,8 @@ proper, its tests and its generated files. Protocol:
 [PROTOCOL.md](PROTOCOL.md). Current numbers: [RESULTS.md](RESULTS.md).
 
 It grew out of the November 2025 post [Python PEP8: Practice what you
-preach](https://bkarak.wizhut.tech/blog/2025/15112025) and the public repo
-`wizhut/python-analysis`, whose git history this tree carries (the old
+preach](https://bkarak.wizhut.tech/blog/2025/15112025) and the repo
+`wizhut/python-analysis` (private since 2026-09-28), whose git history this tree carries (the old
 pipeline is commit `fe6a6fa`). [validation/](validation/README.md) is the
 2026-09-28 check of that post: its numbers reproduce exactly and its trend is
 a ruff configuration artifact. The harness here is the replacement.
