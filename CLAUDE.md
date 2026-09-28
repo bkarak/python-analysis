@@ -10,7 +10,7 @@ proper, its tests and its generated files. Protocol:
 
 It grew out of the November 2025 post [Python PEP8: Practice what you
 preach](https://bkarak.wizhut.tech/blog/2025/15112025) and the repo
-`wizhut/python-analysis` (private since 2026-09-28), whose git history this tree carries (the old
+`bkarak/python-analysis` (private since 2026-09-28; transferred the same day from the `wizhut` organisation to the personal account, so the post's original link redirects), whose git history this tree carries (the old
 pipeline is commit `fe6a6fa`). [validation/](validation/README.md) is the
 2026-09-28 check of that post: its numbers reproduce exactly and its trend is
 a ruff configuration artifact. The harness here is the replacement.
@@ -54,5 +54,5 @@ Sibling research projects: `research/kyori`.
 - Style counts exclude syntax and I/O failures; those are reported beside them, never added.
 - Commit `data/measurements/*.json`, `data/cohorts/*.json` and `data/tarballs.sha256`; never `work/` (tarballs, trees, the CPython clone, raw diagnostics, the blame dump).
 - A cohort is the date of a line's last edit, never its origin; say so when citing one.
-- When a number in RESULTS.md changes, update whatever cites it in the same pass: the blog post's correction, and a `/labs` page on corporate-site if one exists by then.
+- When a number in RESULTS.md changes, update whatever cites it in the same pass: the follow-up post drafted on 2026-09-28 at `~/devel/personal/html-bkarak/web-app/public/blog-data/2026/28092026.html` ("Python PEP8: Practice what you preach, take two"; it quotes Tables 1 and 2 of RESULTS.md and the cohort era table), and a `/labs` page on corporate-site if one exists by then.
 - Read *Known problems* in PROTOCOL.md before citing anything.

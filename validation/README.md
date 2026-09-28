@@ -2,7 +2,7 @@
 
 Checks the figures published in
 [Python PEP8: Practice what you preach](https://bkarak.wizhut.tech/blog/2025/15112025)
-(2025-11-15) against the pipeline in [wizhut/python-analysis](https://github.com/wizhut/python-analysis)
+(2025-11-15) against the pipeline in [bkarak/python-analysis](https://github.com/bkarak/python-analysis)
 (HEAD `fe6a6fa`, ruff 0.14.4 as pinned in its `uv.lock`).
 
 ## Verdict
