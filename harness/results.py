@@ -112,5 +112,61 @@ def main() -> None:
         print(md_table(['release', 'lines', 'pycodestyle /k', 'ruff /k', 'x.y.0', 'pycodestyle /k', 'ruff /k'], rows))
 
 
+def cohorts(version: str) -> None:
+    path = ROOT / 'data' / 'cohorts' / f'{version}.json'
+    if not path.exists():
+        return
+    c = json.loads(path.read_text())
+    fam = ('E1', 'E2', 'E3', 'E5', 'E7')
+
+    def style(b: dict, inst: str = 'pycodestyle', prefix: str = '') -> int:
+        return sum(n for code, n in b[inst]['by_code'].items() if code.startswith(prefix))
+
+    bl = c['blame']
+    print(f"\n## Age cohorts of {version}: density by the date a line was last edited\n")
+    print(f"Every line of `Lib/` at tag `{c['tag']}` (commit `{c['commit'][:10]}`) blamed with "
+          f"`{bl['command']}`, dated by the commit's author time; a diagnostic belongs to the cohort of the "
+          f"line it is reported on. {bl['files']} files blamed, {len(bl['skipped'])} skipped, "
+          f"{bl['unattributed']['pycodestyle']} pycodestyle and {bl['unattributed']['ruff']} ruff diagnostics "
+          f"unattributed. Rates are style diagnostics per thousand lines of the cohort.\n")
+    stdlib, tests = c['by_category']['stdlib'], c['by_category']['tests']
+    total = sum(b['lines'] for b in stdlib['eras'].values())
+    rows = []
+    for era in c['eras']:
+        name = era['name']
+        if name not in stdlib['eras']:
+            continue
+        b = stdlib['eras'][name]
+        t = tests['eras'].get(name, {'lines': 0, 'pycodestyle': {'by_code': {}}})
+        rows.append([name, era['from'] or '', b['lines'], f"{b['lines'] / total * 100:.0f}%",
+                     per_k(style(b), b['lines']), per_k(style(b) - style(b, prefix='E5'), b['lines']),
+                     per_k(style(b, 'ruff'), b['lines']),
+                     *[per_k(style(b, prefix=f), b['lines']) for f in fam],
+                     t['lines'], per_k(style(t), t['lines']) if t['lines'] else 'n/a'])
+    print('### By era, stdlib proper (and the test suite)\n')
+    print(md_table(['era', 'from', 'lines', 'share', 'pycodestyle /k', 'excl. E5 /k', 'ruff /k', *fam, 'test lines', 'tests /k'], rows))
+
+    print('\n### By year, stdlib proper\n')
+    rows = []
+    for year, b in stdlib['years'].items():
+        t = tests['years'].get(year)
+        rows.append([year, b['lines'], f"{b['lines'] / total * 100:.1f}%", style(b), per_k(style(b), b['lines']),
+                     *[per_k(style(b, prefix=f), b['lines']) for f in fam],
+                     t['lines'] if t else 0, per_k(style(t), t['lines']) if t and t['lines'] else 'n/a'])
+    print(md_table(['year', 'lines', 'share', 'pycodestyle', '/k', *fam, 'test lines', 'tests /k'], rows))
+
+    print('\n### Rules by era, stdlib proper (pycodestyle, per thousand lines of the era)\n')
+    overall: dict[str, int] = {}
+    for b in stdlib['eras'].values():
+        for code, n in b['pycodestyle']['by_code'].items():
+            overall[code] = overall.get(code, 0) + n
+    top = sorted(overall, key=lambda k: -overall[k])[:12]
+    names = [e['name'] for e in c['eras'] if e['name'] in stdlib['eras']]
+    rows = [[code, *[per_k(stdlib['eras'][n]['pycodestyle']['by_code'].get(code, 0), stdlib['eras'][n]['lines'])
+                     for n in names]] for code in top]
+    print(md_table(['rule', *names], rows))
+
+
 if __name__ == '__main__':
     main()
+    cohorts(sorted((p.stem for p in MEASUREMENTS.glob('*.json') if is_series(p.stem)), key=vkey)[-1])

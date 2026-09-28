@@ -9,14 +9,15 @@ reproduced and taken apart in [validation/README.md](validation/README.md):
 they were right and their trend was an artifact of the tool's configuration.
 Everything below exists to make that impossible to repeat.
 
-Run: `make fetch` then `make measure`; tables with `make results`. Numbers
-and their reading: [RESULTS.md](RESULTS.md).
+Run: `make fetch` then `make measure`; tables with `make results`;
+`make cpython` and `make cohorts` for the age cohorts. Numbers and their
+reading: [RESULTS.md](RESULTS.md).
 
 ## Question
 
 Two hypotheses were left open in November 2025: *nobody cares about PEP 8*,
 or *the standard library is getting less Pythonic*. The series here answers
-the second. The first needs the age analysis under **Planned**: PEP 8 tells
+the second. The first is what **Age cohorts** answers: PEP 8 tells
 maintainers not to reformat old code, so whether 1991 code follows a 2001
 guide says nothing about whether anyone cares; whether code written after
 2001 follows it does.
@@ -134,6 +135,44 @@ is not distinguished and counts as stdlib. See **Known problems**.
 - A release is the tarball whose SHA-256 is in `data/tarballs.sha256`; a
   different digest is a different release.
 
+## Age cohorts
+
+The series says whether the library is getting less Pythonic. Whether
+anyone cares is a different question, because PEP 8 tells maintainers not
+to reformat code that already works: old lines keep their old style by
+policy, and the test is the code written after the guide. `make cohorts`
+runs it for the latest series release (`COHORT=` picks another; its tag,
+tarball and raw diagnostics must exist).
+
+- **Blame.** Every `.py` under `Lib/` at the release's tag is blamed with
+  `git blame --line-porcelain <tag> -- Lib/<file>` in the clone at
+  `work/cpython` (`make cpython`, once, about 1 GB). Each line is dated by
+  the **author time** of the commit that last edited it. That is the last
+  edit, not the line's origin: a line reformatted in 2010 is 2010's. For a
+  style question that is the right date, since the last editor was the
+  last person with a chance to make the line conform; the cost is under
+  Known problems 9 to 11. No `-w` (a whitespace change is an edit here),
+  no `-M` or `-C` (moved code is dated at the move).
+- **Alignment.** The tarball's files are compared with the tag's blobs by
+  git object hash, and a file is skipped if they differ or if blame and
+  the inventory disagree on its line count; the cohort JSON records what
+  was skipped and how many diagnostics could not be attributed. For
+  3.14.0 all 1830 files match and nothing is lost.
+- **Attribution.** A diagnostic belongs to the cohort of the line it is
+  reported on. Blank-line rules (E3) are reported on the definition after
+  the gap, so they blame that line's editor.
+- **Cohorts.** By calendar year, and by era, each era starting on the day
+  of an event in how CPython's code was written or reviewed: PEP 8's
+  creation (2001-07-05), the 3.0 release (2008-12-03), the move to GitHub
+  pull requests (2017-02-10) and the first ruff hook in CPython's
+  pre-commit configuration (2023-09-12, gh-60283). Density is style
+  diagnostics per thousand lines of the cohort, by category and rule
+  family as elsewhere; the era table also gives the density without E5,
+  because line length behaves unlike every other family.
+- **Output.** `data/cohorts/<v>.json` (committed): per category, per year
+  and per era, the lines and each instrument's style counts by rule.
+  `work/raw/<v>.blame.tsv` (not committed): the author time of every line.
+
 ## Known problems, not yet fixed
 
 1. **Line length is a third to a half of everything counted.** E501
@@ -159,13 +198,20 @@ is not distinguished and counts as stdlib. See **Known problems**.
    release drifts from its first (3.13.9 against 3.13.0); it is not a
    confidence interval.
 8. **No 2.x yet.**
+9. **Blame dates the last edit.** The 2006 to 2008 cohorts hold every line
+   the Python 3 conversion rewrote, whatever its origin, and any later mass
+   edit (a reindent, an import cleanup) pulls lines forward. The pre-2001
+   cohort is what survived untouched, a biased sample of what was written
+   then.
+10. **Moved code is dated at the move**, since blame runs without `-M` or
+    `-C`: a package split or a rename turns 2005 code into a 2019 cohort.
+11. **Backports keep their author time.** A fix written on main and
+    cherry-picked to a release branch is dated when it was written, which
+    is what is wanted; but a release branch's own commits can predate the
+    tag by months, so the newest cohort is a little older than the tag.
 
 ## Planned
 
-- **Age cohorts.** Blame every violating line of the latest release to the
-  year it was written (this needs a CPython git clone, not a tarball) and
-  report density by cohort. This is the test of "practice what you preach":
-  whether code written after PEP 8 follows it.
 - **2.x.** pycodestyle only, from 2.0 or 2.7, to put the pre-PEP 8 library
   on the chart.
 - **What CPython enforces.** Since 2023 CPython runs ruff in pre-commit on

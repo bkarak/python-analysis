@@ -3,6 +3,7 @@ SERIES      := 3.0 3.1 3.2 3.3.0 3.4.0 3.5.0 3.6.0 3.7.0 3.8.0 3.9.0 3.10.0 3.11
 SENSITIVITY := 3.0.1 3.1.1 3.2.1 3.12.11 3.13.9
 VERSIONS    ?= $(SERIES) $(SENSITIVITY)
 JOBS        ?= 12
+COHORT      ?= 3.14.0
 
 default: help
 
@@ -28,10 +29,16 @@ results:         ## print the RESULTS.md tables from data/measurements/
 generated:       ## list the files the classifier calls generated, per release (eyeball this after changing it)
 	for v in $(VERSIONS); do echo "== $$v"; uv run harness/classify.py work/Python-$$v/Lib; done
 
+cpython:         ## clone CPython into work/cpython (once, ~1 GB); blame needs the history
+	@test -d work/cpython || git clone https://github.com/python/cpython.git work/cpython
+
+cohorts: cpython ## blame every line of $(COHORT) and report density by edit date -> data/cohorts/
+	uv run harness/cohorts.py --jobs $(JOBS) $(COHORT)
+
 validation:      ## re-run the check of the November 2025 post (17 releases, see validation/README.md)
 	uv run validation/breakdown.py && uv run validation/isolated.py
 
 clean-work:      ## delete the extracted trees, tarballs and raw diagnostics (not the measurements)
 	rm -rf work/Python-* work/raw
 
-.PHONY: default help setup list-releases fetch measure results generated validation clean-work
+.PHONY: default help setup list-releases fetch measure results generated cpython cohorts validation clean-work

@@ -4,7 +4,7 @@
     uv run harness/measure.py [--jobs N] 3.14.0 3.13.0 ...
 
 Reads work/Python-<v>/Lib, writes data/measurements/<v>.json and the raw
-diagnostics to work/raw/<v>.<instrument>.tsv. The instrument definitions here
+diagnostics to work/raw/<v>.<instrument>.tsv (code, file, row, col, text). The instrument definitions here
 are the ones PROTOCOL.md describes; change both together.
 """
 from __future__ import annotations
@@ -72,7 +72,7 @@ def balanced_chunks(files: dict[str, dict], n: int) -> list[list[str]]:
     return [b for b in buckets if b]
 
 
-def run_pycodestyle(lib: Path, files: dict[str, dict], jobs: int) -> list[tuple[str, str, str]]:
+def run_pycodestyle(lib: Path, files: dict[str, dict], jobs: int) -> list[tuple[str, str, int, int, str]]:
     def one(batch: list[str]) -> str:
         proc = subprocess.run(
             # -P keeps the release's own Lib/ (the cwd) off sys.path; without it the 2008
@@ -91,12 +91,12 @@ def run_pycodestyle(lib: Path, files: dict[str, dict], jobs: int) -> list[tuple[
         for line in out.splitlines():
             parts = line.split('\t', 4)
             if len(parts) == 5:
-                path, _row, _col, code, text = parts
-                rows.append((code, path, text))
+                path, row, col, code, text = parts
+                rows.append((code, path, int(row), int(col), text))
     return rows
 
 
-def run_ruff(lib: Path, files: dict[str, dict], target: str) -> tuple[list[tuple[str, str, str]], list[str]]:
+def run_ruff(lib: Path, files: dict[str, dict], target: str) -> tuple[list[tuple[str, str, int, int, str]], list[str]]:
     args = ['check', '--isolated', '--no-cache', '--preview', '--select', 'E,W',
             f'--line-length={LINE_LENGTH}', f'--target-version={target}',
             '--output-format', 'json', '--exit-zero']
@@ -107,17 +107,18 @@ def run_ruff(lib: Path, files: dict[str, dict], target: str) -> tuple[list[tuple
     rows = []
     for d in json.loads(proc.stdout):
         code = d.get('code') or 'invalid-syntax'
-        rows.append((code, d['filename'].removeprefix(prefix), d['message']))
+        rows.append((code, d['filename'].removeprefix(prefix),
+                     d['location']['row'], d['location']['column'], d['message']))
     return rows, args
 
 
-def aggregate(rows: list[tuple[str, str, str]], files: dict[str, dict]) -> dict:
+def aggregate(rows: list[tuple[str, str, int, int, str]], files: dict[str, dict]) -> dict:
     by_code: Counter = Counter()
     by_cat: Counter = Counter()
     by_file: Counter = Counter()
     by_cat_code: dict[str, Counter] = defaultdict(Counter)
     messages: dict[str, str] = {}
-    for code, rel, text in rows:
+    for code, rel, _row, _col, text in rows:
         cat = files[rel]['category'] if rel in files else 'unknown'
         by_code[code] += 1
         by_cat[cat] += 1
@@ -172,7 +173,7 @@ def measure(version: str, jobs: int) -> None:
     (OUT / f'{version}.json').write_text(json.dumps(result, indent=1) + '\n')
     for name, rows in (('pycodestyle', pcs_rows), ('ruff', ruff_rows)):
         with open(RAW / f'{version}.{name}.tsv', 'w') as fh:
-            fh.writelines(f'{c}\t{r}\t{t}\n' for c, r, t in sorted(rows))
+            fh.writelines(f'{c}\t{f}\t{r}\t{col}\t{t}\n' for c, f, r, col, t in sorted(rows))
     p, r = result['pycodestyle'], result['ruff']
     print(f"{version:8} files {sum(result['files'].values()):5}  lines {sum(result['lines'].values()):8}  "
           f"pycodestyle {p['style']:6} (+{p['errors']:3} non-style)  ruff {r['style']:6} (+{r['errors']:3})  "

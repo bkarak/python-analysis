@@ -12,7 +12,10 @@ Protocol: [PROTOCOL.md](PROTOCOL.md). Current numbers: [RESULTS.md](RESULTS.md).
 48.1 style diagnostics per thousand lines between 3.0 and 3.14.0. Every
 rule family fell except line length, which doubled. Of everything a naive
 count sees in 3.14.0, the test suite is 47 % and 78 generated files are
-36 %; the library a user imports is 17 %.
+36 %; the library a user imports is 17 %. Dated by the commit that last
+edited each line, code from every era is cleaner than the last except for
+line length: long lines rise from 2 per thousand in code untouched since
+before PEP 8 to 28 in code edited since 2023.
 
 It grew out of the November 2025 post [Python PEP8: Practice what you
 preach](https://bkarak.wizhut.tech/blog/2025/15112025) and its script, which
@@ -34,6 +37,8 @@ make fetch          # the series + sensitivity set into work/ (~450 MB down, ~2.
 make measure        # both instruments on every release -> data/measurements/<v>.json (~3 s each)
 make results        # the RESULTS.md tables
 make generated      # what the classifier calls generated, per release
+make cpython        # clone CPython into work/ (once, ~1 GB); blame needs the history
+make cohorts        # blame every line of 3.14.0 -> data/cohorts/3.14.0.json (~2 min)
 
 VERSIONS="3.15.0" make fetch measure    # add a release
 make list-releases                       # what python.org offers
@@ -46,7 +51,9 @@ make validation                          # the check of the 2025 post (its 17 re
 | `harness/measure.py` | the two instruments and the per-release JSON |
 | `harness/classify.py` | tests / generated / stdlib |
 | `harness/results.py` | the tables |
+| `harness/cohorts.py` | blame at the tag, density by the date a line was last edited |
 | `data/measurements/` | one JSON per release, committed |
+| `data/cohorts/` | one JSON per blamed release, committed |
 | `data/tarballs.sha256` | digest of every tarball measured |
 | `validation/` | the 2025 check: scripts, JSON, findings |
 | `work/` | tarballs, trees, raw diagnostics; gitignored |

@@ -24,6 +24,7 @@ Sibling research projects: `research/kyori`.
 - `make measure` — both instruments on every release, about 40 s each with `JOBS=12` → `data/measurements/<v>.json`, raw diagnostics in `work/raw/`
 - `make results` — prints the RESULTS.md tables
 - `make generated` — prints what the classifier calls generated, per release; eyeball it after touching `harness/classify.py`
+- `make cpython` — clones CPython into `work/cpython` once (about 1 GB); `make cohorts` blames every line of `COHORT` (default 3.14.0) and writes `data/cohorts/<v>.json` in about two minutes; `make results` then prints the cohort tables too
 - `make validation` — re-runs the November 2025 check (its 17 releases must be in `work/`)
 - `VERSIONS="3.15.0" make fetch measure` — add a release; `make list-releases` shows what python.org has
 
@@ -36,9 +37,11 @@ Sibling research projects: `research/kyori`.
 | `harness/releases.py` | List python.org releases; fetch and extract tarballs; record checksums |
 | `harness/measure.py` | The two instruments, the file inventory, the per-release JSON |
 | `harness/classify.py` | tests / generated / stdlib rules |
-| `harness/results.py` | Aggregates the measurements into the tables |
+| `harness/results.py` | Aggregates the measurements and cohorts into the tables |
+| `harness/cohorts.py` | git blame at the release's tag; lines and diagnostics by the year and era of their last edit |
 | `data/measurements/` | One JSON per release: counts by rule, category, category × rule, top files, the generated list, the instrument that produced it |
 | `data/tarballs.sha256` | Digest of every tarball measured |
+| `data/cohorts/` | One JSON per blamed release: per category, per year and per era, lines and style counts by rule |
 | `validation/` | The check of the 2025 post: its own two scripts, their JSON, and a README with the findings |
 | `work/` | Tarballs, extracted trees, raw diagnostics; gitignored |
 
@@ -49,6 +52,7 @@ Sibling research projects: `research/kyori`.
 - The series is the first release of each minor. Patch releases are the sensitivity set, never averaged in.
 - Categories are decided tests first, then generated, then stdlib. The headline number is the stdlib category's density under pycodestyle.
 - Style counts exclude syntax and I/O failures; those are reported beside them, never added.
-- Commit `data/measurements/*.json` and `data/tarballs.sha256`; never `work/`.
+- Commit `data/measurements/*.json`, `data/cohorts/*.json` and `data/tarballs.sha256`; never `work/` (tarballs, trees, the CPython clone, raw diagnostics, the blame dump).
+- A cohort is the date of a line's last edit, never its origin; say so when citing one.
 - When a number in RESULTS.md changes, update whatever cites it in the same pass: the blog post's correction, and a `/labs` page on corporate-site if one exists by then.
 - Read *Known problems* in PROTOCOL.md before citing anything.
