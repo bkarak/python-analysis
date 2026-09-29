@@ -1,0 +1,157 @@
+{
+ "version": "3.14.0",
+ "measured": "2026-09-29",
+ "ruff_pre_commit_rev": "v0.12.8",
+ "hooks": [
+  {
+   "name": "Run Ruff (lint) on Doc/",
+   "files": "^Doc/",
+   "tree": "Doc",
+   "configs": [
+    ".ruff.toml",
+    "Doc/.ruff.toml"
+   ],
+   "select": [
+    "C4",
+    "B",
+    "E",
+    "F",
+    "FA",
+    "FLY",
+    "FURB",
+    "G",
+    "I",
+    "LOG",
+    "N",
+    "PERF",
+    "PGH",
+    "PT",
+    "TCH",
+    "UP",
+    "W"
+   ],
+   "ignore": [
+    "E501"
+   ],
+   "line_length": 79,
+   "tree_files": 35,
+   "tree_lines": 4128,
+   "in_tree_own_config": 0,
+   "in_tree_isolated": 71,
+   "in_stdlib_isolated": 8909,
+   "stdlib_lines": 271599
+  },
+  {
+   "name": "Run Ruff (lint) on Lib/test/",
+   "files": "^Lib/test/",
+   "tree": "Lib/test",
+   "configs": [
+    ".ruff.toml",
+    "Lib/test/.ruff.toml"
+   ],
+   "select": [
+    "F811"
+   ],
+   "ignore": [],
+   "line_length": 79,
+   "tree_files": 1112,
+   "tree_lines": 630844,
+   "in_tree_own_config": 0,
+   "in_tree_isolated": 22,
+   "in_stdlib_isolated": 5,
+   "stdlib_lines": 271599
+  },
+  {
+   "name": "Run Ruff (lint) on Tools/build/",
+   "files": "^Tools/build/",
+   "tree": "Tools/build",
+   "configs": [
+    ".ruff.toml",
+    "Tools/build/.ruff.toml"
+   ],
+   "select": [
+    "C4",
+    "E",
+    "F",
+    "I",
+    "ISC",
+    "LOG",
+    "PGH",
+    "PT",
+    "PYI",
+    "RUF100",
+    "UP",
+    "W",
+    "YTT"
+   ],
+   "ignore": [
+    "E501",
+    "F541",
+    "PYI024",
+    "PYI025",
+    "UP038"
+   ],
+   "line_length": 79,
+   "tree_files": 19,
+   "tree_lines": 5684,
+   "in_tree_own_config": 0,
+   "in_tree_isolated": 25,
+   "in_stdlib_isolated": 5896,
+   "stdlib_lines": 271599
+  },
+  {
+   "name": "Run Ruff (lint) on Tools/i18n/",
+   "files": "^Tools/i18n/",
+   "tree": "Tools/i18n",
+   "configs": [
+    ".ruff.toml",
+    "Tools/i18n/.ruff.toml"
+   ],
+   "select": [
+    "F",
+    "I",
+    "UP"
+   ],
+   "ignore": [],
+   "line_length": 79,
+   "tree_files": 3,
+   "tree_lines": 1265,
+   "in_tree_own_config": 0,
+   "in_tree_isolated": 0,
+   "in_stdlib_isolated": 4957,
+   "stdlib_lines": 271599
+  },
+  {
+   "name": "Run Ruff (lint) on Argument Clinic",
+   "files": "^Tools/clinic/|Lib/test/test_clinic.py",
+   "tree": null,
+   "note": "pattern not resolved to one directory"
+  },
+  {
+   "name": "Run Ruff (lint) on Tools/peg_generator/",
+   "files": "^Tools/peg_generator/",
+   "tree": "Tools/peg_generator",
+   "configs": [
+    ".ruff.toml",
+    "Tools/peg_generator/.ruff.toml"
+   ],
+   "select": [
+    "F",
+    "I",
+    "UP",
+    "RUF100",
+    "PGH004"
+   ],
+   "ignore": [
+    "UP038"
+   ],
+   "line_length": 79,
+   "tree_files": 18,
+   "tree_lines": 4415,
+   "in_tree_own_config": 74,
+   "in_tree_isolated": 74,
+   "in_stdlib_isolated": 4965,
+   "stdlib_lines": 271599
+  }
+ ]
+}

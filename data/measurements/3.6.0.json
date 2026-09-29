@@ -1,6 +1,6 @@
 {
  "version": "3.6.0",
- "measured": "2026-09-28",
+ "measured": "2026-09-29",
  "python": "3.14.2",
  "instruments": {
   "pycodestyle": {
@@ -25,6 +25,22 @@
     "json",
     "--exit-zero"
    ]
+  },
+  "naming": {
+   "version": "0.14.4",
+   "args": [
+    "check",
+    "--isolated",
+    "--no-cache",
+    "--select",
+    "N",
+    "--line-length=79",
+    "--target-version=py37",
+    "--output-format",
+    "json",
+    "--exit-zero"
+   ],
+   "note": "PEP 8 naming: the pep8-naming rules as ported by ruff (N8xx)"
   }
  },
  "files": {
@@ -804,6 +820,193 @@
    "W293": "Blank line contains whitespace",
    "W391": "Too many newlines at end of file",
    "W605": "Invalid escape sequence: `\\\u041f`",
+   "invalid-syntax": "Simple statements must be separated by newlines or semicolons"
+  }
+ },
+ "naming": {
+  "total": 7716,
+  "style": 7644,
+  "errors": 72,
+  "by_code": {
+   "N801": 814,
+   "N802": 3527,
+   "N803": 518,
+   "N804": 77,
+   "N805": 113,
+   "N806": 2126,
+   "N807": 17,
+   "N811": 7,
+   "N812": 22,
+   "N813": 6,
+   "N815": 175,
+   "N816": 78,
+   "N817": 2,
+   "N818": 157,
+   "N999": 5,
+   "invalid-syntax": 72
+  },
+  "by_category": {
+   "generated": 6,
+   "stdlib": 2463,
+   "tests": 5247
+  },
+  "by_category_code": {
+   "generated": {
+    "N802": 3,
+    "N806": 3
+   },
+   "stdlib": {
+    "N801": 165,
+    "N802": 954,
+    "N803": 402,
+    "N804": 33,
+    "N805": 47,
+    "N806": 617,
+    "N807": 8,
+    "N811": 1,
+    "N812": 18,
+    "N813": 2,
+    "N815": 94,
+    "N816": 59,
+    "N818": 58,
+    "N999": 5
+   },
+   "tests": {
+    "N801": 649,
+    "N802": 2570,
+    "N803": 116,
+    "N804": 44,
+    "N805": 66,
+    "N806": 1506,
+    "N807": 9,
+    "N811": 6,
+    "N812": 4,
+    "N813": 4,
+    "N815": 81,
+    "N816": 19,
+    "N817": 2,
+    "N818": 99,
+    "invalid-syntax": 72
+   }
+  },
+  "top_files": [
+   [
+    "test/test_socket.py",
+    466
+   ],
+   [
+    "test/test_decimal.py",
+    387
+   ],
+   [
+    "xml/dom/minidom.py",
+    268
+   ],
+   [
+    "idlelib/configdialog.py",
+    206
+   ],
+   [
+    "lib2to3/tests/data/infinite_recursion.py",
+    180
+   ],
+   [
+    "test/test_minidom.py",
+    129
+   ],
+   [
+    "unittest/case.py",
+    125
+   ],
+   [
+    "test/test_enum.py",
+    121
+   ],
+   [
+    "idlelib/config.py",
+    114
+   ],
+   [
+    "test/test_ipaddress.py",
+    106
+   ],
+   [
+    "unittest/test/test_case.py",
+    105
+   ],
+   [
+    "test/test_pathlib.py",
+    97
+   ],
+   [
+    "tkinter/__init__.py",
+    93
+   ],
+   [
+    "unittest/test/test_loader.py",
+    85
+   ],
+   [
+    "test/test_with.py",
+    83
+   ],
+   [
+    "test/test_bz2.py",
+    82
+   ],
+   [
+    "test/pydocfodder.py",
+    78
+   ],
+   [
+    "test/pystone.py",
+    77
+   ],
+   [
+    "test/test_descr.py",
+    73
+   ],
+   [
+    "lib2to3/tests/test_fixers.py",
+    71
+   ],
+   [
+    "logging/__init__.py",
+    66
+   ],
+   [
+    "lib2to3/tests/data/py2_test_grammar.py",
+    63
+   ],
+   [
+    "test/test_smtpd.py",
+    62
+   ],
+   [
+    "test/test_smtplib.py",
+    58
+   ],
+   [
+    "test/test_inspect.py",
+    57
+   ]
+  ],
+  "messages": {
+   "N801": "Class name `_localimpl` should use CapWords convention",
+   "N802": "Function name `getOptionalRelease` should be lowercase",
+   "N803": "Argument name `optionalRelease` should be lowercase",
+   "N804": "First argument of a class method should be named `cls`",
+   "N805": "First argument of a method should be named `self`",
+   "N806": "Variable `B` in function should be lowercase",
+   "N807": "Function name should not start and end with `__`",
+   "N811": "Constant `MAPPING` imported as non-constant `modules`",
+   "N812": "Lowercase `allocate_lock` imported as non-lowercase `Lock`",
+   "N813": "Camelcase `OrderedDict` imported as lowercase `_default_dict`",
+   "N815": "Variable `_writeBody` in class scope should not be mixedCase",
+   "N816": "Variable `barry_as_FLUFL` in global scope should not be mixedCase",
+   "N817": "CamelCase `Decimal` imported as acronym `D`",
+   "N818": "Exception name `DecimalException` should be named with an Error suffix",
+   "N999": "Invalid module name: 'NodeFilter'",
    "invalid-syntax": "Simple statements must be separated by newlines or semicolons"
   }
  }

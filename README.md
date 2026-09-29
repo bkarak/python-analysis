@@ -15,7 +15,12 @@ count sees in 3.14.0, the test suite is 47 % and 78 generated files are
 36 %; the library a user imports is 17 %. Dated by the commit that last
 edited each line, code from every era is cleaner than the last except for
 line length: long lines rise from 2 per thousand in code untouched since
-before PEP 8 to 28 in code edited since 2023.
+before PEP 8 to 28 in code edited since 2023, though the median long line
+is 85 characters, not 99. The rules about what code does are 2 % of the
+count; the rest is layout, and against black-formatted projects, which sit
+near zero on everything but line length, the library is an order of
+magnitude further from PEP 8's layout rules. Python 2.0.1 ran at 261 per
+thousand lines, 2.7 at 129.
 
 It grew out of the November 2025 post [Python PEP8: Practice what you
 preach](https://bkarak.wizhut.tech/blog/2025/15112025) and its script, which
@@ -39,6 +44,7 @@ make results        # the RESULTS.md tables
 make generated      # what the classifier calls generated, per release
 make cpython        # clone CPython into work/ (once, ~1 GB); blame needs the history
 make cohorts        # blame every line of 3.14.0 -> data/cohorts/3.14.0.json (~2 min)
+make analyses       # cohorts, the content dating, sensitivity, line length, enforcement, survival, packages, baselines
 
 VERSIONS="3.15.0" make fetch measure    # add a release
 make list-releases                       # what python.org offers
@@ -51,9 +57,16 @@ make validation                          # the check of the 2025 post (its 17 re
 | `harness/measure.py` | the two instruments and the per-release JSON |
 | `harness/classify.py` | tests / generated / stdlib |
 | `harness/results.py` | the tables |
-| `harness/cohorts.py` | blame at the tag, density by the date a line was last edited |
+| `harness/cohorts.py` | blame at the tag, density by the date a line was last edited; `--dating content` for `-w -M -C` |
+| `harness/sensitivity.py` | era boundaries a year either way, source lines as denominator, bootstrap over files |
+| `harness/linelength.py` | where the long lines sit, per release and per era; docstring lines over 72 |
+| `harness/enforcement.py` | what CPython's own ruff hooks select, counted where they run and in `Lib/` proper |
+| `harness/survival.py` | reverse blame from a branch point: which violations are still there |
+| `harness/packages.py` | density per package; the vendored packages |
+| `harness/baselines.py` | the same instruments on django, numpy, pip, requests, black |
 | `data/measurements/` | one JSON per release, committed |
-| `data/cohorts/` | one JSON per blamed release, committed |
+| `data/cohorts/` | one JSON per blamed release and dating, committed |
+| `data/{sensitivity,linelength,enforcement,survival,packages,baselines}/` | one JSON per analysis, committed |
 | `data/tarballs.sha256` | digest of every tarball measured |
 | `validation/` | the 2025 check: scripts, JSON, findings |
 | `work/` | tarballs, trees, raw diagnostics; gitignored |

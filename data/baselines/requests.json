@@ -1,0 +1,291 @@
+{
+ "project": "requests",
+ "pypi": "requests",
+ "version": "2.34.2",
+ "sdist": {
+  "url": "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz",
+  "sha256": "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
+ },
+ "source_dir": "src/requests",
+ "dropped": [],
+ "measured": "2026-09-29",
+ "instruments": {
+  "pycodestyle": {
+   "version": "2.15.0",
+   "args": [
+    "--max-line-length=79"
+   ]
+  },
+  "ruff": {
+   "version": "0.14.4",
+   "args": [
+    "check",
+    "--isolated",
+    "--no-cache",
+    "--preview",
+    "--select",
+    "E,W",
+    "--line-length=79",
+    "--target-version=py310",
+    "--output-format",
+    "json",
+    "--exit-zero"
+   ]
+  },
+  "naming": {
+   "version": "0.14.4",
+   "args": [
+    "check",
+    "--isolated",
+    "--no-cache",
+    "--select",
+    "N",
+    "--line-length=79",
+    "--target-version=py310",
+    "--output-format",
+    "json",
+    "--exit-zero"
+   ]
+  }
+ },
+ "files": {
+  "stdlib": 19,
+  "tests": 0,
+  "generated": 0
+ },
+ "lines": {
+  "stdlib": 6385,
+  "tests": 0,
+  "generated": 0
+ },
+ "sloc": {
+  "stdlib": 4734,
+  "tests": 0,
+  "generated": 0
+ },
+ "generated_files": [],
+ "pycodestyle": {
+  "total": 262,
+  "style": 262,
+  "errors": 0,
+  "by_code": {
+   "E203": 2,
+   "E301": 4,
+   "E302": 4,
+   "E402": 17,
+   "E501": 235
+  },
+  "by_category": {
+   "stdlib": 262
+  },
+  "by_category_code": {
+   "stdlib": {
+    "E203": 2,
+    "E301": 4,
+    "E302": 4,
+    "E402": 17,
+    "E501": 235
+   }
+  },
+  "top_files": [
+   [
+    "models.py",
+    46
+   ],
+   [
+    "sessions.py",
+    43
+   ],
+   [
+    "adapters.py",
+    38
+   ],
+   [
+    "utils.py",
+    35
+   ],
+   [
+    "cookies.py",
+    25
+   ],
+   [
+    "api.py",
+    19
+   ],
+   [
+    "__init__.py",
+    18
+   ],
+   [
+    "auth.py",
+    9
+   ],
+   [
+    "_types.py",
+    8
+   ],
+   [
+    "compat.py",
+    8
+   ],
+   [
+    "help.py",
+    4
+   ],
+   [
+    "exceptions.py",
+    3
+   ],
+   [
+    "structures.py",
+    2
+   ],
+   [
+    "status_codes.py",
+    2
+   ],
+   [
+    "_internal_utils.py",
+    2
+   ]
+  ],
+  "messages": {
+   "E203": "whitespace before ':'",
+   "E301": "expected 1 blank line, found 0",
+   "E302": "expected 2 blank lines, found 0",
+   "E402": "module level import not at top of file",
+   "E501": "line too long (89 > 79 characters)"
+  }
+ },
+ "ruff": {
+  "total": 207,
+  "style": 207,
+  "errors": 0,
+  "by_code": {
+   "E402": 17,
+   "E501": 190
+  },
+  "by_category": {
+   "stdlib": 207
+  },
+  "by_category_code": {
+   "stdlib": {
+    "E402": 17,
+    "E501": 190
+   }
+  },
+  "top_files": [
+   [
+    "sessions.py",
+    35
+   ],
+   [
+    "adapters.py",
+    34
+   ],
+   [
+    "models.py",
+    32
+   ],
+   [
+    "utils.py",
+    24
+   ],
+   [
+    "cookies.py",
+    20
+   ],
+   [
+    "api.py",
+    19
+   ],
+   [
+    "__init__.py",
+    14
+   ],
+   [
+    "_types.py",
+    8
+   ],
+   [
+    "compat.py",
+    7
+   ],
+   [
+    "auth.py",
+    5
+   ],
+   [
+    "exceptions.py",
+    3
+   ],
+   [
+    "_internal_utils.py",
+    2
+   ],
+   [
+    "status_codes.py",
+    2
+   ],
+   [
+    "help.py",
+    1
+   ],
+   [
+    "structures.py",
+    1
+   ]
+  ],
+  "messages": {
+   "E402": "Module level import not at top of file",
+   "E501": "Line too long (86 > 79)"
+  }
+ },
+ "naming": {
+  "total": 20,
+  "style": 20,
+  "errors": 0,
+  "by_code": {
+   "N802": 2,
+   "N806": 12,
+   "N818": 6
+  },
+  "by_category": {
+   "stdlib": 20
+  },
+  "by_category_code": {
+   "stdlib": {
+    "N802": 2,
+    "N806": 12,
+    "N818": 6
+   }
+  },
+  "top_files": [
+   [
+    "auth.py",
+    6
+   ],
+   [
+    "exceptions.py",
+    6
+   ],
+   [
+    "utils.py",
+    5
+   ],
+   [
+    "cookies.py",
+    2
+   ],
+   [
+    "adapters.py",
+    1
+   ]
+  ],
+  "messages": {
+   "N802": "Function name `SOCKSProxyManager` should be lowercase",
+   "N806": "Variable `A1` in function should be lowercase",
+   "N818": "Exception name `RequestException` should be named with an Error suffix"
+  }
+ }
+}

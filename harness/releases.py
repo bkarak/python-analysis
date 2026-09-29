@@ -19,14 +19,13 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from versions import numeric, vkey  # noqa: E402
+
 BASE = 'https://www.python.org/ftp/python'
 ROOT = Path(__file__).resolve().parent.parent
 WORK = ROOT / 'work'
 SUMS = ROOT / 'data' / 'tarballs.sha256'
-
-
-def vkey(v: str) -> tuple[int, ...]:
-    return tuple(int(x) for x in v.split('.'))
 
 
 def list_releases() -> None:
@@ -40,7 +39,7 @@ def record(line: str) -> None:
     SUMS.parent.mkdir(exist_ok=True)
     lines = set(SUMS.read_text().splitlines()) if SUMS.exists() else set()
     lines.add(line)
-    key = lambda l: vkey(re.search(r'Python-([\d.]+)\.tgz', l).group(1))  # noqa: E731
+    key = lambda l: vkey(re.search(r'Python-(\d+\.\d+(?:\.\d+)?(?:(?:a|b|rc)\d+)?)\.tgz', l).group(1))  # noqa: E731
     SUMS.write_text('\n'.join(sorted(lines, key=key)) + '\n')
 
 
@@ -48,7 +47,7 @@ def fetch(v: str) -> None:
     WORK.mkdir(exist_ok=True)
     tgz, tree = WORK / f'Python-{v}.tgz', WORK / f'Python-{v}'
     if not tgz.exists():
-        url = f'{BASE}/{v}/Python-{v}.tgz'
+        url = f'{BASE}/{numeric(v)}/Python-{v}.tgz'
         print(f'{v}: downloading {url}', flush=True)
         try:
             with urllib.request.urlopen(url, timeout=120) as resp, open(tgz, 'wb') as out:

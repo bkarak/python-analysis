@@ -1,6 +1,6 @@
 {
  "version": "3.10.0",
- "measured": "2026-09-28",
+ "measured": "2026-09-29",
  "python": "3.14.2",
  "instruments": {
   "pycodestyle": {
@@ -25,6 +25,22 @@
     "json",
     "--exit-zero"
    ]
+  },
+  "naming": {
+   "version": "0.14.4",
+   "args": [
+    "check",
+    "--isolated",
+    "--no-cache",
+    "--select",
+    "N",
+    "--line-length=79",
+    "--target-version=py310",
+    "--output-format",
+    "json",
+    "--exit-zero"
+   ],
+   "note": "PEP 8 naming: the pep8-naming rules as ported by ruff (N8xx)"
   }
  },
  "files": {
@@ -798,6 +814,193 @@
    "W293": "Blank line contains whitespace",
    "W391": "Too many newlines at end of file",
    "W605": "Invalid escape sequence: `\\\u041f`",
+   "invalid-syntax": "Simple statements must be separated by newlines or semicolons"
+  }
+ },
+ "naming": {
+  "total": 8596,
+  "style": 8525,
+  "errors": 71,
+  "by_code": {
+   "N801": 918,
+   "N802": 3811,
+   "N803": 532,
+   "N804": 60,
+   "N805": 210,
+   "N806": 2504,
+   "N807": 19,
+   "N811": 10,
+   "N812": 8,
+   "N813": 7,
+   "N815": 174,
+   "N816": 75,
+   "N817": 4,
+   "N818": 186,
+   "N999": 7,
+   "invalid-syntax": 71
+  },
+  "by_category": {
+   "generated": 3,
+   "stdlib": 2212,
+   "tests": 6381
+  },
+  "by_category_code": {
+   "generated": {
+    "N802": 3
+   },
+   "stdlib": {
+    "N801": 175,
+    "N802": 905,
+    "N803": 396,
+    "N804": 8,
+    "N805": 40,
+    "N806": 461,
+    "N807": 9,
+    "N811": 3,
+    "N812": 4,
+    "N813": 3,
+    "N815": 89,
+    "N816": 55,
+    "N818": 59,
+    "N999": 5
+   },
+   "tests": {
+    "N801": 743,
+    "N802": 2903,
+    "N803": 136,
+    "N804": 52,
+    "N805": 170,
+    "N806": 2043,
+    "N807": 10,
+    "N811": 7,
+    "N812": 4,
+    "N813": 4,
+    "N815": 85,
+    "N816": 20,
+    "N817": 4,
+    "N818": 127,
+    "N999": 2,
+    "invalid-syntax": 71
+   }
+  },
+  "top_files": [
+   [
+    "test/test_socket.py",
+    516
+   ],
+   [
+    "test/test_decimal.py",
+    392
+   ],
+   [
+    "xml/dom/minidom.py",
+    268
+   ],
+   [
+    "lib2to3/tests/data/infinite_recursion.py",
+    180
+   ],
+   [
+    "test/test_enum.py",
+    140
+   ],
+   [
+    "unittest/case.py",
+    135
+   ],
+   [
+    "test/test_typing.py",
+    132
+   ],
+   [
+    "test/test_minidom.py",
+    131
+   ],
+   [
+    "unittest/test/test_case.py",
+    119
+   ],
+   [
+    "test/test_ipaddress.py",
+    110
+   ],
+   [
+    "test/test_pathlib.py",
+    110
+   ],
+   [
+    "unittest/test/test_runner.py",
+    108
+   ],
+   [
+    "idlelib/config.py",
+    101
+   ],
+   [
+    "test/test_sys_settrace.py",
+    99
+   ],
+   [
+    "test/test_statistics.py",
+    97
+   ],
+   [
+    "tkinter/__init__.py",
+    94
+   ],
+   [
+    "unittest/test/test_loader.py",
+    87
+   ],
+   [
+    "test/test_with.py",
+    84
+   ],
+   [
+    "test/test_bz2.py",
+    82
+   ],
+   [
+    "test/pydocfodder.py",
+    78
+   ],
+   [
+    "test/test_zoneinfo/test_zoneinfo.py",
+    78
+   ],
+   [
+    "test/test_descr.py",
+    74
+   ],
+   [
+    "lib2to3/tests/test_fixers.py",
+    71
+   ],
+   [
+    "logging/__init__.py",
+    67
+   ],
+   [
+    "test/test_smtplib.py",
+    67
+   ]
+  ],
+  "messages": {
+   "N801": "Class name `_localimpl` should use CapWords convention",
+   "N802": "Function name `getOptionalRelease` should be lowercase",
+   "N803": "Argument name `optionalRelease` should be lowercase",
+   "N804": "First argument of a class method should be named `cls`",
+   "N805": "First argument of a method should be named `self`",
+   "N806": "Variable `B` in function should be lowercase",
+   "N807": "Function name should not start and end with `__`",
+   "N811": "Constant `_PROJECT_BASE` imported as non-constant `project_base`",
+   "N812": "Lowercase `allocate_lock` imported as non-lowercase `Lock`",
+   "N813": "Camelcase `ProcessPoolExecutor` imported as lowercase `pe`",
+   "N815": "Variable `_writeBody` in class scope should not be mixedCase",
+   "N816": "Variable `barry_as_FLUFL` in global scope should not be mixedCase",
+   "N817": "CamelCase `Decimal` imported as acronym `D`",
+   "N818": "Exception name `DecimalException` should be named with an Error suffix",
+   "N999": "Invalid module name: 'audit-tests'",
    "invalid-syntax": "Simple statements must be separated by newlines or semicolons"
   }
  }

@@ -1,6 +1,6 @@
 {
  "version": "3.5.0",
- "measured": "2026-09-28",
+ "measured": "2026-09-29",
  "python": "3.14.2",
  "instruments": {
   "pycodestyle": {
@@ -25,6 +25,22 @@
     "json",
     "--exit-zero"
    ]
+  },
+  "naming": {
+   "version": "0.14.4",
+   "args": [
+    "check",
+    "--isolated",
+    "--no-cache",
+    "--select",
+    "N",
+    "--line-length=79",
+    "--target-version=py37",
+    "--output-format",
+    "json",
+    "--exit-zero"
+   ],
+   "note": "PEP 8 naming: the pep8-naming rules as ported by ruff (N8xx)"
   }
  },
  "files": {
@@ -855,6 +871,197 @@
    "W293": "Blank line contains whitespace",
    "W391": "Too many newlines at end of file",
    "W605": "Invalid escape sequence: `\\s`",
+   "invalid-syntax": "Expected an identifier, but found a keyword `async` that cannot be used here"
+  }
+ },
+ "naming": {
+  "total": 8078,
+  "style": 7940,
+  "errors": 138,
+  "by_code": {
+   "N801": 792,
+   "N802": 3983,
+   "N803": 514,
+   "N804": 95,
+   "N805": 105,
+   "N806": 1925,
+   "N807": 25,
+   "N811": 6,
+   "N812": 26,
+   "N813": 15,
+   "N815": 172,
+   "N816": 82,
+   "N817": 2,
+   "N818": 141,
+   "N999": 57,
+   "invalid-syntax": 138
+  },
+  "by_category": {
+   "generated": 601,
+   "stdlib": 2530,
+   "tests": 4947
+  },
+  "by_category_code": {
+   "generated": {
+    "N802": 558,
+    "N803": 23,
+    "N806": 3,
+    "N807": 10,
+    "N816": 7
+   },
+   "stdlib": {
+    "N801": 164,
+    "N802": 932,
+    "N803": 385,
+    "N804": 59,
+    "N805": 43,
+    "N806": 644,
+    "N807": 6,
+    "N811": 1,
+    "N812": 22,
+    "N813": 2,
+    "N815": 91,
+    "N816": 58,
+    "N818": 57,
+    "N999": 57,
+    "invalid-syntax": 9
+   },
+   "tests": {
+    "N801": 628,
+    "N802": 2493,
+    "N803": 106,
+    "N804": 36,
+    "N805": 62,
+    "N806": 1278,
+    "N807": 9,
+    "N811": 5,
+    "N812": 4,
+    "N813": 13,
+    "N815": 81,
+    "N816": 17,
+    "N817": 2,
+    "N818": 84,
+    "invalid-syntax": 129
+   }
+  },
+  "top_files": [
+   [
+    "test/test_socket.py",
+    464
+   ],
+   [
+    "test/test_decimal.py",
+    385
+   ],
+   [
+    "xml/dom/minidom.py",
+    268
+   ],
+   [
+    "idlelib/configDialog.py",
+    214
+   ],
+   [
+    "lib2to3/tests/data/infinite_recursion.py",
+    180
+   ],
+   [
+    "test/test_minidom.py",
+    128
+   ],
+   [
+    "unittest/case.py",
+    122
+   ],
+   [
+    "idlelib/configHandler.py",
+    115
+   ],
+   [
+    "test/test_ipaddress.py",
+    105
+   ],
+   [
+    "unittest/test/test_case.py",
+    104
+   ],
+   [
+    "plat-sunos5/IN.py",
+    95
+   ],
+   [
+    "tkinter/__init__.py",
+    95
+   ],
+   [
+    "test/test_pathlib.py",
+    93
+   ],
+   [
+    "unittest/test/test_loader.py",
+    85
+   ],
+   [
+    "test/test_with.py",
+    82
+   ],
+   [
+    "test/test_bz2.py",
+    81
+   ],
+   [
+    "test/pydocfodder.py",
+    78
+   ],
+   [
+    "test/pystone.py",
+    77
+   ],
+   [
+    "plat-unixware7/IN.py",
+    76
+   ],
+   [
+    "plat-sunos5/STROPTS.py",
+    74
+   ],
+   [
+    "test/test_descr.py",
+    73
+   ],
+   [
+    "lib2to3/tests/test_fixers.py",
+    72
+   ],
+   [
+    "test/test_collections.py",
+    69
+   ],
+   [
+    "logging/__init__.py",
+    66
+   ],
+   [
+    "lib2to3/tests/data/py2_test_grammar.py",
+    63
+   ]
+  ],
+  "messages": {
+   "N801": "Class name `_localimpl` should use CapWords convention",
+   "N802": "Function name `getOptionalRelease` should be lowercase",
+   "N803": "Argument name `optionalRelease` should be lowercase",
+   "N804": "First argument of a class method should be named `cls`",
+   "N805": "First argument of a method should be named `self`",
+   "N806": "Variable `B` in function should be lowercase",
+   "N807": "Function name should not start and end with `__`",
+   "N811": "Constant `MAPPING` imported as non-constant `modules`",
+   "N812": "Lowercase `allocate_lock` imported as non-lowercase `Lock`",
+   "N813": "Camelcase `OrderedDict` imported as lowercase `_default_dict`",
+   "N815": "Variable `_encoded_EMPTY` in class scope should not be mixedCase",
+   "N816": "Variable `barry_as_FLUFL` in global scope should not be mixedCase",
+   "N817": "CamelCase `Decimal` imported as acronym `D`",
+   "N818": "Exception name `DecimalException` should be named with an Error suffix",
+   "N999": "Invalid module name: 'AutoComplete'",
    "invalid-syntax": "Expected an identifier, but found a keyword `async` that cannot be used here"
   }
  }

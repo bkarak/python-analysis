@@ -10,8 +10,9 @@ they were right and their trend was an artifact of the tool's configuration.
 Everything below exists to make that impossible to repeat.
 
 Run: `make fetch` then `make measure`; tables with `make results`;
-`make cpython` and `make cohorts` for the age cohorts. Numbers and their
-reading: [RESULTS.md](RESULTS.md).
+`make cpython` and `make cohorts` for the age cohorts; `make analyses` for
+everything from the age cohorts on. Numbers and their reading:
+[RESULTS.md](RESULTS.md).
 
 ## Question
 
@@ -35,14 +36,23 @@ guide says nothing about whether anyone cares; whether code written after
 - **The series** is the first release of every minor, 3.0 to 3.14, fifteen
   points. For 3.0, 3.1 and 3.2 that tarball is `Python-3.0.tgz` and so on;
   the 2025 pipeline's regex skipped those three.
-- **The sensitivity set** is a handful of patch releases (3.0.1, 3.1.1,
-  3.2.1, 3.12.11, 3.13.9), reported next to their minor's first release and
-  never averaged into the series. A patch release only backports fixes, so
-  the twenty-six patch releases of 3.9 are twenty-six near-copies of one
-  point; averaging them weights minors unequally, and in 2025 it averaged two
-  instruments into one number for 3.13.
-- **Not in the corpus yet**: 2.x. pycodestyle can tokenise it; ruff cannot
-  parse it. See **Planned**.
+- **The sensitivity set** is every other release python.org offers: all
+  the patch releases of every minor, 264 tarballs in all together with the
+  series (`make measure-all` fetches, measures and purges them one at a
+  time, keeping only their JSON). They are reported per minor as the spread
+  of a minor's releases around its first, and never averaged into the
+  series. A patch release only backports fixes, so the twenty-five patch
+  releases of 3.9 are twenty-five near-copies of one point; averaging them
+  weights minors unequally, and in 2025 it averaged two instruments into one
+  number for 3.13.
+- **A pre-release** of the next x.y.0 (3.15.0rc2 in September 2026) stands
+  in for its final until the final ships, flagged as such in the series
+  table and used for nothing else. Ruff's target version is clamped to
+  py314, the newest ruff 0.14.4 knows, so any 3.15 syntax it cannot parse
+  counts as non-style, not as style.
+- **Python 2** is in the series as 2.0.1 and 2.7 (python.org has no
+  `Python-2.0.tgz`, so the first patch release stands in for 2.0). See
+  **Python 2** below for what the instruments can do with it.
 
 ## Instruments
 
@@ -173,6 +183,119 @@ tarball and raw diagnostics must exist).
   and per era, the lines and each instrument's style counts by rule.
   `work/raw/<v>.blame.tsv` (not committed): the author time of every line.
 
+## Naming
+
+PEP 8's naming conventions are not pycodestyle's business, so a third
+instrument covers them: ruff's N rules, its port of pep8-naming (N801 to
+N818: class, function, argument and variable names, `self` and `cls`,
+import aliases, error suffixes), run `--isolated --select N` on the same
+file list as everything else and stored in each measurement under `naming`.
+Counted per category and, through the blame dump, per cohort. It is a rule
+count like the others, with the same denominator; n/a for 2.x, which ruff
+cannot parse.
+
+## Rule severity
+
+A bare `except` is not a missing blank line. The semantic rules are E711 to
+E714 (comparisons to None, True and False, membership and identity tests),
+E721 (type comparison), E722 (bare except), E731 (lambda assignment), E741
+to E743 (ambiguous names) and the W6 deprecations: they describe what the
+code does. Everything else describes how it is laid out and is cosmetic.
+Both are reported per release and per era. The headline density counts
+both, and says so; the list lives in `harness/results.py`.
+
+## Line length
+
+E501 counts lines over 79. The distribution says where they sit: per
+release and per era, the share of lines over 79, 88, 99 and 120 characters
+and the median, 90th percentile and maximum length of the lines over 79,
+measured as pycodestyle measures E501 (characters after decoding, trailing
+whitespace stripped, a tab counting one; the URL exception not applied).
+PEP 8's 72-column limit for docstrings and comments, which pycodestyle only
+checks when asked, is counted as W505 with `--max-doc-length=72`.
+`make linelength`; `data/linelength/<v>.json`.
+
+## Two datings
+
+Blame dates the last edit of a line. `make cohorts-content` dates it a
+second way, with `git blame -w -M -C`: whitespace-only edits are ignored,
+and lines moved or copied between files keep their origin. The two datings
+are reported side by side for the era table; where they differ, the
+difference is the share of lines whose last edit was cosmetic or a move.
+Neither is the line's birth: an edit that changed the text (the Python 3
+conversion, a renamed variable) moves the line under both.
+`data/cohorts/<v>-content.json`.
+
+## Enforcement
+
+CPython's `.pre-commit-config.yaml` runs ruff on some trees and not on
+others, each tree under its own `.ruff.toml` chain. `make enforcement`
+reads the hooks, resolves the rules and the line length each one's chain
+selects (ruff's defaults, E4, E7, E9 and F at 88 columns, where the chain
+says nothing) and counts those rules three ways with the ruff pinned here:
+in the tree under CPython's configuration, which is what the hook checks
+and should be zero at release; in the tree with the configuration's
+excludes dropped; and in the library proper, where no hook runs. The ruff
+version CPython pinned is recorded (`ruff_pre_commit_rev`); a newer ruff
+reports rules the pinned one did not have, which is why a hook can show a
+non-zero count under its own configuration. `data/enforcement/<v>.json`.
+
+## Fix behaviour
+
+Does a violation go away when its line is touched, and are violating lines
+touched more than others? `make survival` takes an older release and the
+latest. The start is the merge base of the two tags, the commit where the
+older minor branched off main (release tags live on release branches and
+are not ancestors of later tags); its `Lib/` is archived and measured with
+pycodestyle, and every line is reverse-blamed to the end tag with
+`git blame --reverse`. A line reported under the end commit is unchanged
+there, at a known place; any other line was edited or removed. A violation
+survives when its line is unchanged and the end release's own diagnostics
+carry the same rule at that place. Reported for the stdlib proper of the
+start, per rule, next to the survival of all its lines.
+`data/survival/<from>-<to>.json`.
+
+## Packages and vendored code
+
+`make packages` groups the stdlib proper of a release by top-level package
+or module and reports the density of each, so that a reader can see
+whether the non-conformance is a few packages or the whole tree. Vendored
+code, meaning code maintained outside CPython and synced in, is listed in
+`harness/packages.py` with its origin (tomllib, `_pyrepl`,
+`importlib.metadata`, `importlib.resources`, `zipfile._path`); its density
+and the library's without it are reported. It stays inside the `stdlib`
+category everywhere else: it is what a user imports, and the headline moves
+by about a point without it. `data/packages/<v>.json`.
+
+## Sensitivity
+
+`make sensitivity` checks the cohort result three ways, on the stdlib
+proper: every era boundary moved a year earlier and a year later; source
+lines (non-blank, non-comment) as the denominator instead of physical
+lines; and a bootstrap over files, the unit of resampling, 1000 resamples
+with replacement under a fixed seed, giving a 95 % interval (2.5th to
+97.5th percentile) for each era's density with and without E5. Cohorts are
+populations, not samples; the interval says how much a number depends on
+which files carry it. `data/sensitivity/<v>.json`.
+
+## Baselines
+
+`make baselines` runs the same instruments, flags and categories on the
+current sdists of Django, NumPy, pip, requests and black, downloaded from
+PyPI and pinned by SHA-256 in each result, measuring each project's own
+source tree (pip without its `_vendor` directory; black without its
+vendored `blib2to3`) with ruff's target at py310. Their densities put a
+ceiling and a floor around the library's. A black-formatted project scores
+high on E501 and E203 at 79 columns by construction, which is what the
+`excl. E5` column is for. `data/baselines/<name>.json`.
+
+## Python 2
+
+pycodestyle tokenises Python 2 with Python 3.14's tokenizer and reports it,
+so 2.0.1 and 2.7 are in the series under pycodestyle. ruff cannot parse
+Python 2: its columns are n/a for 2.x, its non-style count there is the
+parser giving up, and the naming instrument, which is ruff, is n/a too.
+
 ## Known problems, not yet fixed
 
 1. **Line length is a third to a half of everything counted.** E501
@@ -194,9 +317,10 @@ tarball and raw diagnostics must exist).
    with Python 3.14's tokenizer and ruff parses them with `--target-version
    py37`. A few dozen files per old release fail (the non-style column), all
    of them test fixtures or lib2to3's Python 2 samples.
-7. **One point per minor.** The sensitivity set shows how far a late patch
-   release drifts from its first (3.13.9 against 3.13.0); it is not a
-   confidence interval.
+7. **One point per minor.** The spread of a minor's other releases is
+   reported, not folded in; it is not a confidence interval, and for 2.7,
+   whose eighteen patch releases span ten years, it is 20 per thousand
+   lines, which the series does not show.
 8. **No 2.x yet.**
 9. **Blame dates the last edit.** The 2006 to 2008 cohorts hold every line
    the Python 3 conversion rewrote, whatever its origin, and any later mass
@@ -209,14 +333,41 @@ tarball and raw diagnostics must exist).
     cherry-picked to a release branch is dated when it was written, which
     is what is wanted; but a release branch's own commits can predate the
     tag by months, so the newest cohort is a little older than the tag.
+12. **The severity split is a judgement.** E741 (a variable called `l`) is
+    semantic here because the name reads as a digit; E703 (a trailing
+    semicolon) is cosmetic although it is a statement rule. Change the list
+    and both columns move.
+13. **Naming has one instrument**, ruff's port of pep8-naming, with no
+    second opinion.
+14. **Enforcement is measured with today's ruff, not the pinned one.** A
+    hook's count under its own configuration reports rules added since
+    CPython pinned its version, not a hook that failed.
+15. **Survival cannot tell edited from removed**, any more than blame can:
+    a rewritten line and a deleted line both count as changed. Its start is
+    the branch point, not the release: the 373 files that changed between
+    the 3.8 branch point and 3.8.0 are measured as they were at the branch
+    point.
+16. **The baselines are five projects at one version each**, chosen by
+    hand. They bound the library's number; they do not place it in a
+    distribution.
 
 ## Planned
 
-- **2.x.** pycodestyle only, from 2.0 or 2.7, to put the pre-PEP 8 library
-  on the chart.
-- **What CPython enforces.** Since 2023 CPython runs ruff in pre-commit on
-  `Lib/test`, `Tools` and `Doc` with a narrow rule set; counting those rules
-  separately would show enforcement in the data.
+What is not done. Nothing here changes what the tables mean until it is
+done and written into RESULTS.md.
+
+1. **3.15.0**, due in October 2026: `VERSIONS=3.15.0 make fetch measure`,
+   then `COHORT=3.15.0 make analyses`, and the post's promise is kept.
+2. **A birth date for lines.** The content dating still moves a line under
+   any edit of its text. A first-appearance date (the commit that
+   introduced the line's text, through `git log -S` or a line-history
+   walk) would bound the Python 3 conversion's pull properly; it is
+   expensive and not done.
+3. **The older imports** (`email` from mimelib, `ctypes`, `multiprocessing`,
+   `json` from simplejson, `unittest`, `argparse`, `logging` …) arrived
+   from outside too, decades ago, and are maintained in-tree since. They
+   are not vendored here; a per-package origin list would let a reader
+   split them out.
 
 ## Claims
 

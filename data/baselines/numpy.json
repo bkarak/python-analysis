@@ -1,0 +1,709 @@
+{
+ "project": "numpy",
+ "pypi": "numpy",
+ "version": "2.5.3",
+ "sdist": {
+  "url": "https://files.pythonhosted.org/packages/13/01/11703282db468b85f6f7b8c7f22d058de5970d5c7e60a3a8aaa313c3de36/numpy-2.5.3.tar.gz",
+  "sha256": "df2d5874ff183595a4ba404edd04f6bd9b5505c1d7708573f6a6c17489a67563"
+ },
+ "source_dir": "numpy",
+ "dropped": [],
+ "measured": "2026-09-29",
+ "instruments": {
+  "pycodestyle": {
+   "version": "2.15.0",
+   "args": [
+    "--max-line-length=79"
+   ]
+  },
+  "ruff": {
+   "version": "0.14.4",
+   "args": [
+    "check",
+    "--isolated",
+    "--no-cache",
+    "--preview",
+    "--select",
+    "E,W",
+    "--line-length=79",
+    "--target-version=py310",
+    "--output-format",
+    "json",
+    "--exit-zero"
+   ]
+  },
+  "naming": {
+   "version": "0.14.4",
+   "args": [
+    "check",
+    "--isolated",
+    "--no-cache",
+    "--select",
+    "N",
+    "--line-length=79",
+    "--target-version=py310",
+    "--output-format",
+    "json",
+    "--exit-zero"
+   ]
+  }
+ },
+ "files": {
+  "stdlib": 198,
+  "tests": 239,
+  "generated": 0
+ },
+ "lines": {
+  "stdlib": 125141,
+  "tests": 132670,
+  "generated": 0
+ },
+ "sloc": {
+  "stdlib": 99264,
+  "tests": 101708,
+  "generated": 0
+ },
+ "generated_files": [],
+ "pycodestyle": {
+  "total": 5426,
+  "style": 5426,
+  "errors": 0,
+  "by_code": {
+   "E101": 4,
+   "E111": 10,
+   "E114": 8,
+   "E116": 4,
+   "E117": 3,
+   "E122": 154,
+   "E124": 27,
+   "E125": 5,
+   "E127": 545,
+   "E128": 1178,
+   "E129": 2,
+   "E131": 6,
+   "E201": 215,
+   "E202": 21,
+   "E203": 78,
+   "E221": 1,
+   "E225": 33,
+   "E231": 3,
+   "E261": 4,
+   "E265": 83,
+   "E266": 20,
+   "E302": 656,
+   "E303": 1,
+   "E305": 1,
+   "E402": 51,
+   "E501": 2093,
+   "E701": 3,
+   "E712": 52,
+   "E722": 2,
+   "E731": 41,
+   "E741": 87,
+   "E743": 1,
+   "W191": 4,
+   "W291": 9,
+   "W293": 21
+  },
+  "by_category": {
+   "stdlib": 2233,
+   "tests": 3193
+  },
+  "by_category_code": {
+   "stdlib": {
+    "E101": 4,
+    "E111": 10,
+    "E114": 7,
+    "E116": 4,
+    "E117": 2,
+    "E122": 145,
+    "E124": 14,
+    "E125": 3,
+    "E127": 49,
+    "E128": 402,
+    "E129": 1,
+    "E131": 5,
+    "E201": 5,
+    "E202": 5,
+    "E203": 12,
+    "E221": 1,
+    "E225": 33,
+    "E231": 2,
+    "E261": 4,
+    "E265": 29,
+    "E266": 20,
+    "E302": 277,
+    "E402": 50,
+    "E501": 1061,
+    "E712": 3,
+    "E731": 9,
+    "E741": 41,
+    "E743": 1,
+    "W191": 4,
+    "W291": 9,
+    "W293": 21
+   },
+   "tests": {
+    "E114": 1,
+    "E117": 1,
+    "E122": 9,
+    "E124": 13,
+    "E125": 2,
+    "E127": 496,
+    "E128": 776,
+    "E129": 1,
+    "E131": 1,
+    "E201": 210,
+    "E202": 16,
+    "E203": 66,
+    "E231": 1,
+    "E265": 54,
+    "E302": 379,
+    "E303": 1,
+    "E305": 1,
+    "E402": 1,
+    "E501": 1032,
+    "E701": 3,
+    "E712": 49,
+    "E722": 2,
+    "E731": 32,
+    "E741": 46
+   }
+  },
+  "top_files": [
+   [
+    "_core/tests/test_nditer.py",
+    442
+   ],
+   [
+    "_core/_add_newdocs.py",
+    294
+   ],
+   [
+    "_core/tests/test_multiarray.py",
+    233
+   ],
+   [
+    "_core/code_generators/generate_umath.py",
+    192
+   ],
+   [
+    "f2py/crackfortran.py",
+    185
+   ],
+   [
+    "_core/tests/test_datetime.py",
+    166
+   ],
+   [
+    "_core/tests/test_umath.py",
+    159
+   ],
+   [
+    "f2py/rules.py",
+    143
+   ],
+   [
+    "_core/code_generators/ufunc_docstrings.py",
+    133
+   ],
+   [
+    "_core/tests/test_dtype.py",
+    115
+   ],
+   [
+    "lib/tests/test_arraypad.py",
+    107
+   ],
+   [
+    "_core/tests/test_arrayprint.py",
+    102
+   ],
+   [
+    "ma/tests/test_core.py",
+    101
+   ],
+   [
+    "_core/tests/test_scalarprint.py",
+    100
+   ],
+   [
+    "random/tests/test_generator_mt19937.py",
+    99
+   ],
+   [
+    "f2py/cfuncs.py",
+    92
+   ],
+   [
+    "_core/src/highway/docs/conf.py",
+    91
+   ],
+   [
+    "lib/tests/test_function_base.py",
+    71
+   ],
+   [
+    "ma/core.py",
+    70
+   ],
+   [
+    "lib/tests/test_io.py",
+    70
+   ],
+   [
+    "_core/tests/test_ufunc.py",
+    67
+   ],
+   [
+    "_core/tests/test_indexing.py",
+    67
+   ],
+   [
+    "testing/_private/utils.py",
+    53
+   ],
+   [
+    "f2py/cb_rules.py",
+    48
+   ],
+   [
+    "_core/tests/test_numeric.py",
+    47
+   ]
+  ],
+  "messages": {
+   "E101": "indentation contains mixed spaces and tabs",
+   "E111": "indentation is not a multiple of 4",
+   "E114": "indentation is not a multiple of 4 (comment)",
+   "E116": "unexpected indentation (comment)",
+   "E117": "over-indented",
+   "E122": "continuation line missing indentation or outdented",
+   "E124": "closing bracket does not match visual indentation",
+   "E125": "continuation line with same indent as next logical line",
+   "E127": "continuation line over-indented for visual indent",
+   "E128": "continuation line under-indented for visual indent",
+   "E129": "visually indented line with same indent as next logical line",
+   "E131": "continuation line unaligned for hanging indent",
+   "E201": "whitespace after '['",
+   "E202": "whitespace before ']'",
+   "E203": "whitespace before ':'",
+   "E221": "multiple spaces before operator",
+   "E225": "missing whitespace around operator",
+   "E231": "missing whitespace after ','",
+   "E261": "at least two spaces before inline comment",
+   "E265": "block comment should start with '# '",
+   "E266": "too many leading '#' for block comment",
+   "E302": "expected 2 blank lines, found 1",
+   "E303": "too many blank lines (2)",
+   "E305": "expected 2 blank lines after class or function definition, found 1",
+   "E402": "module level import not at top of file",
+   "E501": "line too long (80 > 79 characters)",
+   "E701": "multiple statements on one line (colon)",
+   "E712": "comparison to False should be 'if cond is False:' or 'if not cond:'",
+   "E722": "do not use bare 'except'",
+   "E731": "do not assign a lambda expression, use a def",
+   "E741": "ambiguous variable name 'l'",
+   "E743": "ambiguous function definition 'I'",
+   "W191": "indentation contains tabs",
+   "W291": "trailing whitespace",
+   "W293": "blank line contains whitespace"
+  }
+ },
+ "ruff": {
+  "total": 4886,
+  "style": 4769,
+  "errors": 117,
+  "by_code": {
+   "E101": 3,
+   "E111": 10,
+   "E114": 8,
+   "E116": 4,
+   "E117": 3,
+   "E201": 215,
+   "E202": 5,
+   "E203": 2,
+   "E221": 1,
+   "E225": 3,
+   "E226": 30,
+   "E241": 1387,
+   "E261": 4,
+   "E265": 83,
+   "E266": 20,
+   "E302": 657,
+   "E303": 1,
+   "E305": 1,
+   "E402": 52,
+   "E501": 2044,
+   "E712": 52,
+   "E714": 11,
+   "E731": 41,
+   "E741": 97,
+   "W191": 4,
+   "W291": 9,
+   "W293": 21,
+   "W391": 1,
+   "invalid-syntax": 117
+  },
+  "by_category": {
+   "stdlib": 1722,
+   "tests": 3164
+  },
+  "by_category_code": {
+   "stdlib": {
+    "E101": 3,
+    "E111": 10,
+    "E114": 7,
+    "E116": 4,
+    "E117": 2,
+    "E201": 5,
+    "E202": 5,
+    "E203": 2,
+    "E221": 1,
+    "E225": 3,
+    "E226": 30,
+    "E241": 13,
+    "E261": 4,
+    "E265": 29,
+    "E266": 20,
+    "E302": 277,
+    "E402": 51,
+    "E501": 1037,
+    "E712": 3,
+    "E714": 6,
+    "E731": 9,
+    "E741": 50,
+    "W191": 4,
+    "W291": 9,
+    "W293": 21,
+    "W391": 1,
+    "invalid-syntax": 116
+   },
+   "tests": {
+    "E114": 1,
+    "E117": 1,
+    "E201": 210,
+    "E241": 1374,
+    "E265": 54,
+    "E302": 380,
+    "E303": 1,
+    "E305": 1,
+    "E402": 1,
+    "E501": 1007,
+    "E712": 49,
+    "E714": 5,
+    "E731": 32,
+    "E741": 47,
+    "invalid-syntax": 1
+   }
+  },
+  "top_files": [
+   [
+    "lib/tests/test_arraypad.py",
+    577
+   ],
+   [
+    "_core/tests/test_umath.py",
+    229
+   ],
+   [
+    "_core/tests/test_multiarray.py",
+    217
+   ],
+   [
+    "f2py/crackfortran.py",
+    187
+   ],
+   [
+    "random/tests/test_generator_mt19937.py",
+    131
+   ],
+   [
+    "f2py/rules.py",
+    123
+   ],
+   [
+    "_core/tests/test_umath_complex.py",
+    112
+   ],
+   [
+    "_core/tests/test_nditer.py",
+    111
+   ],
+   [
+    "lib/tests/test_packbits.py",
+    109
+   ],
+   [
+    "_core/tests/test_arrayprint.py",
+    106
+   ],
+   [
+    "ma/tests/test_core.py",
+    96
+   ],
+   [
+    "f2py/cfuncs.py",
+    92
+   ],
+   [
+    "_core/src/highway/docs/conf.py",
+    91
+   ],
+   [
+    "linalg/tests/test_linalg.py",
+    90
+   ],
+   [
+    "_core/_add_newdocs.py",
+    72
+   ],
+   [
+    "lib/tests/test_function_base.py",
+    70
+   ],
+   [
+    "ma/core.py",
+    63
+   ],
+   [
+    "_core/tests/test_einsum.py",
+    58
+   ],
+   [
+    "_typing/_char_codes.py",
+    58
+   ],
+   [
+    "ma/tests/test_extras.py",
+    58
+   ],
+   [
+    "testing/_private/utils.py",
+    49
+   ],
+   [
+    "f2py/cb_rules.py",
+    46
+   ],
+   [
+    "_core/tests/test_ufunc.py",
+    45
+   ],
+   [
+    "random/tests/test_randomstate.py",
+    43
+   ],
+   [
+    "tests/test_matlib.py",
+    43
+   ]
+  ],
+  "messages": {
+   "E101": "Indentation contains mixed spaces and tabs",
+   "E111": "Indentation is not a multiple of 4",
+   "E114": "Indentation is not a multiple of 4 (comment)",
+   "E116": "Unexpected indentation (comment)",
+   "E117": "Over-indented (comment)",
+   "E201": "Whitespace after '('",
+   "E202": "Whitespace before ')'",
+   "E203": "Whitespace before ','",
+   "E221": "Multiple spaces before operator",
+   "E225": "Missing whitespace around operator",
+   "E226": "Missing whitespace around arithmetic operator",
+   "E241": "Multiple spaces after comma",
+   "E261": "Insert at least two spaces before an inline comment",
+   "E265": "Block comment should start with `# `",
+   "E266": "Too many leading `#` before block comment",
+   "E302": "Expected 2 blank lines, found 0",
+   "E303": "Too many blank lines (2)",
+   "E305": "Expected 2 blank lines after class or function definition, found (1)",
+   "E402": "Module level import not at top of file",
+   "E501": "Line too long (83 > 79)",
+   "E712": "Avoid equality comparisons to `False`; use `not legacy:` for false checks",
+   "E714": "Test for object identity should be `is not`",
+   "E731": "Do not assign a `lambda` expression, use a `def`",
+   "E741": "Ambiguous variable name: `O`",
+   "W191": "Indentation contains tabs",
+   "W291": "Trailing whitespace",
+   "W293": "Blank line contains whitespace",
+   "W391": "Extra newline at end of file",
+   "invalid-syntax": "Cannot use `type` alias statement on Python 3.10 (syntax was added in Python 3.12)"
+  }
+ },
+ "naming": {
+  "total": 1456,
+  "style": 1339,
+  "errors": 117,
+  "by_code": {
+   "N801": 155,
+   "N802": 255,
+   "N803": 86,
+   "N804": 5,
+   "N805": 3,
+   "N806": 795,
+   "N807": 2,
+   "N811": 1,
+   "N812": 3,
+   "N815": 6,
+   "N816": 18,
+   "N817": 1,
+   "N818": 7,
+   "N999": 2,
+   "invalid-syntax": 117
+  },
+  "by_category": {
+   "stdlib": 391,
+   "tests": 1065
+  },
+  "by_category_code": {
+   "stdlib": {
+    "N801": 57,
+    "N802": 70,
+    "N803": 29,
+    "N805": 1,
+    "N806": 83,
+    "N807": 2,
+    "N811": 1,
+    "N812": 3,
+    "N815": 6,
+    "N816": 17,
+    "N818": 5,
+    "N999": 1,
+    "invalid-syntax": 116
+   },
+   "tests": {
+    "N801": 98,
+    "N802": 185,
+    "N803": 57,
+    "N804": 5,
+    "N805": 2,
+    "N806": 712,
+    "N816": 1,
+    "N817": 1,
+    "N818": 2,
+    "N999": 1,
+    "invalid-syntax": 1
+   }
+  },
+  "top_files": [
+   [
+    "_core/tests/test_defchararray.py",
+    126
+   ],
+   [
+    "_core/tests/test_multiarray.py",
+    95
+   ],
+   [
+    "_core/tests/test_numeric.py",
+    91
+   ],
+   [
+    "linalg/tests/test_linalg.py",
+    70
+   ],
+   [
+    "ma/tests/test_core.py",
+    63
+   ],
+   [
+    "ma/tests/test_old_ma.py",
+    53
+   ],
+   [
+    "_typing/_char_codes.py",
+    48
+   ],
+   [
+    "matrixlib/tests/test_defmatrix.py",
+    44
+   ],
+   [
+    "lib/tests/test_function_base.py",
+    40
+   ],
+   [
+    "polynomial/tests/test_classes.py",
+    35
+   ],
+   [
+    "_core/tests/test_unicode.py",
+    33
+   ],
+   [
+    "ma/tests/test_extras.py",
+    30
+   ],
+   [
+    "linalg/lapack_lite/clapack_scrub.py",
+    26
+   ],
+   [
+    "_core/tests/test_arrayprint.py",
+    24
+   ],
+   [
+    "_typing/_array_like.py",
+    24
+   ],
+   [
+    "lib/_function_base_impl.py",
+    23
+   ],
+   [
+    "_core/tests/test_ufunc.py",
+    22
+   ],
+   [
+    "_core/tests/test_shape_base.py",
+    21
+   ],
+   [
+    "lib/tests/test__datasource.py",
+    21
+   ],
+   [
+    "lib/tests/test_shape_base.py",
+    21
+   ],
+   [
+    "_typing/_dtype_like.py",
+    19
+   ],
+   [
+    "_core/src/common/pythoncapi-compat/upgrade_pythoncapi.py",
+    18
+   ],
+   [
+    "linalg/lapack_lite/make_lite.py",
+    17
+   ],
+   [
+    "_core/tests/test_einsum.py",
+    16
+   ],
+   [
+    "_core/tests/test_overrides.py",
+    16
+   ]
+  ],
+  "messages": {
+   "N801": "Class name `__array_namespace_info__` should use CapWords convention",
+   "N802": "Function name `_DType_reconstruct` should be lowercase",
+   "N803": "Argument name `DType` should be lowercase",
+   "N804": "First argument of a class method should be named `cls`",
+   "N805": "First argument of a method should be named `self`",
+   "N806": "Variable `LOG2_STEP` in function should be lowercase",
+   "N807": "Function name should not start and end with `__`",
+   "N811": "Constant `ARRAY_FUNCTIONS` imported as non-constant `_array_functions`",
+   "N812": "Lowercase `numeric` imported as non-lowercase `NX`",
+   "N815": "Variable `cS` in class scope should not be mixedCase",
+   "N816": "Variable `sctypeDict` in global scope should not be mixedCase",
+   "N817": "CamelCase `Fraction` imported as acronym `F`",
+   "N818": "Exception name `_TemplateContinue` should be named with an Error suffix",
+   "N999": "Invalid module name: 'hook-numpy'",
+   "invalid-syntax": "Cannot use `type` alias statement on Python 3.10 (syntax was added in Python 3.12)"
+  }
+ }
+}

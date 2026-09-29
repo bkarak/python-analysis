@@ -1,6 +1,6 @@
 {
  "version": "3.1",
- "measured": "2026-09-28",
+ "measured": "2026-09-29",
  "python": "3.14.2",
  "instruments": {
   "pycodestyle": {
@@ -25,6 +25,22 @@
     "json",
     "--exit-zero"
    ]
+  },
+  "naming": {
+   "version": "0.14.4",
+   "args": [
+    "check",
+    "--isolated",
+    "--no-cache",
+    "--select",
+    "N",
+    "--line-length=79",
+    "--target-version=py37",
+    "--output-format",
+    "json",
+    "--exit-zero"
+   ],
+   "note": "PEP 8 naming: the pep8-naming rules as ported by ruff (N8xx)"
   }
  },
  "files": {
@@ -835,6 +851,193 @@
    "E902": "stream did not contain valid UTF-8",
    "W293": "Blank line contains whitespace",
    "W605": "Invalid escape sequence: `\\s`",
+   "invalid-syntax": "Simple statements must be separated by newlines or semicolons"
+  }
+ },
+ "naming": {
+  "total": 5658,
+  "style": 5582,
+  "errors": 76,
+  "by_code": {
+   "N801": 622,
+   "N802": 3063,
+   "N803": 424,
+   "N804": 9,
+   "N805": 70,
+   "N806": 1017,
+   "N807": 16,
+   "N811": 5,
+   "N812": 27,
+   "N813": 3,
+   "N815": 95,
+   "N816": 77,
+   "N818": 96,
+   "N999": 58,
+   "invalid-syntax": 76
+  },
+  "by_category": {
+   "generated": 690,
+   "stdlib": 2276,
+   "tests": 2692
+  },
+  "by_category_code": {
+   "generated": {
+    "N802": 641,
+    "N803": 27,
+    "N806": 3,
+    "N807": 12,
+    "N816": 7
+   },
+   "stdlib": {
+    "N801": 147,
+    "N802": 868,
+    "N803": 334,
+    "N805": 39,
+    "N806": 616,
+    "N807": 2,
+    "N812": 24,
+    "N813": 2,
+    "N815": 73,
+    "N816": 60,
+    "N818": 46,
+    "N999": 57,
+    "invalid-syntax": 8
+   },
+   "tests": {
+    "N801": 475,
+    "N802": 1554,
+    "N803": 63,
+    "N804": 9,
+    "N805": 31,
+    "N806": 398,
+    "N807": 2,
+    "N811": 5,
+    "N812": 3,
+    "N813": 1,
+    "N815": 22,
+    "N816": 10,
+    "N818": 50,
+    "N999": 1,
+    "invalid-syntax": 68
+   }
+  },
+  "top_files": [
+   [
+    "xml/dom/minidom.py",
+    262
+   ],
+   [
+    "test/test_unittest.py",
+    233
+   ],
+   [
+    "idlelib/configDialog.py",
+    218
+   ],
+   [
+    "lib2to3/tests/data/infinite_recursion.py",
+    180
+   ],
+   [
+    "unittest.py",
+    163
+   ],
+   [
+    "test/test_socket.py",
+    147
+   ],
+   [
+    "test/test_minidom.py",
+    120
+   ],
+   [
+    "tkinter/__init__.py",
+    117
+   ],
+   [
+    "idlelib/configHandler.py",
+    113
+   ],
+   [
+    "plat-sunos5/IN.py",
+    95
+   ],
+   [
+    "test/test_zipfile.py",
+    83
+   ],
+   [
+    "test/test_with.py",
+    81
+   ],
+   [
+    "test/pydocfodder.py",
+    78
+   ],
+   [
+    "test/pystone.py",
+    77
+   ],
+   [
+    "plat-unixware7/IN.py",
+    76
+   ],
+   [
+    "plat-sunos5/STROPTS.py",
+    74
+   ],
+   [
+    "plat-atheos/IN.py",
+    65
+   ],
+   [
+    "test/test_descr.py",
+    65
+   ],
+   [
+    "lib2to3/tests/data/py2_test_grammar.py",
+    63
+   ],
+   [
+    "lib2to3/tests/test_fixers.py",
+    55
+   ],
+   [
+    "xml/dom/expatbuilder.py",
+    55
+   ],
+   [
+    "plat-darwin/IN.py",
+    53
+   ],
+   [
+    "logging/handlers.py",
+    50
+   ],
+   [
+    "zipfile.py",
+    48
+   ],
+   [
+    "plat-linux2/IN.py",
+    46
+   ]
+  ],
+  "messages": {
+   "N801": "Class name `error` should use CapWords convention",
+   "N802": "Function name `getOptionalRelease` should be lowercase",
+   "N803": "Argument name `optionalRelease` should be lowercase",
+   "N804": "First argument of a class method should be named `cls`",
+   "N805": "First argument of a method should be named `self`",
+   "N806": "Variable `B` in function should be lowercase",
+   "N807": "Function name should not start and end with `__`",
+   "N811": "Constant `MAPPING` imported as non-constant `modules`",
+   "N812": "Lowercase `allocate_lock` imported as non-lowercase `Lock`",
+   "N813": "Camelcase `OrderedDict` imported as lowercase `_default_dict`",
+   "N815": "Variable `_writeBody` in class scope should not be mixedCase",
+   "N816": "Variable `barry_as_FLUFL` in global scope should not be mixedCase",
+   "N818": "Exception name `error` should be named with an Error suffix",
+   "N999": "Invalid module name: 'AutoComplete'",
    "invalid-syntax": "Simple statements must be separated by newlines or semicolons"
   }
  }

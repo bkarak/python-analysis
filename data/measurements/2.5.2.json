@@ -1,0 +1,1083 @@
+{
+ "version": "2.5.2",
+ "measured": "2026-09-29",
+ "python": "3.14.2",
+ "instruments": {
+  "pycodestyle": {
+   "version": "2.15.0",
+   "args": [
+    "--max-line-length=79"
+   ],
+   "note": "defaults otherwise, including the default ignore list"
+  },
+  "ruff": {
+   "version": "0.14.4",
+   "args": [
+    "check",
+    "--isolated",
+    "--no-cache",
+    "--preview",
+    "--select",
+    "E,W",
+    "--line-length=79",
+    "--target-version=py37",
+    "--output-format",
+    "json",
+    "--exit-zero"
+   ]
+  },
+  "naming": {
+   "version": "0.14.4",
+   "args": [
+    "check",
+    "--isolated",
+    "--no-cache",
+    "--select",
+    "N",
+    "--line-length=79",
+    "--target-version=py37",
+    "--output-format",
+    "json",
+    "--exit-zero"
+   ],
+   "note": "PEP 8 naming: the pep8-naming rules as ported by ruff (N8xx)"
+  }
+ },
+ "files": {
+  "stdlib": 615,
+  "tests": 474,
+  "generated": 138
+ },
+ "lines": {
+  "stdlib": 200547,
+  "tests": 121756,
+  "generated": 50681
+ },
+ "sloc": {
+  "stdlib": 153752,
+  "tests": 94142,
+  "generated": 46809
+ },
+ "generated_files": [
+  "compiler/ast.py",
+  "encodings/charmap.py",
+  "encodings/cp037.py",
+  "encodings/cp1006.py",
+  "encodings/cp1026.py",
+  "encodings/cp1140.py",
+  "encodings/cp1250.py",
+  "encodings/cp1251.py",
+  "encodings/cp1252.py",
+  "encodings/cp1253.py",
+  "encodings/cp1254.py",
+  "encodings/cp1255.py",
+  "encodings/cp1256.py",
+  "encodings/cp1257.py",
+  "encodings/cp1258.py",
+  "encodings/cp424.py",
+  "encodings/cp437.py",
+  "encodings/cp500.py",
+  "encodings/cp737.py",
+  "encodings/cp775.py",
+  "encodings/cp850.py",
+  "encodings/cp852.py",
+  "encodings/cp855.py",
+  "encodings/cp856.py",
+  "encodings/cp857.py",
+  "encodings/cp860.py",
+  "encodings/cp861.py",
+  "encodings/cp862.py",
+  "encodings/cp863.py",
+  "encodings/cp864.py",
+  "encodings/cp865.py",
+  "encodings/cp866.py",
+  "encodings/cp869.py",
+  "encodings/cp874.py",
+  "encodings/cp875.py",
+  "encodings/hp_roman8.py",
+  "encodings/iso8859_1.py",
+  "encodings/iso8859_10.py",
+  "encodings/iso8859_11.py",
+  "encodings/iso8859_13.py",
+  "encodings/iso8859_14.py",
+  "encodings/iso8859_15.py",
+  "encodings/iso8859_16.py",
+  "encodings/iso8859_2.py",
+  "encodings/iso8859_3.py",
+  "encodings/iso8859_4.py",
+  "encodings/iso8859_5.py",
+  "encodings/iso8859_6.py",
+  "encodings/iso8859_7.py",
+  "encodings/iso8859_8.py",
+  "encodings/iso8859_9.py",
+  "encodings/koi8_r.py",
+  "encodings/koi8_u.py",
+  "encodings/mac_arabic.py",
+  "encodings/mac_centeuro.py",
+  "encodings/mac_croatian.py",
+  "encodings/mac_cyrillic.py",
+  "encodings/mac_farsi.py",
+  "encodings/mac_greek.py",
+  "encodings/mac_iceland.py",
+  "encodings/mac_latin2.py",
+  "encodings/mac_roman.py",
+  "encodings/mac_romanian.py",
+  "encodings/mac_turkish.py",
+  "encodings/palmos.py",
+  "encodings/ptcp154.py",
+  "encodings/rot_13.py",
+  "encodings/tis_620.py",
+  "keyword.py",
+  "msilib/schema.py",
+  "msilib/sequence.py",
+  "plat-aix3/IN.py",
+  "plat-aix4/IN.py",
+  "plat-atheos/IN.py",
+  "plat-atheos/TYPES.py",
+  "plat-beos5/IN.py",
+  "plat-darwin/IN.py",
+  "plat-freebsd2/IN.py",
+  "plat-freebsd3/IN.py",
+  "plat-freebsd4/IN.py",
+  "plat-freebsd5/IN.py",
+  "plat-freebsd6/IN.py",
+  "plat-freebsd7/IN.py",
+  "plat-irix5/ERRNO.py",
+  "plat-irix5/FILE.py",
+  "plat-irix5/IN.py",
+  "plat-irix5/WAIT.py",
+  "plat-irix6/ERRNO.py",
+  "plat-irix6/FILE.py",
+  "plat-irix6/IN.py",
+  "plat-irix6/WAIT.py",
+  "plat-linux2/CDROM.py",
+  "plat-linux2/DLFCN.py",
+  "plat-linux2/IN.py",
+  "plat-linux2/TYPES.py",
+  "plat-mac/Carbon/Aliases.py",
+  "plat-mac/Carbon/Appearance.py",
+  "plat-mac/Carbon/AppleEvents.py",
+  "plat-mac/Carbon/AppleHelp.py",
+  "plat-mac/Carbon/CarbonEvents.py",
+  "plat-mac/Carbon/Components.py",
+  "plat-mac/Carbon/Controls.py",
+  "plat-mac/Carbon/CoreFoundation.py",
+  "plat-mac/Carbon/CoreGraphics.py",
+  "plat-mac/Carbon/Dialogs.py",
+  "plat-mac/Carbon/Dragconst.py",
+  "plat-mac/Carbon/Events.py",
+  "plat-mac/Carbon/Files.py",
+  "plat-mac/Carbon/Folders.py",
+  "plat-mac/Carbon/Fonts.py",
+  "plat-mac/Carbon/IBCarbonRuntime.py",
+  "plat-mac/Carbon/Icons.py",
+  "plat-mac/Carbon/LaunchServices.py",
+  "plat-mac/Carbon/Lists.py",
+  "plat-mac/Carbon/MacHelp.py",
+  "plat-mac/Carbon/MacTextEditor.py",
+  "plat-mac/Carbon/Menus.py",
+  "plat-mac/Carbon/OSAconst.py",
+  "plat-mac/Carbon/QDOffscreen.py",
+  "plat-mac/Carbon/QuickDraw.py",
+  "plat-mac/Carbon/QuickTime.py",
+  "plat-mac/Carbon/Resources.py",
+  "plat-mac/Carbon/Sound.py",
+  "plat-mac/Carbon/TextEdit.py",
+  "plat-mac/Carbon/Windows.py",
+  "plat-netbsd1/IN.py",
+  "plat-os2emx/IN.py",
+  "plat-os2emx/SOCKET.py",
+  "plat-sunos5/CDIO.py",
+  "plat-sunos5/DLFCN.py",
+  "plat-sunos5/IN.py",
+  "plat-sunos5/STROPTS.py",
+  "plat-sunos5/TYPES.py",
+  "plat-unixware7/IN.py",
+  "plat-unixware7/STROPTS.py",
+  "stringprep.py",
+  "symbol.py",
+  "token.py"
+ ],
+ "pycodestyle": {
+  "total": 73353,
+  "style": 73350,
+  "errors": 3,
+  "by_code": {
+   "E114": 22,
+   "E115": 59,
+   "E116": 33,
+   "E117": 9,
+   "E122": 2229,
+   "E124": 55,
+   "E125": 40,
+   "E127": 454,
+   "E128": 1417,
+   "E129": 76,
+   "E131": 12,
+   "E201": 222,
+   "E202": 239,
+   "E203": 4201,
+   "E211": 896,
+   "E221": 2033,
+   "E222": 1916,
+   "E225": 1197,
+   "E227": 631,
+   "E228": 174,
+   "E231": 9336,
+   "E251": 782,
+   "E261": 2102,
+   "E262": 23999,
+   "E265": 1026,
+   "E266": 857,
+   "E271": 20,
+   "E272": 7,
+   "E275": 30,
+   "E301": 1199,
+   "E302": 6825,
+   "E303": 1046,
+   "E305": 1597,
+   "E306": 732,
+   "E401": 329,
+   "E402": 499,
+   "E501": 3605,
+   "E502": 123,
+   "E701": 1874,
+   "E702": 193,
+   "E703": 27,
+   "E711": 136,
+   "E712": 3,
+   "E713": 78,
+   "E714": 10,
+   "E721": 182,
+   "E722": 337,
+   "E731": 66,
+   "E741": 169,
+   "E742": 13,
+   "E901": 3,
+   "W605": 233
+  },
+  "by_category": {
+   "generated": 30309,
+   "stdlib": 29409,
+   "tests": 13635
+  },
+  "by_category_code": {
+   "generated": {
+    "E122": 699,
+    "E127": 14,
+    "E201": 22,
+    "E202": 2,
+    "E211": 39,
+    "E221": 53,
+    "E225": 59,
+    "E227": 224,
+    "E228": 1,
+    "E231": 4408,
+    "E251": 4,
+    "E261": 474,
+    "E262": 21976,
+    "E265": 6,
+    "E266": 283,
+    "E275": 1,
+    "E301": 4,
+    "E302": 1007,
+    "E303": 3,
+    "E305": 266,
+    "E401": 1,
+    "E402": 64,
+    "E501": 662,
+    "E502": 14,
+    "E701": 10,
+    "E703": 3,
+    "E741": 10
+   },
+   "stdlib": {
+    "E114": 12,
+    "E115": 25,
+    "E116": 26,
+    "E117": 9,
+    "E122": 177,
+    "E124": 35,
+    "E125": 15,
+    "E127": 217,
+    "E128": 946,
+    "E129": 67,
+    "E131": 4,
+    "E201": 104,
+    "E202": 111,
+    "E203": 3936,
+    "E211": 646,
+    "E221": 1851,
+    "E222": 1897,
+    "E225": 931,
+    "E227": 253,
+    "E228": 127,
+    "E231": 2730,
+    "E251": 550,
+    "E261": 1278,
+    "E262": 1995,
+    "E265": 597,
+    "E266": 274,
+    "E271": 12,
+    "E272": 1,
+    "E275": 20,
+    "E301": 976,
+    "E302": 3768,
+    "E303": 781,
+    "E305": 736,
+    "E306": 57,
+    "E401": 175,
+    "E402": 256,
+    "E501": 1780,
+    "E502": 66,
+    "E701": 1116,
+    "E702": 91,
+    "E703": 9,
+    "E711": 104,
+    "E712": 2,
+    "E713": 74,
+    "E714": 9,
+    "E721": 141,
+    "E722": 175,
+    "E731": 14,
+    "E741": 84,
+    "W605": 149
+   },
+   "tests": {
+    "E114": 10,
+    "E115": 34,
+    "E116": 7,
+    "E122": 1353,
+    "E124": 20,
+    "E125": 25,
+    "E127": 223,
+    "E128": 471,
+    "E129": 9,
+    "E131": 8,
+    "E201": 96,
+    "E202": 126,
+    "E203": 265,
+    "E211": 211,
+    "E221": 129,
+    "E222": 19,
+    "E225": 207,
+    "E227": 154,
+    "E228": 46,
+    "E231": 2198,
+    "E251": 228,
+    "E261": 350,
+    "E262": 28,
+    "E265": 423,
+    "E266": 300,
+    "E271": 8,
+    "E272": 6,
+    "E275": 9,
+    "E301": 219,
+    "E302": 2050,
+    "E303": 262,
+    "E305": 595,
+    "E306": 675,
+    "E401": 153,
+    "E402": 179,
+    "E501": 1163,
+    "E502": 43,
+    "E701": 748,
+    "E702": 102,
+    "E703": 15,
+    "E711": 32,
+    "E712": 1,
+    "E713": 4,
+    "E714": 1,
+    "E721": 41,
+    "E722": 162,
+    "E731": 52,
+    "E741": 75,
+    "E742": 13,
+    "E901": 3,
+    "W605": 84
+   }
+  },
+  "top_files": [
+   [
+    "plat-mac/macerrors.py",
+    5432
+   ],
+   [
+    "msilib/schema.py",
+    3615
+   ],
+   [
+    "idlelib/configDialog.py",
+    1292
+   ],
+   [
+    "test/cjkencodings_test.py",
+    1002
+   ],
+   [
+    "plat-mac/lib-scriptpackages/CodeWarrior/Metrowerks_Shell_Suite.py",
+    946
+   ],
+   [
+    "test/test_descr.py",
+    867
+   ],
+   [
+    "stringprep.py",
+    866
+   ],
+   [
+    "encodings/mac_arabic.py",
+    707
+   ],
+   [
+    "encodings/cp864.py",
+    673
+   ],
+   [
+    "encodings/cp850.py",
+    669
+   ],
+   [
+    "encodings/cp863.py",
+    669
+   ],
+   [
+    "encodings/cp437.py",
+    669
+   ],
+   [
+    "encodings/cp866.py",
+    669
+   ],
+   [
+    "encodings/cp852.py",
+    669
+   ],
+   [
+    "encodings/cp775.py",
+    669
+   ],
+   [
+    "encodings/cp865.py",
+    669
+   ],
+   [
+    "encodings/cp862.py",
+    669
+   ],
+   [
+    "encodings/cp737.py",
+    669
+   ],
+   [
+    "encodings/cp860.py",
+    669
+   ],
+   [
+    "encodings/cp855.py",
+    669
+   ],
+   [
+    "encodings/cp861.py",
+    669
+   ],
+   [
+    "lib-tk/Tkinter.py",
+    665
+   ],
+   [
+    "encodings/cp857.py",
+    665
+   ],
+   [
+    "encodings/cp869.py",
+    661
+   ],
+   [
+    "plat-mac/lib-scriptpackages/StdSuites/AppleScript_Suite.py",
+    578
+   ]
+  ],
+  "messages": {
+   "E114": "indentation is not a multiple of 4 (comment)",
+   "E115": "expected an indented block (comment)",
+   "E116": "unexpected indentation (comment)",
+   "E117": "over-indented (comment)",
+   "E122": "continuation line missing indentation or outdented",
+   "E124": "closing bracket does not match visual indentation",
+   "E125": "continuation line with same indent as next logical line",
+   "E127": "continuation line over-indented for visual indent",
+   "E128": "continuation line under-indented for visual indent",
+   "E129": "visually indented line with same indent as next logical line",
+   "E131": "continuation line unaligned for hanging indent",
+   "E201": "whitespace after '{'",
+   "E202": "whitespace before '}'",
+   "E203": "whitespace before ':'",
+   "E211": "whitespace before '('",
+   "E221": "multiple spaces before operator",
+   "E222": "multiple spaces after operator",
+   "E225": "missing whitespace around operator",
+   "E227": "missing whitespace around bitwise or shift operator",
+   "E228": "missing whitespace around modulo operator",
+   "E231": "missing whitespace after ':'",
+   "E251": "unexpected spaces around keyword / parameter equals",
+   "E261": "at least two spaces before inline comment",
+   "E262": "inline comment should start with '# '",
+   "E265": "block comment should start with '# '",
+   "E266": "too many leading '#' for block comment",
+   "E271": "multiple spaces after keyword",
+   "E272": "multiple spaces before keyword",
+   "E275": "missing whitespace after keyword",
+   "E301": "expected 1 blank line, found 0",
+   "E302": "expected 2 blank lines, found 1",
+   "E303": "too many blank lines (2)",
+   "E305": "expected 2 blank lines after class or function definition, found 1",
+   "E306": "expected 1 blank line before a nested definition, found 0",
+   "E401": "multiple imports on one line",
+   "E402": "module level import not at top of file",
+   "E501": "line too long (80 > 79 characters)",
+   "E502": "the backslash is redundant between brackets",
+   "E701": "multiple statements on one line (colon)",
+   "E702": "multiple statements on one line (semicolon)",
+   "E703": "statement ends with a semicolon",
+   "E711": "comparison to None should be 'if cond is not None:'",
+   "E712": "comparison to False should be 'if cond is False:' or 'if not cond:'",
+   "E713": "test for membership should be 'not in'",
+   "E714": "test for object identity should be 'is not'",
+   "E721": "do not compare types, for exact checks use `is` / `is not`, for instance checks use `isinstance()`",
+   "E722": "do not use bare 'except'",
+   "E731": "do not assign a lambda expression, use a def",
+   "E741": "ambiguous variable name 'l'",
+   "E742": "ambiguous class definition 'I'",
+   "E901": "TokenError: 'u' and 'r' prefixes are incompatible",
+   "W605": "invalid escape sequence '\\g'"
+  }
+ },
+ "ruff": {
+  "total": 73519,
+  "style": 65326,
+  "errors": 8193,
+  "by_code": {
+   "E111": 3,
+   "E113": 4,
+   "E114": 22,
+   "E115": 39,
+   "E116": 25,
+   "E117": 10,
+   "E201": 233,
+   "E202": 245,
+   "E203": 4181,
+   "E211": 893,
+   "E221": 613,
+   "E222": 59,
+   "E225": 1175,
+   "E226": 3752,
+   "E227": 842,
+   "E228": 191,
+   "E231": 9193,
+   "E241": 441,
+   "E251": 676,
+   "E261": 2001,
+   "E262": 22164,
+   "E265": 977,
+   "E266": 816,
+   "E271": 31,
+   "E272": 74,
+   "E275": 24,
+   "E301": 1102,
+   "E302": 6266,
+   "E303": 1041,
+   "E305": 1558,
+   "E306": 810,
+   "E401": 103,
+   "E402": 159,
+   "E501": 3059,
+   "E502": 120,
+   "E701": 1853,
+   "E702": 193,
+   "E703": 24,
+   "E711": 11,
+   "E712": 1,
+   "E713": 11,
+   "E714": 2,
+   "E721": 17,
+   "E722": 59,
+   "E731": 11,
+   "E741": 15,
+   "E742": 4,
+   "E902": 25,
+   "W293": 139,
+   "W605": 84,
+   "invalid-syntax": 8168
+  },
+  "by_category": {
+   "generated": 30791,
+   "stdlib": 27049,
+   "tests": 15679
+  },
+  "by_category_code": {
+   "generated": {
+    "E201": 22,
+    "E202": 2,
+    "E211": 39,
+    "E221": 53,
+    "E222": 6,
+    "E225": 51,
+    "E226": 87,
+    "E227": 232,
+    "E228": 1,
+    "E231": 4408,
+    "E251": 4,
+    "E261": 474,
+    "E262": 21976,
+    "E265": 6,
+    "E266": 283,
+    "E271": 10,
+    "E301": 4,
+    "E302": 745,
+    "E303": 3,
+    "E305": 266,
+    "E401": 1,
+    "E402": 1,
+    "E501": 662,
+    "E502": 14,
+    "E701": 10,
+    "E703": 3,
+    "invalid-syntax": 1428
+   },
+   "stdlib": {
+    "E111": 3,
+    "E113": 2,
+    "E114": 12,
+    "E115": 25,
+    "E116": 18,
+    "E117": 10,
+    "E201": 107,
+    "E202": 105,
+    "E203": 3933,
+    "E211": 643,
+    "E221": 427,
+    "E222": 35,
+    "E225": 906,
+    "E226": 1950,
+    "E227": 417,
+    "E228": 134,
+    "E231": 2623,
+    "E241": 221,
+    "E251": 498,
+    "E261": 1180,
+    "E262": 161,
+    "E265": 552,
+    "E266": 270,
+    "E271": 12,
+    "E272": 22,
+    "E275": 17,
+    "E301": 850,
+    "E302": 3670,
+    "E303": 778,
+    "E305": 712,
+    "E306": 65,
+    "E401": 51,
+    "E402": 134,
+    "E501": 1373,
+    "E502": 64,
+    "E701": 1109,
+    "E702": 91,
+    "E703": 9,
+    "E711": 3,
+    "E712": 1,
+    "E713": 9,
+    "E721": 13,
+    "E722": 16,
+    "E731": 3,
+    "E741": 8,
+    "E902": 11,
+    "W293": 72,
+    "W605": 72,
+    "invalid-syntax": 3652
+   },
+   "tests": {
+    "E113": 2,
+    "E114": 10,
+    "E115": 14,
+    "E116": 7,
+    "E201": 104,
+    "E202": 138,
+    "E203": 248,
+    "E211": 211,
+    "E221": 133,
+    "E222": 18,
+    "E225": 218,
+    "E226": 1715,
+    "E227": 193,
+    "E228": 56,
+    "E231": 2162,
+    "E241": 220,
+    "E251": 174,
+    "E261": 347,
+    "E262": 27,
+    "E265": 419,
+    "E266": 263,
+    "E271": 9,
+    "E272": 52,
+    "E275": 7,
+    "E301": 248,
+    "E302": 1851,
+    "E303": 260,
+    "E305": 580,
+    "E306": 745,
+    "E401": 51,
+    "E402": 24,
+    "E501": 1024,
+    "E502": 42,
+    "E701": 734,
+    "E702": 102,
+    "E703": 12,
+    "E711": 8,
+    "E713": 2,
+    "E714": 2,
+    "E721": 4,
+    "E722": 43,
+    "E731": 8,
+    "E741": 7,
+    "E742": 4,
+    "E902": 14,
+    "W293": 67,
+    "W605": 12,
+    "invalid-syntax": 3088
+   }
+  },
+  "top_files": [
+   [
+    "msilib/schema.py",
+    3191
+   ],
+   [
+    "idlelib/configDialog.py",
+    1217
+   ],
+   [
+    "test/test_descr.py",
+    1164
+   ],
+   [
+    "plat-mac/lib-scriptpackages/CodeWarrior/Metrowerks_Shell_Suite.py",
+    964
+   ],
+   [
+    "encodings/mac_arabic.py",
+    707
+   ],
+   [
+    "stringprep.py",
+    703
+   ],
+   [
+    "encodings/cp864.py",
+    673
+   ],
+   [
+    "encodings/cp437.py",
+    669
+   ],
+   [
+    "encodings/cp737.py",
+    669
+   ],
+   [
+    "encodings/cp775.py",
+    669
+   ],
+   [
+    "encodings/cp850.py",
+    669
+   ],
+   [
+    "encodings/cp852.py",
+    669
+   ],
+   [
+    "encodings/cp855.py",
+    669
+   ],
+   [
+    "encodings/cp860.py",
+    669
+   ],
+   [
+    "encodings/cp861.py",
+    669
+   ],
+   [
+    "encodings/cp862.py",
+    669
+   ],
+   [
+    "encodings/cp863.py",
+    669
+   ],
+   [
+    "encodings/cp865.py",
+    669
+   ],
+   [
+    "encodings/cp866.py",
+    669
+   ],
+   [
+    "encodings/cp857.py",
+    665
+   ],
+   [
+    "encodings/cp869.py",
+    661
+   ],
+   [
+    "lib-tk/Tkinter.py",
+    648
+   ],
+   [
+    "plat-mac/lib-scriptpackages/StdSuites/AppleScript_Suite.py",
+    609
+   ],
+   [
+    "test/test_grammar.py",
+    532
+   ],
+   [
+    "plat-mac/Carbon/QuickTime.py",
+    518
+   ]
+  ],
+  "messages": {
+   "E111": "Indentation is not a multiple of 4",
+   "E113": "Unexpected indentation",
+   "E114": "Indentation is not a multiple of 4 (comment)",
+   "E115": "Expected an indented block (comment)",
+   "E116": "Unexpected indentation (comment)",
+   "E117": "Over-indented (comment)",
+   "E201": "Whitespace after '('",
+   "E202": "Whitespace before ')'",
+   "E203": "Whitespace before ':'",
+   "E211": "Whitespace before '('",
+   "E221": "Multiple spaces before operator",
+   "E222": "Multiple spaces after operator",
+   "E225": "Missing whitespace around operator",
+   "E226": "Missing whitespace around arithmetic operator",
+   "E227": "Missing whitespace around bitwise or shift operator",
+   "E228": "Missing whitespace around modulo operator",
+   "E231": "Missing whitespace after `,`",
+   "E241": "Multiple spaces after comma",
+   "E251": "Unexpected spaces around keyword / parameter equals",
+   "E261": "Insert at least two spaces before an inline comment",
+   "E262": "Inline comment should start with `# `",
+   "E265": "Block comment should start with `# `",
+   "E266": "Too many leading `#` before block comment",
+   "E271": "Multiple spaces after keyword",
+   "E272": "Multiple spaces before keyword",
+   "E275": "Missing whitespace after keyword",
+   "E301": "Expected 1 blank line, found 0",
+   "E302": "Expected 2 blank lines, found 1",
+   "E303": "Too many blank lines (3)",
+   "E305": "Expected 2 blank lines after class or function definition, found (1)",
+   "E306": "Expected 1 blank line before a nested definition, found 0",
+   "E401": "Multiple imports on one line",
+   "E402": "Module level import not at top of file",
+   "E501": "Line too long (80 > 79)",
+   "E502": "Redundant backslash",
+   "E701": "Multiple statements on one line (colon)",
+   "E702": "Multiple statements on one line (semicolon)",
+   "E703": "Statement ends with an unnecessary semicolon",
+   "E711": "Comparison to `None` should be `cond is None`",
+   "E712": "Avoid inequality comparisons to `False`; use `iterator:` for truth checks",
+   "E713": "Test for membership should be `not in`",
+   "E714": "Test for object identity should be `is not`",
+   "E721": "Use `is` and `is not` for type comparisons, or `isinstance()` for isinstance checks",
+   "E722": "Do not use bare `except`",
+   "E731": "Do not assign a `lambda` expression, use a `def`",
+   "E741": "Ambiguous variable name: `l`",
+   "E742": "Ambiguous class name: `I`",
+   "E902": "stream did not contain valid UTF-8",
+   "W293": "Blank line contains whitespace",
+   "W605": "Invalid escape sequence: `\\s`",
+   "invalid-syntax": "Simple statements must be separated by newlines or semicolons"
+  }
+ },
+ "naming": {
+  "total": 12449,
+  "style": 4281,
+  "errors": 8168,
+  "by_code": {
+   "N801": 410,
+   "N802": 637,
+   "N803": 66,
+   "N804": 2,
+   "N805": 11,
+   "N806": 297,
+   "N812": 1,
+   "N813": 6,
+   "N815": 7,
+   "N816": 2658,
+   "N818": 6,
+   "N999": 180,
+   "invalid-syntax": 8168
+  },
+  "by_category": {
+   "generated": 4340,
+   "stdlib": 4672,
+   "tests": 3437
+  },
+  "by_category_code": {
+   "generated": {
+    "N802": 231,
+    "N803": 4,
+    "N806": 3,
+    "N816": 2644,
+    "N999": 30,
+    "invalid-syntax": 1428
+   },
+   "stdlib": {
+    "N801": 362,
+    "N802": 216,
+    "N803": 56,
+    "N806": 206,
+    "N812": 1,
+    "N813": 6,
+    "N815": 7,
+    "N816": 14,
+    "N818": 5,
+    "N999": 147,
+    "invalid-syntax": 3652
+   },
+   "tests": {
+    "N801": 48,
+    "N802": 190,
+    "N803": 6,
+    "N804": 2,
+    "N805": 11,
+    "N806": 88,
+    "N818": 1,
+    "N999": 3,
+    "invalid-syntax": 3088
+   }
+  },
+  "top_files": [
+   [
+    "plat-mac/Carbon/AppleEvents.py",
+    956
+   ],
+   [
+    "plat-mac/Carbon/Appearance.py",
+    641
+   ],
+   [
+    "plat-mac/Carbon/QuickTime.py",
+    496
+   ],
+   [
+    "plat-mac/Carbon/Files.py",
+    418
+   ],
+   [
+    "idlelib/configDialog.py",
+    228
+   ],
+   [
+    "test/test_descr.py",
+    223
+   ],
+   [
+    "test/test_types.py",
+    194
+   ],
+   [
+    "test/test_builtin.py",
+    192
+   ],
+   [
+    "plat-unixware7/STROPTS.py",
+    183
+   ],
+   [
+    "test/test_grammar.py",
+    174
+   ],
+   [
+    "plat-mac/Carbon/Menus.py",
+    168
+   ],
+   [
+    "plat-irix5/IOCTL.py",
+    166
+   ],
+   [
+    "plat-irix6/IOCTL.py",
+    166
+   ],
+   [
+    "uuid.py",
+    140
+   ],
+   [
+    "plat-atheos/IN.py",
+    114
+   ],
+   [
+    "test/test_uuid.py",
+    102
+   ],
+   [
+    "plat-mac/Carbon/Events.py",
+    100
+   ],
+   [
+    "plat-mac/findertools.py",
+    87
+   ],
+   [
+    "bsddb/test/test_basics.py",
+    81
+   ],
+   [
+    "plat-mac/Carbon/Dialogs.py",
+    76
+   ],
+   [
+    "plat-mac/Carbon/Windows.py",
+    74
+   ],
+   [
+    "test/test_hexoct.py",
+    73
+   ],
+   [
+    "plat-mac/lib-scriptpackages/StdSuites/AppleScript_Suite.py",
+    71
+   ],
+   [
+    "test/test_extcall.py",
+    69
+   ],
+   [
+    "plat-mac/Carbon/LaunchServices.py",
+    67
+   ]
+  ],
+  "messages": {
+   "N801": "Class name `_localbase` should use CapWords convention",
+   "N802": "Function name `isReservedKey` should be lowercase",
+   "N803": "Argument name `LegalChars` should be lowercase",
+   "N804": "First argument of a class method should be named `cls`",
+   "N805": "First argument of a method should be named `self`",
+   "N806": "Variable `Omatch` in function should be lowercase",
+   "N812": "Lowercase `maxint` imported as non-lowercase `INFINITY`",
+   "N813": "Camelcase `ClassType` imported as lowercase `classobj`",
+   "N815": "Variable `_moduleName` in class scope should not be mixedCase",
+   "N816": "Variable `_deadlock_MinSleepTime` in global scope should not be mixedCase",
+   "N818": "Exception name `Empty` should be named with an Error suffix",
+   "N999": "Invalid module name: 'AutoComplete'",
+   "invalid-syntax": "Simple statements must be separated by newlines or semicolons"
+  }
+ }
+}

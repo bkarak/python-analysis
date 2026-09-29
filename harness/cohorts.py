@@ -2,7 +2,10 @@
 """Age cohorts: blame every line of a release's Lib/ to the commit that last
 edited it, and report PEP 8 density by the date of that edit.
 
-    uv run harness/cohorts.py [--jobs N] [--limit N] 3.14.0
+    uv run harness/cohorts.py [--jobs N] [--limit N] [--dating last-edit|content] 3.14.0
+
+`--dating content` blames with `-w -M -C` (whitespace ignored, moves and copies
+followed) and writes <v>-content.json / <v>.blame-content.tsv instead.
 
 Needs the CPython clone in work/cpython (make cpython) and the release's raw
 diagnostics in work/raw/ (make measure). Writes data/cohorts/<v>.json and
@@ -27,7 +30,8 @@ from measure import RAW, ROOT, WORK, inventory, is_error  # noqa: E402
 
 CPYTHON = WORK / 'cpython'
 OUT = ROOT / 'data' / 'cohorts'
-INSTRUMENTS = ('pycodestyle', 'ruff')
+INSTRUMENTS = ('pycodestyle', 'ruff', 'naming')
+DATINGS = {'last-edit': [], 'content': ['-w', '-M', '-C']}
 # Each era starts on the day of an event in how CPython's code was written or reviewed.
 ERAS: list[tuple[str, date | None]] = [
     ('before PEP 8', None),
@@ -66,9 +70,9 @@ def blob_sha(path: Path) -> str:
     return hashlib.sha1(b'blob %d\0' % len(data) + data).hexdigest()
 
 
-def blame(tag: str, rel: str) -> list[int]:
+def blame(tag: str, rel: str, flags: list[str] = []) -> list[int]:
     """author-time, in epoch seconds, of the commit that last edited each line."""
-    proc = subprocess.run(['git', '-C', str(CPYTHON), 'blame', '--line-porcelain', tag, '--', f'Lib/{rel}'],
+    proc = subprocess.run(['git', '-C', str(CPYTHON), 'blame', *flags, '--line-porcelain', tag, '--', f'Lib/{rel}'],
                           capture_output=True, text=True, errors='replace')
     times: list[int] = []
     current = 0
@@ -81,13 +85,27 @@ def blame(tag: str, rel: str) -> list[int]:
 
 
 def read_raw(version: str, instrument: str) -> list[tuple[str, str, int]]:
+    """(code, file, row) of every style diagnostic of one instrument; [] if never measured."""
     rows = []
-    with open(RAW / f'{version}.{instrument}.tsv') as fh:
+    path = RAW / f'{version}.{instrument}.tsv'
+    if not path.exists():
+        return rows
+    with open(path) as fh:
         for line in fh:
             code, rel, row, _col, _text = line.rstrip('\n').split('\t', 4)
             if not is_error(code):
                 rows.append((code, rel, int(row)))
     return rows
+
+
+def read_blame(version: str, suffix: str = '') -> dict[str, list[int]]:
+    """file -> author-time of every line, from work/raw/<v>.blame<suffix>.tsv."""
+    out: dict[str, list[int]] = defaultdict(list)
+    with open(RAW / f'{version}.blame{suffix}.tsv') as fh:
+        for line in fh:
+            rel, _n, t = line.rstrip('\n').split('\t')
+            out[rel].append(int(t))
+    return dict(out)
 
 
 class Bucket:
@@ -103,7 +121,9 @@ class Bucket:
                    for i, c in self.by_code.items()}}
 
 
-def main(version: str, jobs: int, limit: int | None) -> None:
+def main(version: str, jobs: int, limit: int | None, dating: str = 'last-edit') -> None:
+    flags = DATINGS[dating]
+    suffix = '' if dating == 'last-edit' else f'-{dating}'
     tag = f'v{version}'
     lib = WORK / f'Python-{version}' / 'Lib'
     if not CPYTHON.is_dir():
@@ -125,7 +145,7 @@ def main(version: str, jobs: int, limit: int | None) -> None:
             skipped[rel] = 'tarball content differs from the tag'
     todo = [r for r in rels if r not in skipped]
     with ThreadPoolExecutor(jobs) as pool:
-        times = dict(zip(todo, pool.map(lambda r: blame(tag, r), todo)))
+        times = dict(zip(todo, pool.map(lambda r: blame(tag, r, flags), todo)))
     for rel in todo:
         if len(times[rel]) != files[rel]['lines']:
             skipped[rel] = f'blame has {len(times[rel])} lines, the inventory {files[rel]["lines"]}'
@@ -162,7 +182,8 @@ def main(version: str, jobs: int, limit: int | None) -> None:
     result = {
         'version': version, 'tag': tag, 'commit': commit,
         'measured': date.today().isoformat(), 'seconds': round(time.time() - t0, 1),
-        'blame': {'command': f'git blame --line-porcelain {tag} -- Lib/<file>', 'date': 'author-time',
+        'dating': {'mode': dating, 'flags': flags},
+        'blame': {'command': f"git blame {' '.join(flags + ['--line-porcelain'])} {tag} -- Lib/<file>", 'date': 'author-time',
                   'files': len(times), 'skipped': skipped, 'unattributed': unattributed},
         'eras': [{'name': n, 'from': d.isoformat() if d else None} for n, d in ERAS],
         'by_category': {c: {'years': {str(y): b.as_dict() for y, b in sorted(years[c].items())},
@@ -171,12 +192,12 @@ def main(version: str, jobs: int, limit: int | None) -> None:
     }
     if limit is None:
         OUT.mkdir(parents=True, exist_ok=True)
-        (OUT / f'{version}.json').write_text(json.dumps(result, indent=1) + '\n')
-        with open(RAW / f'{version}.blame.tsv', 'w') as fh:
+        (OUT / f'{version}{suffix}.json').write_text(json.dumps(result, indent=1) + '\n')
+        with open(RAW / f'{version}.blame{suffix}.tsv', 'w') as fh:
             for rel, ts in sorted(times.items()):
                 fh.writelines(f'{rel}\t{i}\t{t}\n' for i, t in enumerate(ts, 1))
     total = sum(b.lines for c in CATEGORIES for b in eras[c].values())
-    print(f"{version}: blamed {len(times)} files, {total} lines, skipped {len(skipped)}, "
+    print(f"{version} ({dating}): blamed {len(times)} files, {total} lines, skipped {len(skipped)}, "
           f"unattributed {unattributed}, {result['seconds']}s" + ('  (limited: not written)' if limit else ''))
     for era, _ in ERAS:
         b = eras['stdlib'].get(era)
@@ -193,6 +214,11 @@ if __name__ == '__main__':
         i = argv.index('--jobs'); jobs = int(argv[i + 1]); del argv[i:i + 2]
     if '--limit' in argv:
         i = argv.index('--limit'); limit = int(argv[i + 1]); del argv[i:i + 2]
+    dating = 'last-edit'
+    if '--dating' in argv:
+        i = argv.index('--dating'); dating = argv[i + 1]; del argv[i:i + 2]
+        if dating not in DATINGS:
+            sys.exit(f'--dating must be one of {sorted(DATINGS)}')
     if len(argv) != 1:
         sys.exit(__doc__)
-    main(argv[0], jobs, limit)
+    main(argv[0], jobs, limit, dating)

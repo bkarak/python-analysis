@@ -1,6 +1,6 @@
 {
  "version": "3.0",
- "measured": "2026-09-28",
+ "measured": "2026-09-29",
  "python": "3.14.2",
  "instruments": {
   "pycodestyle": {
@@ -25,6 +25,22 @@
     "json",
     "--exit-zero"
    ]
+  },
+  "naming": {
+   "version": "0.14.4",
+   "args": [
+    "check",
+    "--isolated",
+    "--no-cache",
+    "--select",
+    "N",
+    "--line-length=79",
+    "--target-version=py37",
+    "--output-format",
+    "json",
+    "--exit-zero"
+   ],
+   "note": "PEP 8 naming: the pep8-naming rules as ported by ruff (N8xx)"
   }
  },
  "files": {
@@ -834,6 +850,196 @@
    "E902": "stream did not contain valid UTF-8",
    "W293": "Blank line contains whitespace",
    "W605": "Invalid escape sequence: `\\s`",
+   "invalid-syntax": "Invalid decimal integer literal"
+  }
+ },
+ "naming": {
+  "total": 5336,
+  "style": 5262,
+  "errors": 74,
+  "by_code": {
+   "N801": 597,
+   "N802": 2870,
+   "N803": 419,
+   "N804": 9,
+   "N805": 55,
+   "N806": 951,
+   "N807": 14,
+   "N811": 5,
+   "N812": 27,
+   "N813": 3,
+   "N815": 92,
+   "N816": 71,
+   "N817": 1,
+   "N818": 91,
+   "N999": 57,
+   "invalid-syntax": 74
+  },
+  "by_category": {
+   "generated": 637,
+   "stdlib": 2183,
+   "tests": 2516
+  },
+  "by_category_code": {
+   "generated": {
+    "N802": 594,
+    "N803": 27,
+    "N806": 3,
+    "N807": 11,
+    "N816": 2
+   },
+   "stdlib": {
+    "N801": 145,
+    "N802": 829,
+    "N803": 331,
+    "N805": 27,
+    "N806": 587,
+    "N807": 1,
+    "N812": 24,
+    "N813": 1,
+    "N815": 73,
+    "N816": 59,
+    "N818": 42,
+    "N999": 56,
+    "invalid-syntax": 8
+   },
+   "tests": {
+    "N801": 452,
+    "N802": 1447,
+    "N803": 61,
+    "N804": 9,
+    "N805": 28,
+    "N806": 361,
+    "N807": 2,
+    "N811": 5,
+    "N812": 3,
+    "N813": 2,
+    "N815": 19,
+    "N816": 10,
+    "N817": 1,
+    "N818": 49,
+    "N999": 1,
+    "invalid-syntax": 66
+   }
+  },
+  "top_files": [
+   [
+    "xml/dom/minidom.py",
+    262
+   ],
+   [
+    "idlelib/configDialog.py",
+    221
+   ],
+   [
+    "lib2to3/tests/data/infinite_recursion.py",
+    180
+   ],
+   [
+    "test/test_socket.py",
+    140
+   ],
+   [
+    "test/test_unittest.py",
+    132
+   ],
+   [
+    "tkinter/__init__.py",
+    117
+   ],
+   [
+    "test/test_minidom.py",
+    114
+   ],
+   [
+    "idlelib/configHandler.py",
+    113
+   ],
+   [
+    "plat-sunos5/IN.py",
+    95
+   ],
+   [
+    "unittest.py",
+    91
+   ],
+   [
+    "test/test_zipfile.py",
+    81
+   ],
+   [
+    "test/pydocfodder.py",
+    78
+   ],
+   [
+    "test/pystone.py",
+    77
+   ],
+   [
+    "plat-unixware7/IN.py",
+    76
+   ],
+   [
+    "plat-sunos5/STROPTS.py",
+    74
+   ],
+   [
+    "test/test_with.py",
+    71
+   ],
+   [
+    "plat-atheos/IN.py",
+    65
+   ],
+   [
+    "test/test_descr.py",
+    64
+   ],
+   [
+    "lib2to3/tests/data/py2_test_grammar.py",
+    63
+   ],
+   [
+    "xml/dom/expatbuilder.py",
+    55
+   ],
+   [
+    "lib2to3/tests/test_fixers.py",
+    52
+   ],
+   [
+    "test/test_io.py",
+    52
+   ],
+   [
+    "logging/handlers.py",
+    49
+   ],
+   [
+    "plat-linux2/IN.py",
+    46
+   ],
+   [
+    "zipfile.py",
+    44
+   ]
+  ],
+  "messages": {
+   "N801": "Class name `error` should use CapWords convention",
+   "N802": "Function name `getOptionalRelease` should be lowercase",
+   "N803": "Argument name `optionalRelease` should be lowercase",
+   "N804": "First argument of a class method should be named `cls`",
+   "N805": "First argument of a method should be named `self`",
+   "N806": "Variable `B` in function should be lowercase",
+   "N807": "Function name should not start and end with `__`",
+   "N811": "Constant `MAPPING` imported as non-constant `modules`",
+   "N812": "Lowercase `charset` imported as non-lowercase `CharsetModule`",
+   "N813": "Camelcase `LoadLibrary` imported as lowercase `_dlopen`",
+   "N815": "Variable `_writeBody` in class scope should not be mixedCase",
+   "N816": "Variable `tagRECT` in global scope should not be mixedCase",
+   "N817": "CamelCase `cElementTree` imported as acronym `ET`",
+   "N818": "Exception name `error` should be named with an Error suffix",
+   "N999": "Invalid module name: 'AutoComplete'",
    "invalid-syntax": "Invalid decimal integer literal"
   }
  }

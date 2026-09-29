@@ -1,6 +1,6 @@
 {
  "version": "3.14.0",
- "measured": "2026-09-28",
+ "measured": "2026-09-29",
  "python": "3.14.2",
  "instruments": {
   "pycodestyle": {
@@ -25,6 +25,22 @@
     "json",
     "--exit-zero"
    ]
+  },
+  "naming": {
+   "version": "0.14.4",
+   "args": [
+    "check",
+    "--isolated",
+    "--no-cache",
+    "--select",
+    "N",
+    "--line-length=79",
+    "--target-version=py314",
+    "--output-format",
+    "json",
+    "--exit-zero"
+   ],
+   "note": "PEP 8 naming: the pep8-naming rules as ported by ruff (N8xx)"
   }
  },
  "files": {
@@ -800,6 +816,197 @@
    "E902": "stream did not contain valid UTF-8",
    "W391": "Too many newlines at end of file",
    "W605": "Invalid escape sequence: `\\\u041f`",
+   "invalid-syntax": "Got unexpected token \u20ac"
+  }
+ },
+ "naming": {
+  "total": 9553,
+  "style": 9551,
+  "errors": 2,
+  "by_code": {
+   "N801": 814,
+   "N802": 3932,
+   "N803": 515,
+   "N804": 85,
+   "N805": 258,
+   "N806": 3401,
+   "N807": 35,
+   "N811": 4,
+   "N812": 10,
+   "N813": 6,
+   "N814": 2,
+   "N815": 159,
+   "N816": 76,
+   "N817": 8,
+   "N818": 239,
+   "N999": 7,
+   "invalid-syntax": 2
+  },
+  "by_category": {
+   "generated": 3,
+   "stdlib": 2185,
+   "tests": 7365
+  },
+  "by_category_code": {
+   "generated": {
+    "N802": 3
+   },
+   "stdlib": {
+    "N801": 203,
+    "N802": 883,
+    "N803": 364,
+    "N804": 15,
+    "N805": 38,
+    "N806": 464,
+    "N807": 13,
+    "N811": 2,
+    "N812": 5,
+    "N813": 1,
+    "N815": 72,
+    "N816": 53,
+    "N817": 2,
+    "N818": 65,
+    "N999": 5
+   },
+   "tests": {
+    "N801": 611,
+    "N802": 3046,
+    "N803": 151,
+    "N804": 70,
+    "N805": 220,
+    "N806": 2937,
+    "N807": 22,
+    "N811": 2,
+    "N812": 5,
+    "N813": 5,
+    "N814": 2,
+    "N815": 87,
+    "N816": 23,
+    "N817": 6,
+    "N818": 174,
+    "N999": 2,
+    "invalid-syntax": 2
+   }
+  },
+  "top_files": [
+   [
+    "test/test_socket.py",
+    546
+   ],
+   [
+    "test/test_decimal.py",
+    396
+   ],
+   [
+    "test/test_typing.py",
+    367
+   ],
+   [
+    "xml/dom/minidom.py",
+    268
+   ],
+   [
+    "test/test_enum.py",
+    188
+   ],
+   [
+    "unittest/case.py",
+    143
+   ],
+   [
+    "test/test_minidom.py",
+    131
+   ],
+   [
+    "test/test_unittest/test_case.py",
+    128
+   ],
+   [
+    "test/test_sys_settrace.py",
+    122
+   ],
+   [
+    "test/test_pathlib/test_pathlib.py",
+    118
+   ],
+   [
+    "test/test_ipaddress.py",
+    117
+   ],
+   [
+    "test/test_unittest/test_runner.py",
+    117
+   ],
+   [
+    "idlelib/config.py",
+    101
+   ],
+   [
+    "test/test_statistics.py",
+    101
+   ],
+   [
+    "tkinter/__init__.py",
+    94
+   ],
+   [
+    "test/test_type_params.py",
+    91
+   ],
+   [
+    "test/test_bz2.py",
+    87
+   ],
+   [
+    "test/test_unittest/test_result.py",
+    87
+   ],
+   [
+    "test/test_unittest/test_loader.py",
+    86
+   ],
+   [
+    "test/test_with.py",
+    85
+   ],
+   [
+    "test/test_zoneinfo/test_zoneinfo.py",
+    79
+   ],
+   [
+    "test/test_math.py",
+    75
+   ],
+   [
+    "test/test_descr.py",
+    74
+   ],
+   [
+    "logging/__init__.py",
+    72
+   ],
+   [
+    "test/test_smtplib.py",
+    69
+   ]
+  ],
+  "messages": {
+   "N801": "Class name `TestFrozenUtf8_1` should use CapWords convention",
+   "N802": "Function name `getOptionalRelease` should be lowercase",
+   "N803": "Argument name `optionalRelease` should be lowercase",
+   "N804": "First argument of a class method should be named `cls`",
+   "N805": "First argument of a method should be named `self`",
+   "N806": "Variable `B` in function should be lowercase",
+   "N807": "Function name should not start and end with `__`",
+   "N811": "Constant `CDLL` imported as non-constant `WinDLL`",
+   "N812": "Lowercase `allocate_lock` imported as non-lowercase `Lock`",
+   "N813": "Camelcase `LoadLibrary` imported as lowercase `_dlopen`",
+   "N814": "Camelcase `Queue` imported as constant `MQ`",
+   "N815": "Variable `_writeBody` in class scope should not be mixedCase",
+   "N816": "Variable `barry_as_FLUFL` in global scope should not be mixedCase",
+   "N817": "CamelCase `Decimal` imported as acronym `D`",
+   "N818": "Exception name `DecimalException` should be named with an Error suffix",
+   "N999": "Invalid module name: 'audit-tests'",
    "invalid-syntax": "Got unexpected token \u20ac"
   }
  }

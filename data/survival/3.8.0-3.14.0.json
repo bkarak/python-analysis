@@ -1,0 +1,286 @@
+{
+ "from": "3.8.0",
+ "to": "3.14.0",
+ "measured": "2026-09-29",
+ "seconds": 80.2,
+ "start": {
+  "commit": "23d7ce747167cceeeae526a53a6044ec2dc47cbb",
+  "date": "2019-06-04",
+  "tag": null,
+  "note": "merge base of v3.8.0 and v3.14.0: the point where the 3.8 branch left main"
+ },
+ "end": {
+  "commit": "ebf955df7a89ed0c7968f79faec1de49f61ed7cb",
+  "tag": "v3.14.0"
+ },
+ "blame": {
+  "command": "git blame --reverse --line-porcelain 23d7ce747167..v3.14.0 -- Lib/<file>",
+  "files": 1659,
+  "skipped": [],
+  "unattributed": 0
+ },
+ "lines": {
+  "stdlib": {
+   "total": 265883,
+   "survived": 196454
+  },
+  "tests": {
+   "total": 437652,
+   "survived": 355463
+  },
+  "generated": {
+   "total": 44266,
+   "survived": 29151
+  }
+ },
+ "rules": {
+  "E114": {
+   "n": 21,
+   "line_survived": 10,
+   "violation_survived": 10
+  },
+  "E115": {
+   "n": 18,
+   "line_survived": 4,
+   "violation_survived": 4
+  },
+  "E116": {
+   "n": 36,
+   "line_survived": 20,
+   "violation_survived": 20
+  },
+  "E117": {
+   "n": 6,
+   "line_survived": 5,
+   "violation_survived": 5
+  },
+  "E122": {
+   "n": 171,
+   "line_survived": 37,
+   "violation_survived": 37
+  },
+  "E124": {
+   "n": 43,
+   "line_survived": 10,
+   "violation_survived": 10
+  },
+  "E125": {
+   "n": 27,
+   "line_survived": 18,
+   "violation_survived": 18
+  },
+  "E127": {
+   "n": 342,
+   "line_survived": 198,
+   "violation_survived": 198
+  },
+  "E128": {
+   "n": 759,
+   "line_survived": 494,
+   "violation_survived": 487
+  },
+  "E129": {
+   "n": 132,
+   "line_survived": 79,
+   "violation_survived": 79
+  },
+  "E131": {
+   "n": 21,
+   "line_survived": 12,
+   "violation_survived": 12
+  },
+  "E201": {
+   "n": 75,
+   "line_survived": 56,
+   "violation_survived": 56
+  },
+  "E202": {
+   "n": 91,
+   "line_survived": 78,
+   "violation_survived": 78
+  },
+  "E203": {
+   "n": 681,
+   "line_survived": 484,
+   "violation_survived": 484
+  },
+  "E211": {
+   "n": 154,
+   "line_survived": 14,
+   "violation_survived": 14
+  },
+  "E221": {
+   "n": 318,
+   "line_survived": 281,
+   "violation_survived": 281
+  },
+  "E222": {
+   "n": 37,
+   "line_survived": 13,
+   "violation_survived": 13
+  },
+  "E225": {
+   "n": 351,
+   "line_survived": 257,
+   "violation_survived": 257
+  },
+  "E227": {
+   "n": 63,
+   "line_survived": 44,
+   "violation_survived": 44
+  },
+  "E228": {
+   "n": 42,
+   "line_survived": 29,
+   "violation_survived": 29
+  },
+  "E231": {
+   "n": 1086,
+   "line_survived": 820,
+   "violation_survived": 820
+  },
+  "E251": {
+   "n": 334,
+   "line_survived": 216,
+   "violation_survived": 216
+  },
+  "E261": {
+   "n": 1151,
+   "line_survived": 836,
+   "violation_survived": 836
+  },
+  "E262": {
+   "n": 112,
+   "line_survived": 97,
+   "violation_survived": 97
+  },
+  "E265": {
+   "n": 448,
+   "line_survived": 295,
+   "violation_survived": 295
+  },
+  "E266": {
+   "n": 268,
+   "line_survived": 198,
+   "violation_survived": 198
+  },
+  "E271": {
+   "n": 15,
+   "line_survived": 7,
+   "violation_survived": 7
+  },
+  "E272": {
+   "n": 9,
+   "line_survived": 1,
+   "violation_survived": 1
+  },
+  "E275": {
+   "n": 25,
+   "line_survived": 18,
+   "violation_survived": 18
+  },
+  "E301": {
+   "n": 370,
+   "line_survived": 285,
+   "violation_survived": 242
+  },
+  "E302": {
+   "n": 2805,
+   "line_survived": 2126,
+   "violation_survived": 1984
+  },
+  "E303": {
+   "n": 540,
+   "line_survived": 426,
+   "violation_survived": 364
+  },
+  "E305": {
+   "n": 551,
+   "line_survived": 412,
+   "violation_survived": 339
+  },
+  "E306": {
+   "n": 112,
+   "line_survived": 89,
+   "violation_survived": 84
+  },
+  "E401": {
+   "n": 83,
+   "line_survived": 49,
+   "violation_survived": 49
+  },
+  "E402": {
+   "n": 107,
+   "line_survived": 78,
+   "violation_survived": 69
+  },
+  "E501": {
+   "n": 1764,
+   "line_survived": 1114,
+   "violation_survived": 1114
+  },
+  "E502": {
+   "n": 41,
+   "line_survived": 17,
+   "violation_survived": 17
+  },
+  "E701": {
+   "n": 405,
+   "line_survived": 252,
+   "violation_survived": 252
+  },
+  "E702": {
+   "n": 63,
+   "line_survived": 45,
+   "violation_survived": 45
+  },
+  "E703": {
+   "n": 7,
+   "line_survived": 7,
+   "violation_survived": 7
+  },
+  "E711": {
+   "n": 3
+  },
+  "E712": {
+   "n": 1,
+   "line_survived": 1,
+   "violation_survived": 1
+  },
+  "E713": {
+   "n": 41,
+   "line_survived": 29,
+   "violation_survived": 29
+  },
+  "E714": {
+   "n": 2,
+   "line_survived": 2,
+   "violation_survived": 2
+  },
+  "E721": {
+   "n": 27,
+   "line_survived": 8,
+   "violation_survived": 8
+  },
+  "E722": {
+   "n": 181,
+   "line_survived": 137,
+   "violation_survived": 137
+  },
+  "E731": {
+   "n": 32,
+   "line_survived": 19,
+   "violation_survived": 19
+  },
+  "E741": {
+   "n": 68,
+   "line_survived": 45,
+   "violation_survived": 45
+  },
+  "E743": {
+   "n": 1,
+   "line_survived": 1,
+   "violation_survived": 1
+  }
+ }
+}

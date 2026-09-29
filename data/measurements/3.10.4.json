@@ -1,0 +1,1026 @@
+{
+ "version": "3.10.4",
+ "measured": "2026-09-29",
+ "python": "3.14.2",
+ "instruments": {
+  "pycodestyle": {
+   "version": "2.15.0",
+   "args": [
+    "--max-line-length=79"
+   ],
+   "note": "defaults otherwise, including the default ignore list"
+  },
+  "ruff": {
+   "version": "0.14.4",
+   "args": [
+    "check",
+    "--isolated",
+    "--no-cache",
+    "--preview",
+    "--select",
+    "E,W",
+    "--line-length=79",
+    "--target-version=py310",
+    "--output-format",
+    "json",
+    "--exit-zero"
+   ]
+  },
+  "naming": {
+   "version": "0.14.4",
+   "args": [
+    "check",
+    "--isolated",
+    "--no-cache",
+    "--select",
+    "N",
+    "--line-length=79",
+    "--target-version=py310",
+    "--output-format",
+    "json",
+    "--exit-zero"
+   ],
+   "note": "PEP 8 naming: the pep8-naming rules as ported by ruff (N8xx)"
+  }
+ },
+ "files": {
+  "stdlib": 642,
+  "tests": 1005,
+  "generated": 78
+ },
+ "lines": {
+  "stdlib": 275392,
+  "tests": 486319,
+  "generated": 45671
+ },
+ "sloc": {
+  "stdlib": 208618,
+  "tests": 379555,
+  "generated": 44012
+ },
+ "generated_files": [
+  "encodings/charmap.py",
+  "encodings/cp037.py",
+  "encodings/cp1006.py",
+  "encodings/cp1026.py",
+  "encodings/cp1125.py",
+  "encodings/cp1140.py",
+  "encodings/cp1250.py",
+  "encodings/cp1251.py",
+  "encodings/cp1252.py",
+  "encodings/cp1253.py",
+  "encodings/cp1254.py",
+  "encodings/cp1255.py",
+  "encodings/cp1256.py",
+  "encodings/cp1257.py",
+  "encodings/cp1258.py",
+  "encodings/cp273.py",
+  "encodings/cp424.py",
+  "encodings/cp437.py",
+  "encodings/cp500.py",
+  "encodings/cp720.py",
+  "encodings/cp737.py",
+  "encodings/cp775.py",
+  "encodings/cp850.py",
+  "encodings/cp852.py",
+  "encodings/cp855.py",
+  "encodings/cp856.py",
+  "encodings/cp857.py",
+  "encodings/cp858.py",
+  "encodings/cp860.py",
+  "encodings/cp861.py",
+  "encodings/cp862.py",
+  "encodings/cp863.py",
+  "encodings/cp864.py",
+  "encodings/cp865.py",
+  "encodings/cp866.py",
+  "encodings/cp869.py",
+  "encodings/cp874.py",
+  "encodings/cp875.py",
+  "encodings/hp_roman8.py",
+  "encodings/iso8859_1.py",
+  "encodings/iso8859_10.py",
+  "encodings/iso8859_11.py",
+  "encodings/iso8859_13.py",
+  "encodings/iso8859_14.py",
+  "encodings/iso8859_15.py",
+  "encodings/iso8859_16.py",
+  "encodings/iso8859_2.py",
+  "encodings/iso8859_3.py",
+  "encodings/iso8859_4.py",
+  "encodings/iso8859_5.py",
+  "encodings/iso8859_6.py",
+  "encodings/iso8859_7.py",
+  "encodings/iso8859_8.py",
+  "encodings/iso8859_9.py",
+  "encodings/koi8_r.py",
+  "encodings/koi8_t.py",
+  "encodings/koi8_u.py",
+  "encodings/kz1048.py",
+  "encodings/mac_arabic.py",
+  "encodings/mac_croatian.py",
+  "encodings/mac_cyrillic.py",
+  "encodings/mac_farsi.py",
+  "encodings/mac_greek.py",
+  "encodings/mac_iceland.py",
+  "encodings/mac_latin2.py",
+  "encodings/mac_roman.py",
+  "encodings/mac_romanian.py",
+  "encodings/mac_turkish.py",
+  "encodings/palmos.py",
+  "encodings/ptcp154.py",
+  "encodings/rot_13.py",
+  "encodings/tis_620.py",
+  "keyword.py",
+  "msilib/schema.py",
+  "msilib/sequence.py",
+  "pydoc_data/topics.py",
+  "stringprep.py",
+  "token.py"
+ ],
+ "pycodestyle": {
+  "total": 76033,
+  "style": 76033,
+  "errors": 0,
+  "by_code": {
+   "E111": 2,
+   "E114": 52,
+   "E115": 68,
+   "E116": 69,
+   "E117": 10,
+   "E122": 1256,
+   "E124": 193,
+   "E125": 127,
+   "E127": 969,
+   "E128": 4759,
+   "E129": 174,
+   "E131": 109,
+   "E201": 287,
+   "E202": 330,
+   "E203": 1435,
+   "E211": 225,
+   "E221": 434,
+   "E222": 101,
+   "E225": 747,
+   "E227": 410,
+   "E228": 127,
+   "E231": 9483,
+   "E251": 549,
+   "E252": 28,
+   "E261": 2087,
+   "E262": 24984,
+   "E265": 942,
+   "E266": 1095,
+   "E271": 30,
+   "E272": 22,
+   "E275": 45,
+   "E301": 702,
+   "E302": 5894,
+   "E303": 1322,
+   "E305": 1144,
+   "E306": 2900,
+   "E401": 132,
+   "E402": 402,
+   "E501": 9824,
+   "E502": 99,
+   "E701": 1314,
+   "E702": 190,
+   "E703": 29,
+   "E711": 2,
+   "E712": 4,
+   "E713": 53,
+   "E714": 4,
+   "E721": 34,
+   "E722": 359,
+   "E731": 187,
+   "E741": 237,
+   "E742": 31,
+   "E743": 1,
+   "W291": 12,
+   "W293": 3,
+   "W391": 3,
+   "W605": 2
+  },
+  "by_category": {
+   "generated": 32849,
+   "stdlib": 14110,
+   "tests": 29074
+  },
+  "by_category_code": {
+   "generated": {
+    "E122": 697,
+    "E127": 1,
+    "E128": 576,
+    "E225": 53,
+    "E231": 4420,
+    "E261": 69,
+    "E262": 24763,
+    "E266": 304,
+    "E302": 446,
+    "E305": 21,
+    "E501": 1492,
+    "E701": 7
+   },
+   "stdlib": {
+    "E111": 1,
+    "E114": 20,
+    "E115": 12,
+    "E116": 35,
+    "E117": 7,
+    "E122": 163,
+    "E124": 39,
+    "E125": 27,
+    "E127": 353,
+    "E128": 727,
+    "E129": 137,
+    "E131": 23,
+    "E201": 75,
+    "E202": 93,
+    "E203": 695,
+    "E211": 152,
+    "E221": 314,
+    "E222": 30,
+    "E225": 349,
+    "E227": 63,
+    "E228": 39,
+    "E231": 1053,
+    "E251": 292,
+    "E261": 1127,
+    "E262": 112,
+    "E265": 441,
+    "E266": 263,
+    "E271": 13,
+    "E272": 10,
+    "E275": 24,
+    "E301": 324,
+    "E302": 2806,
+    "E303": 536,
+    "E305": 540,
+    "E306": 116,
+    "E401": 80,
+    "E402": 105,
+    "E501": 2077,
+    "E502": 37,
+    "E701": 387,
+    "E702": 63,
+    "E703": 7,
+    "E712": 1,
+    "E713": 41,
+    "E714": 2,
+    "E721": 22,
+    "E722": 173,
+    "E731": 33,
+    "E741": 63,
+    "E743": 1,
+    "W291": 7
+   },
+   "tests": {
+    "E111": 1,
+    "E114": 32,
+    "E115": 56,
+    "E116": 34,
+    "E117": 3,
+    "E122": 396,
+    "E124": 154,
+    "E125": 100,
+    "E127": 615,
+    "E128": 3456,
+    "E129": 37,
+    "E131": 86,
+    "E201": 212,
+    "E202": 237,
+    "E203": 740,
+    "E211": 73,
+    "E221": 120,
+    "E222": 71,
+    "E225": 345,
+    "E227": 347,
+    "E228": 88,
+    "E231": 4010,
+    "E251": 257,
+    "E252": 28,
+    "E261": 891,
+    "E262": 109,
+    "E265": 501,
+    "E266": 528,
+    "E271": 17,
+    "E272": 12,
+    "E275": 21,
+    "E301": 378,
+    "E302": 2642,
+    "E303": 786,
+    "E305": 583,
+    "E306": 2784,
+    "E401": 52,
+    "E402": 297,
+    "E501": 6255,
+    "E502": 62,
+    "E701": 920,
+    "E702": 127,
+    "E703": 22,
+    "E711": 2,
+    "E712": 3,
+    "E713": 12,
+    "E714": 2,
+    "E721": 12,
+    "E722": 186,
+    "E731": 154,
+    "E741": 174,
+    "E742": 31,
+    "W291": 5,
+    "W293": 3,
+    "W391": 3,
+    "W605": 2
+   }
+  },
+  "top_files": [
+   [
+    "msilib/schema.py",
+    3613
+   ],
+   [
+    "pydoc_data/topics.py",
+    1486
+   ],
+   [
+    "stringprep.py",
+    867
+   ],
+   [
+    "test/test_descr.py",
+    812
+   ],
+   [
+    "test/test_buffer.py",
+    743
+   ],
+   [
+    "test/test_itertools.py",
+    726
+   ],
+   [
+    "encodings/mac_arabic.py",
+    703
+   ],
+   [
+    "test/test_email/test__header_value_parser.py",
+    675
+   ],
+   [
+    "encodings/cp864.py",
+    673
+   ],
+   [
+    "encodings/cp861.py",
+    669
+   ],
+   [
+    "encodings/cp855.py",
+    669
+   ],
+   [
+    "encodings/cp737.py",
+    669
+   ],
+   [
+    "encodings/cp863.py",
+    669
+   ],
+   [
+    "encodings/cp775.py",
+    669
+   ],
+   [
+    "encodings/cp862.py",
+    669
+   ],
+   [
+    "encodings/cp865.py",
+    669
+   ],
+   [
+    "encodings/cp852.py",
+    669
+   ],
+   [
+    "encodings/cp866.py",
+    669
+   ],
+   [
+    "encodings/cp860.py",
+    669
+   ],
+   [
+    "encodings/cp437.py",
+    669
+   ],
+   [
+    "encodings/cp850.py",
+    669
+   ],
+   [
+    "encodings/cp1125.py",
+    668
+   ],
+   [
+    "encodings/cp858.py",
+    666
+   ],
+   [
+    "encodings/cp857.py",
+    665
+   ],
+   [
+    "encodings/cp869.py",
+    660
+   ]
+  ],
+  "messages": {
+   "E111": "indentation is not a multiple of 4",
+   "E114": "indentation is not a multiple of 4 (comment)",
+   "E115": "expected an indented block (comment)",
+   "E116": "unexpected indentation (comment)",
+   "E117": "over-indented",
+   "E122": "continuation line missing indentation or outdented",
+   "E124": "closing bracket does not match visual indentation",
+   "E125": "continuation line with same indent as next logical line",
+   "E127": "continuation line over-indented for visual indent",
+   "E128": "continuation line under-indented for visual indent",
+   "E129": "visually indented line with same indent as next logical line",
+   "E131": "continuation line unaligned for hanging indent",
+   "E201": "whitespace after '('",
+   "E202": "whitespace before ')'",
+   "E203": "whitespace before ':'",
+   "E211": "whitespace before '('",
+   "E221": "multiple spaces before operator",
+   "E222": "multiple spaces after operator",
+   "E225": "missing whitespace around operator",
+   "E227": "missing whitespace around bitwise or shift operator",
+   "E228": "missing whitespace around modulo operator",
+   "E231": "missing whitespace after ','",
+   "E251": "unexpected spaces around keyword / parameter equals",
+   "E252": "missing whitespace around parameter equals",
+   "E261": "at least two spaces before inline comment",
+   "E262": "inline comment should start with '# '",
+   "E265": "block comment should start with '# '",
+   "E266": "too many leading '#' for block comment",
+   "E271": "multiple spaces after keyword",
+   "E272": "multiple spaces before keyword",
+   "E275": "missing whitespace after keyword",
+   "E301": "expected 1 blank line, found 0",
+   "E302": "expected 2 blank lines, found 1",
+   "E303": "too many blank lines (2)",
+   "E305": "expected 2 blank lines after class or function definition, found 1",
+   "E306": "expected 1 blank line before a nested definition, found 0",
+   "E401": "multiple imports on one line",
+   "E402": "module level import not at top of file",
+   "E501": "line too long (80 > 79 characters)",
+   "E502": "the backslash is redundant between brackets",
+   "E701": "multiple statements on one line (colon)",
+   "E702": "multiple statements on one line (semicolon)",
+   "E703": "statement ends with a semicolon",
+   "E711": "comparison to None should be 'if cond is not None:'",
+   "E712": "comparison to True should be 'if cond is True:' or 'if cond:'",
+   "E713": "test for membership should be 'not in'",
+   "E714": "test for object identity should be 'is not'",
+   "E721": "do not compare types, for exact checks use `is` / `is not`, for instance checks use `isinstance()`",
+   "E722": "do not use bare 'except'",
+   "E731": "do not assign a lambda expression, use a def",
+   "E741": "ambiguous variable name 'l'",
+   "E742": "ambiguous class definition 'I'",
+   "E743": "ambiguous function definition 'l'",
+   "W291": "trailing whitespace",
+   "W293": "blank line contains whitespace",
+   "W391": "blank line at end of file",
+   "W605": "invalid escape sequence '\\\u041f'"
+  }
+ },
+ "ruff": {
+  "total": 74718,
+  "style": 74643,
+  "errors": 75,
+  "by_code": {
+   "E111": 2,
+   "E114": 52,
+   "E115": 68,
+   "E116": 69,
+   "E117": 10,
+   "E201": 280,
+   "E202": 313,
+   "E203": 1379,
+   "E211": 225,
+   "E221": 439,
+   "E222": 101,
+   "E225": 660,
+   "E226": 5644,
+   "E227": 414,
+   "E228": 160,
+   "E231": 9461,
+   "E241": 951,
+   "E251": 543,
+   "E252": 28,
+   "E261": 2087,
+   "E262": 24984,
+   "E265": 942,
+   "E266": 1095,
+   "E271": 31,
+   "E272": 181,
+   "E275": 42,
+   "E301": 660,
+   "E302": 5891,
+   "E303": 1322,
+   "E305": 1146,
+   "E306": 3179,
+   "E401": 130,
+   "E402": 403,
+   "E501": 9283,
+   "E502": 99,
+   "E701": 1231,
+   "E702": 190,
+   "E703": 29,
+   "E711": 2,
+   "E712": 4,
+   "E713": 62,
+   "E714": 7,
+   "E721": 49,
+   "E722": 240,
+   "E731": 184,
+   "E741": 275,
+   "E742": 31,
+   "E743": 1,
+   "E902": 4,
+   "W291": 12,
+   "W293": 48,
+   "W391": 3,
+   "W605": 1,
+   "invalid-syntax": 71
+  },
+  "by_category": {
+   "generated": 31424,
+   "stdlib": 14360,
+   "tests": 28934
+  },
+  "by_category_code": {
+   "generated": {
+    "E225": 53,
+    "E231": 4420,
+    "E261": 69,
+    "E262": 24763,
+    "E266": 304,
+    "E302": 446,
+    "E305": 21,
+    "E501": 1341,
+    "E701": 7
+   },
+   "stdlib": {
+    "E111": 1,
+    "E114": 20,
+    "E115": 12,
+    "E116": 35,
+    "E117": 7,
+    "E201": 75,
+    "E202": 81,
+    "E203": 685,
+    "E211": 152,
+    "E221": 314,
+    "E222": 30,
+    "E225": 330,
+    "E226": 1666,
+    "E227": 64,
+    "E228": 47,
+    "E231": 1045,
+    "E241": 197,
+    "E251": 292,
+    "E261": 1127,
+    "E262": 112,
+    "E265": 441,
+    "E266": 263,
+    "E271": 13,
+    "E272": 66,
+    "E275": 24,
+    "E301": 249,
+    "E302": 2802,
+    "E303": 536,
+    "E305": 540,
+    "E306": 124,
+    "E401": 80,
+    "E402": 105,
+    "E501": 2007,
+    "E502": 37,
+    "E701": 387,
+    "E702": 63,
+    "E703": 7,
+    "E712": 1,
+    "E713": 48,
+    "E714": 2,
+    "E721": 24,
+    "E722": 99,
+    "E731": 33,
+    "E741": 69,
+    "E743": 1,
+    "W291": 7,
+    "W293": 40
+   },
+   "tests": {
+    "E111": 1,
+    "E114": 32,
+    "E115": 56,
+    "E116": 34,
+    "E117": 3,
+    "E201": 205,
+    "E202": 232,
+    "E203": 694,
+    "E211": 73,
+    "E221": 125,
+    "E222": 71,
+    "E225": 277,
+    "E226": 3978,
+    "E227": 350,
+    "E228": 113,
+    "E231": 3996,
+    "E241": 754,
+    "E251": 251,
+    "E252": 28,
+    "E261": 891,
+    "E262": 109,
+    "E265": 501,
+    "E266": 528,
+    "E271": 18,
+    "E272": 115,
+    "E275": 18,
+    "E301": 411,
+    "E302": 2643,
+    "E303": 786,
+    "E305": 585,
+    "E306": 3055,
+    "E401": 50,
+    "E402": 298,
+    "E501": 5935,
+    "E502": 62,
+    "E701": 837,
+    "E702": 127,
+    "E703": 22,
+    "E711": 2,
+    "E712": 3,
+    "E713": 14,
+    "E714": 5,
+    "E721": 25,
+    "E722": 141,
+    "E731": 151,
+    "E741": 206,
+    "E742": 31,
+    "E902": 4,
+    "W291": 5,
+    "W293": 8,
+    "W391": 3,
+    "W605": 1,
+    "invalid-syntax": 71
+   }
+  },
+  "top_files": [
+   [
+    "msilib/schema.py",
+    3189
+   ],
+   [
+    "test/test_buffer.py",
+    903
+   ],
+   [
+    "test/test_descr.py",
+    859
+   ],
+   [
+    "test/test_itertools.py",
+    812
+   ],
+   [
+    "pydoc_data/topics.py",
+    758
+   ],
+   [
+    "stringprep.py",
+    704
+   ],
+   [
+    "encodings/mac_arabic.py",
+    703
+   ],
+   [
+    "encodings/cp864.py",
+    673
+   ],
+   [
+    "encodings/cp437.py",
+    669
+   ],
+   [
+    "encodings/cp737.py",
+    669
+   ],
+   [
+    "encodings/cp775.py",
+    669
+   ],
+   [
+    "encodings/cp850.py",
+    669
+   ],
+   [
+    "encodings/cp852.py",
+    669
+   ],
+   [
+    "encodings/cp855.py",
+    669
+   ],
+   [
+    "encodings/cp860.py",
+    669
+   ],
+   [
+    "encodings/cp861.py",
+    669
+   ],
+   [
+    "encodings/cp862.py",
+    669
+   ],
+   [
+    "encodings/cp863.py",
+    669
+   ],
+   [
+    "encodings/cp865.py",
+    669
+   ],
+   [
+    "encodings/cp866.py",
+    669
+   ],
+   [
+    "encodings/cp1125.py",
+    668
+   ],
+   [
+    "encodings/cp858.py",
+    666
+   ],
+   [
+    "encodings/cp857.py",
+    665
+   ],
+   [
+    "encodings/cp869.py",
+    660
+   ],
+   [
+    "test/test_decimal.py",
+    624
+   ]
+  ],
+  "messages": {
+   "E111": "Indentation is not a multiple of 4",
+   "E114": "Indentation is not a multiple of 4 (comment)",
+   "E115": "Expected an indented block (comment)",
+   "E116": "Unexpected indentation (comment)",
+   "E117": "Over-indented (comment)",
+   "E201": "Whitespace after '('",
+   "E202": "Whitespace before ')'",
+   "E203": "Whitespace before ':'",
+   "E211": "Whitespace before '('",
+   "E221": "Multiple spaces before operator",
+   "E222": "Multiple spaces after operator",
+   "E225": "Missing whitespace around operator",
+   "E226": "Missing whitespace around arithmetic operator",
+   "E227": "Missing whitespace around bitwise or shift operator",
+   "E228": "Missing whitespace around modulo operator",
+   "E231": "Missing whitespace after `,`",
+   "E241": "Multiple spaces after comma",
+   "E251": "Unexpected spaces around keyword / parameter equals",
+   "E252": "Missing whitespace around parameter equals",
+   "E261": "Insert at least two spaces before an inline comment",
+   "E262": "Inline comment should start with `# `",
+   "E265": "Block comment should start with `# `",
+   "E266": "Too many leading `#` before block comment",
+   "E271": "Multiple spaces after keyword",
+   "E272": "Multiple spaces before keyword",
+   "E275": "Missing whitespace after keyword",
+   "E301": "Expected 1 blank line, found 0",
+   "E302": "Expected 2 blank lines, found 0",
+   "E303": "Too many blank lines (2)",
+   "E305": "Expected 2 blank lines after class or function definition, found (0)",
+   "E306": "Expected 1 blank line before a nested definition, found 0",
+   "E401": "Multiple imports on one line",
+   "E402": "Module level import not at top of file",
+   "E501": "Line too long (90 > 79)",
+   "E502": "Redundant backslash",
+   "E701": "Multiple statements on one line (colon)",
+   "E702": "Multiple statements on one line (semicolon)",
+   "E703": "Statement ends with an unnecessary semicolon",
+   "E711": "Comparison to `None` should be `cond is not None`",
+   "E712": "Avoid equality comparisons to `True`; use `f1.atexit:` for truth checks",
+   "E713": "Test for membership should be `not in`",
+   "E714": "Test for object identity should be `is not`",
+   "E721": "Use `is` and `is not` for type comparisons, or `isinstance()` for isinstance checks",
+   "E722": "Do not use bare `except`",
+   "E731": "Do not assign a `lambda` expression, use a `def`",
+   "E741": "Ambiguous variable name: `l`",
+   "E742": "Ambiguous class name: `I`",
+   "E743": "Ambiguous function name: `l`",
+   "E902": "stream did not contain valid UTF-8",
+   "W291": "Trailing whitespace",
+   "W293": "Blank line contains whitespace",
+   "W391": "Too many newlines at end of file",
+   "W605": "Invalid escape sequence: `\\\u041f`",
+   "invalid-syntax": "Simple statements must be separated by newlines or semicolons"
+  }
+ },
+ "naming": {
+  "total": 8641,
+  "style": 8570,
+  "errors": 71,
+  "by_code": {
+   "N801": 929,
+   "N802": 3814,
+   "N803": 532,
+   "N804": 58,
+   "N805": 211,
+   "N806": 2530,
+   "N807": 19,
+   "N811": 10,
+   "N812": 8,
+   "N813": 7,
+   "N815": 174,
+   "N816": 75,
+   "N817": 4,
+   "N818": 192,
+   "N999": 7,
+   "invalid-syntax": 71
+  },
+  "by_category": {
+   "generated": 3,
+   "stdlib": 2210,
+   "tests": 6428
+  },
+  "by_category_code": {
+   "generated": {
+    "N802": 3
+   },
+   "stdlib": {
+    "N801": 175,
+    "N802": 905,
+    "N803": 396,
+    "N804": 6,
+    "N805": 40,
+    "N806": 461,
+    "N807": 9,
+    "N811": 3,
+    "N812": 4,
+    "N813": 3,
+    "N815": 89,
+    "N816": 55,
+    "N818": 59,
+    "N999": 5
+   },
+   "tests": {
+    "N801": 754,
+    "N802": 2906,
+    "N803": 136,
+    "N804": 52,
+    "N805": 171,
+    "N806": 2069,
+    "N807": 10,
+    "N811": 7,
+    "N812": 4,
+    "N813": 4,
+    "N815": 85,
+    "N816": 20,
+    "N817": 4,
+    "N818": 133,
+    "N999": 2,
+    "invalid-syntax": 71
+   }
+  },
+  "top_files": [
+   [
+    "test/test_socket.py",
+    515
+   ],
+   [
+    "test/test_decimal.py",
+    392
+   ],
+   [
+    "xml/dom/minidom.py",
+    268
+   ],
+   [
+    "lib2to3/tests/data/infinite_recursion.py",
+    180
+   ],
+   [
+    "test/test_typing.py",
+    147
+   ],
+   [
+    "test/test_enum.py",
+    145
+   ],
+   [
+    "unittest/case.py",
+    136
+   ],
+   [
+    "test/test_minidom.py",
+    131
+   ],
+   [
+    "unittest/test/test_case.py",
+    119
+   ],
+   [
+    "test/test_ipaddress.py",
+    110
+   ],
+   [
+    "test/test_pathlib.py",
+    110
+   ],
+   [
+    "unittest/test/test_runner.py",
+    108
+   ],
+   [
+    "idlelib/config.py",
+    101
+   ],
+   [
+    "test/test_sys_settrace.py",
+    99
+   ],
+   [
+    "test/test_statistics.py",
+    97
+   ],
+   [
+    "tkinter/__init__.py",
+    94
+   ],
+   [
+    "unittest/test/test_loader.py",
+    87
+   ],
+   [
+    "test/test_with.py",
+    84
+   ],
+   [
+    "test/test_bz2.py",
+    82
+   ],
+   [
+    "test/pydocfodder.py",
+    78
+   ],
+   [
+    "test/test_zoneinfo/test_zoneinfo.py",
+    78
+   ],
+   [
+    "test/test_descr.py",
+    74
+   ],
+   [
+    "lib2to3/tests/test_fixers.py",
+    71
+   ],
+   [
+    "logging/__init__.py",
+    67
+   ],
+   [
+    "test/test_smtplib.py",
+    67
+   ]
+  ],
+  "messages": {
+   "N801": "Class name `_localimpl` should use CapWords convention",
+   "N802": "Function name `getOptionalRelease` should be lowercase",
+   "N803": "Argument name `optionalRelease` should be lowercase",
+   "N804": "First argument of a class method should be named `cls`",
+   "N805": "First argument of a method should be named `self`",
+   "N806": "Variable `B` in function should be lowercase",
+   "N807": "Function name should not start and end with `__`",
+   "N811": "Constant `_PROJECT_BASE` imported as non-constant `project_base`",
+   "N812": "Lowercase `allocate_lock` imported as non-lowercase `Lock`",
+   "N813": "Camelcase `ProcessPoolExecutor` imported as lowercase `pe`",
+   "N815": "Variable `_writeBody` in class scope should not be mixedCase",
+   "N816": "Variable `barry_as_FLUFL` in global scope should not be mixedCase",
+   "N817": "CamelCase `Decimal` imported as acronym `D`",
+   "N818": "Exception name `DecimalException` should be named with an Error suffix",
+   "N999": "Invalid module name: 'audit-tests'",
+   "invalid-syntax": "Simple statements must be separated by newlines or semicolons"
+  }
+ }
+}

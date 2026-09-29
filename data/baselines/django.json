@@ -1,0 +1,492 @@
+{
+ "project": "django",
+ "pypi": "Django",
+ "version": "6.1.1",
+ "sdist": {
+  "url": "https://files.pythonhosted.org/packages/f8/d4/8314b5bdef20832f0ac6ae3b3e4d4924e4759fa3b4af27609dd747e7a6be/django-6.1.1.tar.gz",
+  "sha256": "7ab93536d8e677aa14554c56426290c69480bf2ee68d7513d4a22f57d6bfeb84"
+ },
+ "source_dir": "django",
+ "dropped": [],
+ "measured": "2026-09-29",
+ "instruments": {
+  "pycodestyle": {
+   "version": "2.15.0",
+   "args": [
+    "--max-line-length=79"
+   ]
+  },
+  "ruff": {
+   "version": "0.14.4",
+   "args": [
+    "check",
+    "--isolated",
+    "--no-cache",
+    "--preview",
+    "--select",
+    "E,W",
+    "--line-length=79",
+    "--target-version=py310",
+    "--output-format",
+    "json",
+    "--exit-zero"
+   ]
+  },
+  "naming": {
+   "version": "0.14.4",
+   "args": [
+    "check",
+    "--isolated",
+    "--no-cache",
+    "--select",
+    "N",
+    "--line-length=79",
+    "--target-version=py310",
+    "--output-format",
+    "json",
+    "--exit-zero"
+   ]
+  }
+ },
+ "files": {
+  "stdlib": 899,
+  "tests": 8,
+  "generated": 0
+ },
+ "lines": {
+  "stdlib": 158457,
+  "tests": 6829,
+  "generated": 0
+ },
+ "sloc": {
+  "stdlib": 125890,
+  "tests": 5573,
+  "generated": 0
+ },
+ "generated_files": [],
+ "pycodestyle": {
+  "total": 4379,
+  "style": 4379,
+  "errors": 0,
+  "by_code": {
+   "E203": 48,
+   "E501": 4328,
+   "E743": 3
+  },
+  "by_category": {
+   "stdlib": 4211,
+   "tests": 168
+  },
+  "by_category_code": {
+   "stdlib": {
+    "E203": 47,
+    "E501": 4161,
+    "E743": 3
+   },
+   "tests": {
+    "E203": 1,
+    "E501": 167
+   }
+  },
+  "top_files": [
+   [
+    "contrib/admin/options.py",
+    110
+   ],
+   [
+    "db/models/query.py",
+    104
+   ],
+   [
+    "db/models/fields/related.py",
+    95
+   ],
+   [
+    "db/migrations/autodetector.py",
+    93
+   ],
+   [
+    "db/models/sql/compiler.py",
+    89
+   ],
+   [
+    "db/backends/base/schema.py",
+    87
+   ],
+   [
+    "db/models/sql/query.py",
+    82
+   ],
+   [
+    "db/models/base.py",
+    80
+   ],
+   [
+    "test/testcases.py",
+    73
+   ],
+   [
+    "db/models/expressions.py",
+    72
+   ],
+   [
+    "contrib/admin/checks.py",
+    71
+   ],
+   [
+    "db/models/fields/__init__.py",
+    66
+   ],
+   [
+    "db/models/fields/related_descriptors.py",
+    65
+   ],
+   [
+    "db/migrations/operations/models.py",
+    60
+   ],
+   [
+    "db/models/constraints.py",
+    53
+   ],
+   [
+    "db/migrations/state.py",
+    42
+   ],
+   [
+    "core/management/commands/migrate.py",
+    39
+   ],
+   [
+    "forms/models.py",
+    37
+   ],
+   [
+    "forms/fields.py",
+    35
+   ],
+   [
+    "core/validators.py",
+    35
+   ],
+   [
+    "urls/resolvers.py",
+    34
+   ],
+   [
+    "contrib/contenttypes/fields.py",
+    34
+   ],
+   [
+    "core/management/commands/makemigrations.py",
+    32
+   ],
+   [
+    "contrib/admin/filters.py",
+    32
+   ],
+   [
+    "core/management/commands/makemessages.py",
+    32
+   ]
+  ],
+  "messages": {
+   "E203": "whitespace before ':'",
+   "E501": "line too long (81 > 79 characters)",
+   "E743": "ambiguous function definition 'O'"
+  }
+ },
+ "ruff": {
+  "total": 4255,
+  "style": 4254,
+  "errors": 1,
+  "by_code": {
+   "E501": 4252,
+   "E721": 2,
+   "invalid-syntax": 1
+  },
+  "by_category": {
+   "stdlib": 4093,
+   "tests": 162
+  },
+  "by_category_code": {
+   "stdlib": {
+    "E501": 4090,
+    "E721": 2,
+    "invalid-syntax": 1
+   },
+   "tests": {
+    "E501": 162
+   }
+  },
+  "top_files": [
+   [
+    "contrib/admin/options.py",
+    110
+   ],
+   [
+    "db/models/query.py",
+    98
+   ],
+   [
+    "db/models/fields/related.py",
+    92
+   ],
+   [
+    "db/migrations/autodetector.py",
+    87
+   ],
+   [
+    "db/models/sql/compiler.py",
+    87
+   ],
+   [
+    "db/backends/base/schema.py",
+    84
+   ],
+   [
+    "db/models/base.py",
+    79
+   ],
+   [
+    "db/models/sql/query.py",
+    74
+   ],
+   [
+    "db/models/expressions.py",
+    71
+   ],
+   [
+    "contrib/admin/checks.py",
+    70
+   ],
+   [
+    "test/testcases.py",
+    70
+   ],
+   [
+    "db/models/fields/__init__.py",
+    64
+   ],
+   [
+    "db/models/fields/related_descriptors.py",
+    62
+   ],
+   [
+    "db/migrations/operations/models.py",
+    60
+   ],
+   [
+    "db/models/constraints.py",
+    53
+   ],
+   [
+    "db/migrations/state.py",
+    40
+   ],
+   [
+    "core/management/commands/migrate.py",
+    39
+   ],
+   [
+    "forms/models.py",
+    35
+   ],
+   [
+    "core/validators.py",
+    34
+   ],
+   [
+    "forms/fields.py",
+    33
+   ],
+   [
+    "contrib/admin/filters.py",
+    32
+   ],
+   [
+    "core/management/commands/makemessages.py",
+    32
+   ],
+   [
+    "core/management/commands/makemigrations.py",
+    32
+   ],
+   [
+    "contrib/contenttypes/fields.py",
+    31
+   ],
+   [
+    "db/backends/oracle/creation.py",
+    31
+   ]
+  ],
+  "messages": {
+   "E501": "Line too long (85 > 79)",
+   "E721": "Use `is` and `is not` for type comparisons, or `isinstance()` for isinstance checks",
+   "invalid-syntax": "Cannot use `except*` on Python 3.10 (syntax was added in Python 3.11)"
+  }
+ },
+ "naming": {
+  "total": 309,
+  "style": 308,
+  "errors": 1,
+  "by_code": {
+   "N801": 29,
+   "N802": 112,
+   "N803": 12,
+   "N804": 4,
+   "N805": 14,
+   "N806": 65,
+   "N807": 4,
+   "N811": 1,
+   "N812": 5,
+   "N816": 2,
+   "N818": 60,
+   "invalid-syntax": 1
+  },
+  "by_category": {
+   "stdlib": 237,
+   "tests": 72
+  },
+  "by_category_code": {
+   "stdlib": {
+    "N801": 23,
+    "N802": 63,
+    "N803": 12,
+    "N804": 4,
+    "N805": 10,
+    "N806": 53,
+    "N807": 4,
+    "N811": 1,
+    "N812": 5,
+    "N816": 2,
+    "N818": 59,
+    "invalid-syntax": 1
+   },
+   "tests": {
+    "N801": 6,
+    "N802": 49,
+    "N805": 4,
+    "N806": 12,
+    "N818": 1
+   }
+  },
+  "top_files": [
+   [
+    "test/testcases.py",
+    40
+   ],
+   [
+    "test/runner.py",
+    22
+   ],
+   [
+    "contrib/gis/geos/mutable_list.py",
+    20
+   ],
+   [
+    "utils/dateformat.py",
+    18
+   ],
+   [
+    "core/exceptions.py",
+    16
+   ],
+   [
+    "contrib/gis/geos/coordseq.py",
+    10
+   ],
+   [
+    "contrib/admin/options.py",
+    7
+   ],
+   [
+    "db/models/deletion.py",
+    7
+   ],
+   [
+    "test/utils.py",
+    7
+   ],
+   [
+    "contrib/gis/utils/layermapping.py",
+    5
+   ],
+   [
+    "db/models/fields/__init__.py",
+    5
+   ],
+   [
+    "http/multipartparser.py",
+    5
+   ],
+   [
+    "template/defaultfilters.py",
+    5
+   ],
+   [
+    "utils/functional.py",
+    5
+   ],
+   [
+    "contrib/admin/tests.py",
+    4
+   ],
+   [
+    "contrib/gis/geos/libgeos.py",
+    4
+   ],
+   [
+    "contrib/gis/geos/prototypes/io.py",
+    4
+   ],
+   [
+    "core/handlers/asgi.py",
+    4
+   ],
+   [
+    "core/serializers/xml_serializer.py",
+    4
+   ],
+   [
+    "db/models/query_utils.py",
+    4
+   ],
+   [
+    "core/files/uploadhandler.py",
+    3
+   ],
+   [
+    "core/handlers/wsgi.py",
+    3
+   ],
+   [
+    "core/serializers/base.py",
+    3
+   ],
+   [
+    "db/migrations/exceptions.py",
+    3
+   ],
+   [
+    "db/models/base.py",
+    3
+   ]
+  ],
+  "messages": {
+   "N801": "Class name `ST_Polygon` should use CapWords convention",
+   "N802": "Function name `hand_clean_DELETE` should be lowercase",
+   "N803": "Argument name `newLen` should be lowercase",
+   "N804": "First argument of a class method should be named `cls`",
+   "N805": "First argument of a method should be named `self`",
+   "N806": "Variable `ChangeList` in function should be lowercase",
+   "N807": "Function name should not start and end with `__`",
+   "N811": "Constant `VERSION` imported as non-constant `version`",
+   "N812": "Lowercase `charset` imported as non-lowercase `Charset`",
+   "N816": "Variable `require_GET` in global scope should not be mixedCase",
+   "N818": "Exception name `AlreadyRegistered` should be named with an Error suffix",
+   "invalid-syntax": "Cannot use `except*` on Python 3.10 (syntax was added in Python 3.11)"
+  }
+ }
+}

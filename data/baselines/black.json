@@ -1,0 +1,311 @@
+{
+ "project": "black",
+ "pypi": "black",
+ "version": "26.5.1",
+ "sdist": {
+  "url": "https://files.pythonhosted.org/packages/c0/37/5628dd55bf2b34257fc7603f0fe97c40e3aaf24265f416a9c85c95ca1436/black-26.5.1.tar.gz",
+  "sha256": "dd321f668053961824bcc1be1cc1df748b2d7e4fa28086b08331e577b0100a73"
+ },
+ "source_dir": "src/black",
+ "dropped": [],
+ "measured": "2026-09-29",
+ "instruments": {
+  "pycodestyle": {
+   "version": "2.15.0",
+   "args": [
+    "--max-line-length=79"
+   ]
+  },
+  "ruff": {
+   "version": "0.14.4",
+   "args": [
+    "check",
+    "--isolated",
+    "--no-cache",
+    "--preview",
+    "--select",
+    "E,W",
+    "--line-length=79",
+    "--target-version=py310",
+    "--output-format",
+    "json",
+    "--exit-zero"
+   ]
+  },
+  "naming": {
+   "version": "0.14.4",
+   "args": [
+    "check",
+    "--isolated",
+    "--no-cache",
+    "--select",
+    "N",
+    "--line-length=79",
+    "--target-version=py310",
+    "--output-format",
+    "json",
+    "--exit-zero"
+   ]
+  }
+ },
+ "files": {
+  "stdlib": 24,
+  "tests": 0,
+  "generated": 1
+ },
+ "lines": {
+  "stdlib": 13542,
+  "tests": 0,
+  "generated": 132
+ },
+ "sloc": {
+  "stdlib": 10460,
+  "tests": 0,
+  "generated": 128
+ },
+ "generated_files": [
+  "_width_table.py"
+ ],
+ "pycodestyle": {
+  "total": 697,
+  "style": 697,
+  "errors": 0,
+  "by_code": {
+   "E203": 24,
+   "E501": 673
+  },
+  "by_category": {
+   "stdlib": 697
+  },
+  "by_category_code": {
+   "stdlib": {
+    "E203": 24,
+    "E501": 673
+   }
+  },
+  "top_files": [
+   [
+    "trans.py",
+    140
+   ],
+   [
+    "linegen.py",
+    135
+   ],
+   [
+    "__init__.py",
+    101
+   ],
+   [
+    "lines.py",
+    85
+   ],
+   [
+    "comments.py",
+    46
+   ],
+   [
+    "nodes.py",
+    36
+   ],
+   [
+    "ranges.py",
+    32
+   ],
+   [
+    "files.py",
+    24
+   ],
+   [
+    "brackets.py",
+    19
+   ],
+   [
+    "concurrency.py",
+    17
+   ],
+   [
+    "handle_ipynb_magics.py",
+    16
+   ],
+   [
+    "strings.py",
+    14
+   ],
+   [
+    "parsing.py",
+    10
+   ],
+   [
+    "mode.py",
+    9
+   ],
+   [
+    "report.py",
+    6
+   ],
+   [
+    "cache.py",
+    5
+   ],
+   [
+    "output.py",
+    1
+   ],
+   [
+    "rusty.py",
+    1
+   ]
+  ],
+  "messages": {
+   "E203": "whitespace before ':'",
+   "E501": "line too long (80 > 79 characters)"
+  }
+ },
+ "ruff": {
+  "total": 670,
+  "style": 670,
+  "errors": 0,
+  "by_code": {
+   "E501": 669,
+   "E741": 1
+  },
+  "by_category": {
+   "stdlib": 670
+  },
+  "by_category_code": {
+   "stdlib": {
+    "E501": 669,
+    "E741": 1
+   }
+  },
+  "top_files": [
+   [
+    "linegen.py",
+    134
+   ],
+   [
+    "trans.py",
+    122
+   ],
+   [
+    "__init__.py",
+    98
+   ],
+   [
+    "lines.py",
+    85
+   ],
+   [
+    "comments.py",
+    43
+   ],
+   [
+    "nodes.py",
+    35
+   ],
+   [
+    "ranges.py",
+    32
+   ],
+   [
+    "files.py",
+    24
+   ],
+   [
+    "brackets.py",
+    20
+   ],
+   [
+    "concurrency.py",
+    17
+   ],
+   [
+    "handle_ipynb_magics.py",
+    14
+   ],
+   [
+    "strings.py",
+    13
+   ],
+   [
+    "parsing.py",
+    10
+   ],
+   [
+    "mode.py",
+    9
+   ],
+   [
+    "report.py",
+    6
+   ],
+   [
+    "cache.py",
+    5
+   ],
+   [
+    "const.py",
+    1
+   ],
+   [
+    "output.py",
+    1
+   ],
+   [
+    "rusty.py",
+    1
+   ]
+  ],
+  "messages": {
+   "E501": "Line too long (84 > 79)",
+   "E741": "Ambiguous variable name: `l`"
+  }
+ },
+ "naming": {
+  "total": 52,
+  "style": 52,
+  "errors": 0,
+  "by_code": {
+   "N802": 8,
+   "N803": 7,
+   "N806": 35,
+   "N818": 2
+  },
+  "by_category": {
+   "stdlib": 52
+  },
+  "by_category_code": {
+   "stdlib": {
+    "N802": 8,
+    "N803": 7,
+    "N806": 35,
+    "N818": 2
+   }
+  },
+  "top_files": [
+   [
+    "trans.py",
+    40
+   ],
+   [
+    "linegen.py",
+    8
+   ],
+   [
+    "nodes.py",
+    3
+   ],
+   [
+    "parsing.py",
+    1
+   ]
+  ],
+  "messages": {
+   "N802": "Function name `visit_INDENT` should be lowercase",
+   "N803": "Argument name `LL` should be lowercase",
+   "N806": "Variable `\u00d8` in function should be lowercase",
+   "N818": "Exception name `InvalidInput` should be named with an Error suffix"
+  }
+ }
+}

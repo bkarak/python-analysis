@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" role="img" aria-label="Shares of lines and of diagnostics by category">
+<title>Shares of lines and of diagnostics by category</title>
+<rect width="1200" height="300" fill="#fcfcfb"/>
+<text x="30.0" y="36.0" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#0b0b0b" text-anchor="start" font-weight="600" >Where the lines are, and where the diagnostics are: Lib/ of 3.14.0</text>
+<text x="30.0" y="56.0" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#52514e" text-anchor="start" font-weight="normal" >Shares of physical lines and of pycodestyle style diagnostics, by category</text>
+<text x="138.0" y="113.0" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" fill="#0b0b0b" text-anchor="end" font-weight="600" >Lines</text>
+<rect x="150.0" y="80.0" width="283.8" height="56" fill="#2a78d6"/>
+<text x="292.9" y="113.0" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" fill="#fcfcfb" text-anchor="middle" font-weight="600" >28%</text>
+<rect x="435.8" y="80.0" width="676.5" height="56" fill="#eb6834"/>
+<text x="775.0" y="113.0" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" fill="#fcfcfb" text-anchor="middle" font-weight="600" >67%</text>
+<rect x="1114.3" y="80.0" width="43.7" height="56" fill="#1baf7a"/>
+<text x="1137.2" y="74.0" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#52514e" text-anchor="middle" font-weight="normal" >4.5%</text>
+<text x="138.0" y="193.0" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" fill="#0b0b0b" text-anchor="end" font-weight="600" >Diagnostics</text>
+<rect x="150.0" y="160.0" width="169.1" height="56" fill="#2a78d6"/>
+<text x="235.5" y="193.0" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" fill="#fcfcfb" text-anchor="middle" font-weight="600" >17%</text>
+<rect x="321.1" y="160.0" width="470.6" height="56" fill="#eb6834"/>
+<text x="557.3" y="193.0" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" fill="#fcfcfb" text-anchor="middle" font-weight="600" >47%</text>
+<rect x="793.6" y="160.0" width="364.4" height="56" fill="#1baf7a"/>
+<text x="976.8" y="193.0" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" fill="#fcfcfb" text-anchor="middle" font-weight="600" >36%</text>
+<rect x="150.0" y="278.0" width="14" height="14" rx="3" fill="#2a78d6"/>
+<text x="170.0" y="290.0" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" fill="#52514e" text-anchor="start" font-weight="normal" >Library proper</text>
+<rect x="303.8" y="278.0" width="14" height="14" rx="3" fill="#eb6834"/>
+<text x="323.8" y="290.0" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" fill="#52514e" text-anchor="start" font-weight="normal" >Test suite</text>
+<rect x="426.2" y="278.0" width="14" height="14" rx="3" fill="#1baf7a"/>
+<text x="446.2" y="290.0" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" fill="#52514e" text-anchor="start" font-weight="normal" >Generated files</text>
+</svg>

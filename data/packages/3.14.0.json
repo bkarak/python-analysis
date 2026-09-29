@@ -1,0 +1,1695 @@
+{
+ "version": "3.14.0",
+ "measured": "2026-09-29",
+ "instrument": "pycodestyle",
+ "stdlib": {
+  "lines": 271599,
+  "style": 13076,
+  "per_k": 48.1
+ },
+ "vendored": {
+  "set": {
+   "tomllib": "tomli, Taneli Hukkinen; added in 3.11",
+   "_pyrepl": "pyrepl, from PyPy; added in 3.13",
+   "importlib/metadata": "importlib_metadata, Jason R. Coombs; synced since 3.8",
+   "importlib/resources": "importlib_resources; synced since 3.7",
+   "zipfile/_path": "zipp; synced since 3.12"
+  },
+  "lines": 10876,
+  "style": 216,
+  "files": 47,
+  "per_k": 19.9
+ },
+ "stdlib_without_vendored": {
+  "lines": 260723,
+  "style": 12860,
+  "per_k": 49.3
+ },
+ "packages": [
+  {
+   "name": "__hello__",
+   "files": 1,
+   "lines": 16,
+   "style": 5,
+   "kind": "module",
+   "per_k": 312.5,
+   "vendored": null
+  },
+  {
+   "name": "mimetypes",
+   "files": 1,
+   "lines": 741,
+   "style": 213,
+   "kind": "module",
+   "per_k": 287.4,
+   "vendored": null
+  },
+  {
+   "name": "__phello__",
+   "files": 4,
+   "lines": 14,
+   "style": 4,
+   "kind": "package",
+   "per_k": 285.7,
+   "vendored": null
+  },
+  {
+   "name": "stat",
+   "files": 1,
+   "lines": 207,
+   "style": 50,
+   "kind": "module",
+   "per_k": 241.5,
+   "vendored": null
+  },
+  {
+   "name": "encodings",
+   "files": 51,
+   "lines": 3775,
+   "style": 803,
+   "kind": "package",
+   "per_k": 212.7,
+   "vendored": null
+  },
+  {
+   "name": "locale",
+   "files": 1,
+   "lines": 1783,
+   "style": 304,
+   "kind": "module",
+   "per_k": 170.5,
+   "vendored": null
+  },
+  {
+   "name": "operator",
+   "files": 1,
+   "lines": 475,
+   "style": 73,
+   "kind": "module",
+   "per_k": 153.7,
+   "vendored": null
+  },
+  {
+   "name": "pstats",
+   "files": 1,
+   "lines": 777,
+   "style": 113,
+   "kind": "module",
+   "per_k": 145.4,
+   "vendored": null
+  },
+  {
+   "name": "sre_compile",
+   "files": 1,
+   "lines": 7,
+   "style": 1,
+   "kind": "module",
+   "per_k": 142.9,
+   "vendored": null
+  },
+  {
+   "name": "sre_constants",
+   "files": 1,
+   "lines": 7,
+   "style": 1,
+   "kind": "module",
+   "per_k": 142.9,
+   "vendored": null
+  },
+  {
+   "name": "sre_parse",
+   "files": 1,
+   "lines": 7,
+   "style": 1,
+   "kind": "module",
+   "per_k": 142.9,
+   "vendored": null
+  },
+  {
+   "name": "turtledemo",
+   "files": 21,
+   "lines": 2356,
+   "style": 315,
+   "kind": "package",
+   "per_k": 133.7,
+   "vendored": null
+  },
+  {
+   "name": "wsgiref",
+   "files": 7,
+   "lines": 1594,
+   "style": 195,
+   "kind": "package",
+   "per_k": 122.3,
+   "vendored": null
+  },
+  {
+   "name": "copyreg",
+   "files": 1,
+   "lines": 222,
+   "style": 27,
+   "kind": "module",
+   "per_k": 121.6,
+   "vendored": null
+  },
+  {
+   "name": "curses",
+   "files": 5,
+   "lines": 602,
+   "style": 71,
+   "kind": "package",
+   "per_k": 117.9,
+   "vendored": null
+  },
+  {
+   "name": "difflib",
+   "files": 1,
+   "lines": 2064,
+   "style": 241,
+   "kind": "module",
+   "per_k": 116.8,
+   "vendored": null
+  },
+  {
+   "name": "dis",
+   "files": 1,
+   "lines": 1157,
+   "style": 133,
+   "kind": "module",
+   "per_k": 115.0,
+   "vendored": null
+  },
+  {
+   "name": "graphlib",
+   "files": 1,
+   "lines": 254,
+   "style": 29,
+   "kind": "module",
+   "per_k": 114.2,
+   "vendored": null
+  },
+  {
+   "name": "runpy",
+   "files": 1,
+   "lines": 319,
+   "style": 35,
+   "kind": "module",
+   "per_k": 109.7,
+   "vendored": null
+  },
+  {
+   "name": "poplib",
+   "files": 1,
+   "lines": 477,
+   "style": 51,
+   "kind": "module",
+   "per_k": 106.9,
+   "vendored": null
+  },
+  {
+   "name": "functools",
+   "files": 1,
+   "lines": 1166,
+   "style": 121,
+   "kind": "module",
+   "per_k": 103.8,
+   "vendored": null
+  },
+  {
+   "name": "zipimport",
+   "files": 1,
+   "lines": 822,
+   "style": 83,
+   "kind": "module",
+   "per_k": 101.0,
+   "vendored": null
+  },
+  {
+   "name": "imaplib",
+   "files": 1,
+   "lines": 1965,
+   "style": 195,
+   "kind": "module",
+   "per_k": 99.2,
+   "vendored": null
+  },
+  {
+   "name": "copy",
+   "files": 1,
+   "lines": 286,
+   "style": 28,
+   "kind": "module",
+   "per_k": 97.9,
+   "vendored": null
+  },
+  {
+   "name": "quopri",
+   "files": 1,
+   "lines": 235,
+   "style": 23,
+   "kind": "module",
+   "per_k": 97.9,
+   "vendored": null
+  },
+  {
+   "name": "html",
+   "files": 3,
+   "lines": 3177,
+   "style": 310,
+   "kind": "package",
+   "per_k": 97.6,
+   "vendored": null
+  },
+  {
+   "name": "trace",
+   "files": 1,
+   "lines": 751,
+   "style": 67,
+   "kind": "module",
+   "per_k": 89.2,
+   "vendored": null
+  },
+  {
+   "name": "posixpath",
+   "files": 1,
+   "lines": 595,
+   "style": 50,
+   "kind": "module",
+   "per_k": 84.0,
+   "vendored": null
+  },
+  {
+   "name": "logging",
+   "files": 3,
+   "lines": 5043,
+   "style": 421,
+   "kind": "package",
+   "per_k": 83.5,
+   "vendored": null
+  },
+  {
+   "name": "base64",
+   "files": 1,
+   "lines": 608,
+   "style": 50,
+   "kind": "module",
+   "per_k": 82.2,
+   "vendored": null
+  },
+  {
+   "name": "getopt",
+   "files": 1,
+   "lines": 232,
+   "style": 19,
+   "kind": "module",
+   "per_k": 81.9,
+   "vendored": null
+  },
+  {
+   "name": "traceback",
+   "files": 1,
+   "lines": 1743,
+   "style": 141,
+   "kind": "module",
+   "per_k": 80.9,
+   "vendored": null
+  },
+  {
+   "name": "turtle",
+   "files": 1,
+   "lines": 4268,
+   "style": 344,
+   "kind": "module",
+   "per_k": 80.6,
+   "vendored": null
+  },
+  {
+   "name": "ctypes",
+   "files": 10,
+   "lines": 2414,
+   "style": 192,
+   "kind": "package",
+   "per_k": 79.5,
+   "vendored": null
+  },
+  {
+   "name": "colorsys",
+   "files": 1,
+   "lines": 166,
+   "style": 13,
+   "kind": "module",
+   "per_k": 78.3,
+   "vendored": null
+  },
+  {
+   "name": "re",
+   "files": 4,
+   "lines": 2500,
+   "style": 190,
+   "kind": "package",
+   "per_k": 76.0,
+   "vendored": null
+  },
+  {
+   "name": "enum",
+   "files": 1,
+   "lines": 2167,
+   "style": 161,
+   "kind": "module",
+   "per_k": 74.3,
+   "vendored": null
+  },
+  {
+   "name": "tabnanny",
+   "files": 1,
+   "lines": 338,
+   "style": 24,
+   "kind": "module",
+   "per_k": 71.0,
+   "vendored": null
+  },
+  {
+   "name": "_markupbase",
+   "files": 1,
+   "lines": 396,
+   "style": 28,
+   "kind": "module",
+   "per_k": 70.7,
+   "vendored": null
+  },
+  {
+   "name": "secrets",
+   "files": 1,
+   "lines": 71,
+   "style": 5,
+   "kind": "module",
+   "per_k": 70.4,
+   "vendored": null
+  },
+  {
+   "name": "filecmp",
+   "files": 1,
+   "lines": 320,
+   "style": 22,
+   "kind": "module",
+   "per_k": 68.8,
+   "vendored": null
+  },
+  {
+   "name": "cProfile",
+   "files": 1,
+   "lines": 205,
+   "style": 14,
+   "kind": "module",
+   "per_k": 68.3,
+   "vendored": null
+  },
+  {
+   "name": "csv",
+   "files": 1,
+   "lines": 513,
+   "style": 35,
+   "kind": "module",
+   "per_k": 68.2,
+   "vendored": null
+  },
+  {
+   "name": "types",
+   "files": 1,
+   "lines": 340,
+   "style": 23,
+   "kind": "module",
+   "per_k": 67.6,
+   "vendored": null
+  },
+  {
+   "name": "_strptime",
+   "files": 1,
+   "lines": 822,
+   "style": 55,
+   "kind": "module",
+   "per_k": 66.9,
+   "vendored": null
+  },
+  {
+   "name": "tarfile",
+   "files": 1,
+   "lines": 3133,
+   "style": 204,
+   "kind": "module",
+   "per_k": 65.1,
+   "vendored": null
+  },
+  {
+   "name": "ntpath",
+   "files": 1,
+   "lines": 914,
+   "style": 59,
+   "kind": "module",
+   "per_k": 64.6,
+   "vendored": null
+  },
+  {
+   "name": "statistics",
+   "files": 1,
+   "lines": 1869,
+   "style": 118,
+   "kind": "module",
+   "per_k": 63.1,
+   "vendored": null
+  },
+  {
+   "name": "os",
+   "files": 1,
+   "lines": 1190,
+   "style": 74,
+   "kind": "module",
+   "per_k": 62.2,
+   "vendored": null
+  },
+  {
+   "name": "xmlrpc",
+   "files": 3,
+   "lines": 2507,
+   "style": 155,
+   "kind": "package",
+   "per_k": 61.8,
+   "vendored": null
+  },
+  {
+   "name": "string",
+   "files": 2,
+   "lines": 358,
+   "style": 22,
+   "kind": "package",
+   "per_k": 61.5,
+   "vendored": null
+  },
+  {
+   "name": "sqlite3",
+   "files": 4,
+   "lines": 405,
+   "style": 24,
+   "kind": "package",
+   "per_k": 59.3,
+   "vendored": null
+  },
+  {
+   "name": "antigravity",
+   "files": 1,
+   "lines": 17,
+   "style": 1,
+   "kind": "module",
+   "per_k": 58.8,
+   "vendored": null
+  },
+  {
+   "name": "profile",
+   "files": 1,
+   "lines": 615,
+   "style": 36,
+   "kind": "module",
+   "per_k": 58.5,
+   "vendored": null
+  },
+  {
+   "name": "random",
+   "files": 1,
+   "lines": 1078,
+   "style": 63,
+   "kind": "module",
+   "per_k": 58.4,
+   "vendored": null
+  },
+  {
+   "name": "annotationlib",
+   "files": 1,
+   "lines": 1065,
+   "style": 62,
+   "kind": "module",
+   "per_k": 58.2,
+   "vendored": null
+  },
+  {
+   "name": "pydoc",
+   "files": 1,
+   "lines": 2874,
+   "style": 162,
+   "kind": "module",
+   "per_k": 56.4,
+   "vendored": null
+  },
+  {
+   "name": "pickle",
+   "files": 1,
+   "lines": 1931,
+   "style": 107,
+   "kind": "module",
+   "per_k": 55.4,
+   "vendored": null
+  },
+  {
+   "name": "glob",
+   "files": 1,
+   "lines": 547,
+   "style": 30,
+   "kind": "module",
+   "per_k": 54.8,
+   "vendored": null
+  },
+  {
+   "name": "tty",
+   "files": 1,
+   "lines": 73,
+   "style": 4,
+   "kind": "module",
+   "per_k": 54.8,
+   "vendored": null
+  },
+  {
+   "name": "sysconfig",
+   "files": 2,
+   "lines": 1065,
+   "style": 56,
+   "kind": "package",
+   "per_k": 52.6,
+   "vendored": null
+  },
+  {
+   "name": "fileinput",
+   "files": 1,
+   "lines": 442,
+   "style": 23,
+   "kind": "module",
+   "per_k": 52.0,
+   "vendored": null
+  },
+  {
+   "name": "tkinter",
+   "files": 13,
+   "lines": 8651,
+   "style": 448,
+   "kind": "package",
+   "per_k": 51.8,
+   "vendored": null
+  },
+  {
+   "name": "inspect",
+   "files": 1,
+   "lines": 3398,
+   "style": 173,
+   "kind": "module",
+   "per_k": 50.9,
+   "vendored": null
+  },
+  {
+   "name": "tokenize",
+   "files": 1,
+   "lines": 592,
+   "style": 30,
+   "kind": "module",
+   "per_k": 50.7,
+   "vendored": null
+  },
+  {
+   "name": "pty",
+   "files": 1,
+   "lines": 182,
+   "style": 9,
+   "kind": "module",
+   "per_k": 49.5,
+   "vendored": null
+  },
+  {
+   "name": "_sitebuiltins",
+   "files": 1,
+   "lines": 103,
+   "style": 5,
+   "kind": "module",
+   "per_k": 48.5,
+   "vendored": null
+  },
+  {
+   "name": "cmd",
+   "files": 1,
+   "lines": 414,
+   "style": 20,
+   "kind": "module",
+   "per_k": 48.3,
+   "vendored": null
+  },
+  {
+   "name": "json",
+   "files": 6,
+   "lines": 1396,
+   "style": 66,
+   "kind": "package",
+   "per_k": 47.3,
+   "vendored": null
+  },
+  {
+   "name": "http",
+   "files": 5,
+   "lines": 5902,
+   "style": 277,
+   "kind": "package",
+   "per_k": 46.9,
+   "vendored": null
+  },
+  {
+   "name": "shutil",
+   "files": 1,
+   "lines": 1667,
+   "style": 76,
+   "kind": "module",
+   "per_k": 45.6,
+   "vendored": null
+  },
+  {
+   "name": "tempfile",
+   "files": 1,
+   "lines": 977,
+   "style": 44,
+   "kind": "module",
+   "per_k": 45.0,
+   "vendored": null
+  },
+  {
+   "name": "urllib",
+   "files": 6,
+   "lines": 3872,
+   "style": 173,
+   "kind": "package",
+   "per_k": 44.7,
+   "vendored": null
+  },
+  {
+   "name": "threading",
+   "files": 1,
+   "lines": 1641,
+   "style": 73,
+   "kind": "module",
+   "per_k": 44.5,
+   "vendored": null
+  },
+  {
+   "name": "calendar",
+   "files": 1,
+   "lines": 926,
+   "style": 41,
+   "kind": "module",
+   "per_k": 44.3,
+   "vendored": null
+  },
+  {
+   "name": "_compat_pickle",
+   "files": 1,
+   "lines": 251,
+   "style": 11,
+   "kind": "module",
+   "per_k": 43.8,
+   "vendored": null
+  },
+  {
+   "name": "idlelib",
+   "files": 60,
+   "lines": 20571,
+   "style": 900,
+   "kind": "package",
+   "per_k": 43.8,
+   "vendored": null
+  },
+  {
+   "name": "collections",
+   "files": 1,
+   "lines": 1605,
+   "style": 70,
+   "kind": "package",
+   "per_k": 43.6,
+   "vendored": null
+  },
+  {
+   "name": "ftplib",
+   "files": 1,
+   "lines": 966,
+   "style": 42,
+   "kind": "module",
+   "per_k": 43.5,
+   "vendored": null
+  },
+  {
+   "name": "unittest",
+   "files": 13,
+   "lines": 7123,
+   "style": 309,
+   "kind": "package",
+   "per_k": 43.4,
+   "vendored": null
+  },
+  {
+   "name": "zipapp",
+   "files": 1,
+   "lines": 231,
+   "style": 10,
+   "kind": "module",
+   "per_k": 43.3,
+   "vendored": null
+  },
+  {
+   "name": "_android_support",
+   "files": 1,
+   "lines": 185,
+   "style": 8,
+   "kind": "module",
+   "per_k": 43.2,
+   "vendored": null
+  },
+  {
+   "name": "_osx_support",
+   "files": 1,
+   "lines": 579,
+   "style": 25,
+   "kind": "module",
+   "per_k": 43.2,
+   "vendored": null
+  },
+  {
+   "name": "socketserver",
+   "files": 1,
+   "lines": 863,
+   "style": 37,
+   "kind": "module",
+   "per_k": 42.9,
+   "vendored": null
+  },
+  {
+   "name": "signal",
+   "files": 1,
+   "lines": 94,
+   "style": 4,
+   "kind": "module",
+   "per_k": 42.6,
+   "vendored": null
+  },
+  {
+   "name": "rlcompleter",
+   "files": 1,
+   "lines": 221,
+   "style": 9,
+   "kind": "module",
+   "per_k": 40.7,
+   "vendored": null
+  },
+  {
+   "name": "xml",
+   "files": 22,
+   "lines": 8689,
+   "style": 351,
+   "kind": "package",
+   "per_k": 40.4,
+   "vendored": null
+  },
+  {
+   "name": "platform",
+   "files": 1,
+   "lines": 1515,
+   "style": 61,
+   "kind": "module",
+   "per_k": 40.3,
+   "vendored": null
+  },
+  {
+   "name": "genericpath",
+   "files": 1,
+   "lines": 200,
+   "style": 8,
+   "kind": "module",
+   "per_k": 40.0,
+   "vendored": null
+  },
+  {
+   "name": "io",
+   "files": 1,
+   "lines": 150,
+   "style": 6,
+   "kind": "module",
+   "per_k": 40.0,
+   "vendored": null
+  },
+  {
+   "name": "doctest",
+   "files": 1,
+   "lines": 2918,
+   "style": 116,
+   "kind": "module",
+   "per_k": 39.8,
+   "vendored": null
+  },
+  {
+   "name": "typing",
+   "files": 1,
+   "lines": 3840,
+   "style": 152,
+   "kind": "module",
+   "per_k": 39.6,
+   "vendored": null
+  },
+  {
+   "name": "dataclasses",
+   "files": 1,
+   "lines": 1732,
+   "style": 68,
+   "kind": "module",
+   "per_k": 39.3,
+   "vendored": null
+  },
+  {
+   "name": "heapq",
+   "files": 1,
+   "lines": 610,
+   "style": 24,
+   "kind": "module",
+   "per_k": 39.3,
+   "vendored": null
+  },
+  {
+   "name": "multiprocessing",
+   "files": 23,
+   "lines": 8999,
+   "style": 354,
+   "kind": "package",
+   "per_k": 39.3,
+   "vendored": null
+  },
+  {
+   "name": "codeop",
+   "files": 1,
+   "lines": 154,
+   "style": 6,
+   "kind": "module",
+   "per_k": 39.0,
+   "vendored": null
+  },
+  {
+   "name": "bdb",
+   "files": 1,
+   "lines": 1192,
+   "style": 46,
+   "kind": "module",
+   "per_k": 38.6,
+   "vendored": null
+  },
+  {
+   "name": "ast",
+   "files": 1,
+   "lines": 680,
+   "style": 26,
+   "kind": "module",
+   "per_k": 38.2,
+   "vendored": null
+  },
+  {
+   "name": "codecs",
+   "files": 1,
+   "lines": 1125,
+   "style": 42,
+   "kind": "module",
+   "per_k": 37.3,
+   "vendored": null
+  },
+  {
+   "name": "_aix_support",
+   "files": 1,
+   "lines": 108,
+   "style": 4,
+   "kind": "module",
+   "per_k": 37.0,
+   "vendored": null
+  },
+  {
+   "name": "pprint",
+   "files": 1,
+   "lines": 675,
+   "style": 25,
+   "kind": "module",
+   "per_k": 37.0,
+   "vendored": null
+  },
+  {
+   "name": "zipfile",
+   "files": 4,
+   "lines": 2991,
+   "style": 109,
+   "kind": "package",
+   "per_k": 36.4,
+   "vendored": null
+  },
+  {
+   "name": "tomllib",
+   "files": 4,
+   "lines": 886,
+   "style": 32,
+   "kind": "package",
+   "per_k": 36.1,
+   "vendored": null
+  },
+  {
+   "name": "wave",
+   "files": 1,
+   "lines": 665,
+   "style": 24,
+   "kind": "module",
+   "per_k": 36.1,
+   "vendored": null
+  },
+  {
+   "name": "_pylong",
+   "files": 1,
+   "lines": 729,
+   "style": 26,
+   "kind": "module",
+   "per_k": 35.7,
+   "vendored": null
+  },
+  {
+   "name": "subprocess",
+   "files": 1,
+   "lines": 2230,
+   "style": 78,
+   "kind": "module",
+   "per_k": 35.0,
+   "vendored": null
+  },
+  {
+   "name": "_ast_unparse",
+   "files": 1,
+   "lines": 1160,
+   "style": 40,
+   "kind": "module",
+   "per_k": 34.5,
+   "vendored": null
+  },
+  {
+   "name": "optparse",
+   "files": 1,
+   "lines": 1671,
+   "style": 57,
+   "kind": "module",
+   "per_k": 34.1,
+   "vendored": null
+  },
+  {
+   "name": "gzip",
+   "files": 1,
+   "lines": 717,
+   "style": 24,
+   "kind": "module",
+   "per_k": 33.5,
+   "vendored": null
+  },
+  {
+   "name": "pdb",
+   "files": 1,
+   "lines": 3627,
+   "style": 121,
+   "kind": "module",
+   "per_k": 33.4,
+   "vendored": null
+  },
+  {
+   "name": "_threading_local",
+   "files": 1,
+   "lines": 120,
+   "style": 4,
+   "kind": "module",
+   "per_k": 33.3,
+   "vendored": null
+  },
+  {
+   "name": "symtable",
+   "files": 1,
+   "lines": 451,
+   "style": 15,
+   "kind": "module",
+   "per_k": 33.3,
+   "vendored": null
+  },
+  {
+   "name": "_pydatetime",
+   "files": 1,
+   "lines": 2734,
+   "style": 89,
+   "kind": "module",
+   "per_k": 32.6,
+   "vendored": null
+  },
+  {
+   "name": "smtplib",
+   "files": 1,
+   "lines": 1121,
+   "style": 36,
+   "kind": "module",
+   "per_k": 32.1,
+   "vendored": null
+  },
+  {
+   "name": "plistlib",
+   "files": 1,
+   "lines": 939,
+   "style": 30,
+   "kind": "module",
+   "per_k": 31.9,
+   "vendored": null
+  },
+  {
+   "name": "_pydecimal",
+   "files": 1,
+   "lines": 6389,
+   "style": 199,
+   "kind": "module",
+   "per_k": 31.1,
+   "vendored": null
+  },
+  {
+   "name": "numbers",
+   "files": 1,
+   "lines": 418,
+   "style": 13,
+   "kind": "module",
+   "per_k": 31.1,
+   "vendored": null
+  },
+  {
+   "name": "_collections_abc",
+   "files": 1,
+   "lines": 1167,
+   "style": 36,
+   "kind": "module",
+   "per_k": 30.8,
+   "vendored": null
+  },
+  {
+   "name": "ssl",
+   "files": 1,
+   "lines": 1529,
+   "style": 47,
+   "kind": "module",
+   "per_k": 30.7,
+   "vendored": null
+  },
+  {
+   "name": "_apple_support",
+   "files": 1,
+   "lines": 66,
+   "style": 2,
+   "kind": "module",
+   "per_k": 30.3,
+   "vendored": null
+  },
+  {
+   "name": "venv",
+   "files": 2,
+   "lines": 710,
+   "style": 21,
+   "kind": "package",
+   "per_k": 29.6,
+   "vendored": null
+  },
+  {
+   "name": "configparser",
+   "files": 1,
+   "lines": 1414,
+   "style": 41,
+   "kind": "module",
+   "per_k": 29.0,
+   "vendored": null
+  },
+  {
+   "name": "uuid",
+   "files": 1,
+   "lines": 1007,
+   "style": 29,
+   "kind": "module",
+   "per_k": 28.8,
+   "vendored": null
+  },
+  {
+   "name": "py_compile",
+   "files": 1,
+   "lines": 212,
+   "style": 6,
+   "kind": "module",
+   "per_k": 28.3,
+   "vendored": null
+  },
+  {
+   "name": "socket",
+   "files": 1,
+   "lines": 988,
+   "style": 28,
+   "kind": "module",
+   "per_k": 28.3,
+   "vendored": null
+  },
+  {
+   "name": "site",
+   "files": 1,
+   "lines": 779,
+   "style": 22,
+   "kind": "module",
+   "per_k": 28.2,
+   "vendored": null
+  },
+  {
+   "name": "compileall",
+   "files": 1,
+   "lines": 472,
+   "style": 13,
+   "kind": "module",
+   "per_k": 27.5,
+   "vendored": null
+  },
+  {
+   "name": "textwrap",
+   "files": 1,
+   "lines": 475,
+   "style": 13,
+   "kind": "module",
+   "per_k": 27.4,
+   "vendored": null
+  },
+  {
+   "name": "_weakrefset",
+   "files": 1,
+   "lines": 147,
+   "style": 4,
+   "kind": "module",
+   "per_k": 27.2,
+   "vendored": null
+  },
+  {
+   "name": "nturl2path",
+   "files": 1,
+   "lines": 74,
+   "style": 2,
+   "kind": "module",
+   "per_k": 27.0,
+   "vendored": null
+  },
+  {
+   "name": "email",
+   "files": 29,
+   "lines": 10419,
+   "style": 275,
+   "kind": "package",
+   "per_k": 26.4,
+   "vendored": null
+  },
+  {
+   "name": "gettext",
+   "files": 1,
+   "lines": 657,
+   "style": 17,
+   "kind": "module",
+   "per_k": 25.9,
+   "vendored": null
+  },
+  {
+   "name": "_py_warnings",
+   "files": 1,
+   "lines": 866,
+   "style": 22,
+   "kind": "module",
+   "per_k": 25.4,
+   "vendored": null
+  },
+  {
+   "name": "sched",
+   "files": 1,
+   "lines": 167,
+   "style": 4,
+   "kind": "module",
+   "per_k": 24.0,
+   "vendored": null
+  },
+  {
+   "name": "modulefinder",
+   "files": 1,
+   "lines": 671,
+   "style": 16,
+   "kind": "module",
+   "per_k": 23.8,
+   "vendored": null
+  },
+  {
+   "name": "getpass",
+   "files": 1,
+   "lines": 256,
+   "style": 6,
+   "kind": "module",
+   "per_k": 23.4,
+   "vendored": null
+  },
+  {
+   "name": "_pyio",
+   "files": 1,
+   "lines": 2750,
+   "style": 64,
+   "kind": "module",
+   "per_k": 23.3,
+   "vendored": null
+  },
+  {
+   "name": "concurrent",
+   "files": 9,
+   "lines": 2715,
+   "style": 63,
+   "kind": "package",
+   "per_k": 23.2,
+   "vendored": null
+  },
+  {
+   "name": "pkgutil",
+   "files": 1,
+   "lines": 474,
+   "style": 11,
+   "kind": "module",
+   "per_k": 23.2,
+   "vendored": null
+  },
+  {
+   "name": "pyclbr",
+   "files": 1,
+   "lines": 314,
+   "style": 7,
+   "kind": "module",
+   "per_k": 22.3,
+   "vendored": null
+  },
+  {
+   "name": "_pyrepl",
+   "files": 25,
+   "lines": 6826,
+   "style": 151,
+   "kind": "package",
+   "per_k": 22.1,
+   "vendored": null
+  },
+  {
+   "name": "contextlib",
+   "files": 1,
+   "lines": 814,
+   "style": 17,
+   "kind": "module",
+   "per_k": 20.9,
+   "vendored": null
+  },
+  {
+   "name": "importlib",
+   "files": 25,
+   "lines": 6484,
+   "style": 134,
+   "kind": "package",
+   "per_k": 20.7,
+   "vendored": null
+  },
+  {
+   "name": "netrc",
+   "files": 1,
+   "lines": 199,
+   "style": 4,
+   "kind": "module",
+   "per_k": 20.1,
+   "vendored": null
+  },
+  {
+   "name": "ensurepip",
+   "files": 3,
+   "lines": 300,
+   "style": 6,
+   "kind": "package",
+   "per_k": 20.0,
+   "vendored": null
+  },
+  {
+   "name": "webbrowser",
+   "files": 1,
+   "lines": 749,
+   "style": 15,
+   "kind": "module",
+   "per_k": 20.0,
+   "vendored": null
+  },
+  {
+   "name": "_colorize",
+   "files": 1,
+   "lines": 356,
+   "style": 7,
+   "kind": "module",
+   "per_k": 19.7,
+   "vendored": null
+  },
+  {
+   "name": "lzma",
+   "files": 1,
+   "lines": 364,
+   "style": 7,
+   "kind": "module",
+   "per_k": 19.2,
+   "vendored": null
+  },
+  {
+   "name": "weakref",
+   "files": 1,
+   "lines": 574,
+   "style": 11,
+   "kind": "module",
+   "per_k": 19.2,
+   "vendored": null
+  },
+  {
+   "name": "pickletools",
+   "files": 1,
+   "lines": 2887,
+   "style": 55,
+   "kind": "module",
+   "per_k": 19.1,
+   "vendored": null
+  },
+  {
+   "name": "selectors",
+   "files": 1,
+   "lines": 603,
+   "style": 11,
+   "kind": "module",
+   "per_k": 18.2,
+   "vendored": null
+  },
+  {
+   "name": "pathlib",
+   "files": 3,
+   "lines": 2272,
+   "style": 41,
+   "kind": "package",
+   "per_k": 18.0,
+   "vendored": null
+  },
+  {
+   "name": "mailbox",
+   "files": 1,
+   "lines": 2223,
+   "style": 39,
+   "kind": "module",
+   "per_k": 17.5,
+   "vendored": null
+  },
+  {
+   "name": "reprlib",
+   "files": 1,
+   "lines": 230,
+   "style": 4,
+   "kind": "module",
+   "per_k": 17.4,
+   "vendored": null
+  },
+  {
+   "name": "shlex",
+   "files": 1,
+   "lines": 351,
+   "style": 6,
+   "kind": "module",
+   "per_k": 17.1,
+   "vendored": null
+  },
+  {
+   "name": "argparse",
+   "files": 1,
+   "lines": 2775,
+   "style": 47,
+   "kind": "module",
+   "per_k": 16.9,
+   "vendored": null
+  },
+  {
+   "name": "bisect",
+   "files": 1,
+   "lines": 118,
+   "style": 2,
+   "kind": "module",
+   "per_k": 16.9,
+   "vendored": null
+  },
+  {
+   "name": "fractions",
+   "files": 1,
+   "lines": 1078,
+   "style": 18,
+   "kind": "module",
+   "per_k": 16.7,
+   "vendored": null
+  },
+  {
+   "name": "linecache",
+   "files": 1,
+   "lines": 248,
+   "style": 4,
+   "kind": "module",
+   "per_k": 16.1,
+   "vendored": null
+  },
+  {
+   "name": "queue",
+   "files": 1,
+   "lines": 384,
+   "style": 6,
+   "kind": "module",
+   "per_k": 15.6,
+   "vendored": null
+  },
+  {
+   "name": "bz2",
+   "files": 1,
+   "lines": 352,
+   "style": 5,
+   "kind": "module",
+   "per_k": 14.2,
+   "vendored": null
+  },
+  {
+   "name": "_ios_support",
+   "files": 1,
+   "lines": 71,
+   "style": 1,
+   "kind": "module",
+   "per_k": 14.1,
+   "vendored": null
+  },
+  {
+   "name": "ipaddress",
+   "files": 1,
+   "lines": 2417,
+   "style": 34,
+   "kind": "module",
+   "per_k": 14.1,
+   "vendored": null
+  },
+  {
+   "name": "code",
+   "files": 1,
+   "lines": 396,
+   "style": 5,
+   "kind": "module",
+   "per_k": 12.6,
+   "vendored": null
+  },
+  {
+   "name": "shelve",
+   "files": 1,
+   "lines": 250,
+   "style": 3,
+   "kind": "module",
+   "per_k": 12.0,
+   "vendored": null
+  },
+  {
+   "name": "hashlib",
+   "files": 1,
+   "lines": 255,
+   "style": 3,
+   "kind": "module",
+   "per_k": 11.8,
+   "vendored": null
+  },
+  {
+   "name": "timeit",
+   "files": 1,
+   "lines": 378,
+   "style": 4,
+   "kind": "module",
+   "per_k": 10.6,
+   "vendored": null
+  },
+  {
+   "name": "fnmatch",
+   "files": 1,
+   "lines": 209,
+   "style": 2,
+   "kind": "module",
+   "per_k": 9.6,
+   "vendored": null
+  },
+  {
+   "name": "asyncio",
+   "files": 35,
+   "lines": 14909,
+   "style": 132,
+   "kind": "package",
+   "per_k": 8.9,
+   "vendored": null
+  },
+  {
+   "name": "zoneinfo",
+   "files": 4,
+   "lines": 1153,
+   "style": 10,
+   "kind": "package",
+   "per_k": 8.7,
+   "vendored": null
+  },
+  {
+   "name": "opcode",
+   "files": 1,
+   "lines": 122,
+   "style": 1,
+   "kind": "module",
+   "per_k": 8.2,
+   "vendored": null
+  },
+  {
+   "name": "compression",
+   "files": 9,
+   "lines": 769,
+   "style": 6,
+   "kind": "package",
+   "per_k": 7.8,
+   "vendored": null
+  },
+  {
+   "name": "tracemalloc",
+   "files": 1,
+   "lines": 560,
+   "style": 4,
+   "kind": "module",
+   "per_k": 7.1,
+   "vendored": null
+  },
+  {
+   "name": "__future__",
+   "files": 1,
+   "lines": 147,
+   "style": 1,
+   "kind": "module",
+   "per_k": 6.8,
+   "vendored": null
+  },
+  {
+   "name": "_py_abc",
+   "files": 1,
+   "lines": 147,
+   "style": 1,
+   "kind": "module",
+   "per_k": 6.8,
+   "vendored": null
+  },
+  {
+   "name": "dbm",
+   "files": 5,
+   "lines": 659,
+   "style": 4,
+   "kind": "package",
+   "per_k": 6.1,
+   "vendored": null
+  },
+  {
+   "name": "abc",
+   "files": 1,
+   "lines": 188,
+   "style": 1,
+   "kind": "module",
+   "per_k": 5.3,
+   "vendored": null
+  },
+  {
+   "name": "contextvars",
+   "files": 1,
+   "lines": 8,
+   "style": 0,
+   "kind": "module",
+   "per_k": 0.0,
+   "vendored": null
+  },
+  {
+   "name": "datetime",
+   "files": 1,
+   "lines": 13,
+   "style": 0,
+   "kind": "module",
+   "per_k": 0.0,
+   "vendored": null
+  },
+  {
+   "name": "decimal",
+   "files": 1,
+   "lines": 109,
+   "style": 0,
+   "kind": "module",
+   "per_k": 0.0,
+   "vendored": null
+  },
+  {
+   "name": "hmac",
+   "files": 1,
+   "lines": 256,
+   "style": 0,
+   "kind": "module",
+   "per_k": 0.0,
+   "vendored": null
+  },
+  {
+   "name": "pydoc_data",
+   "files": 1,
+   "lines": 0,
+   "style": 0,
+   "kind": "package",
+   "per_k": null,
+   "vendored": null
+  },
+  {
+   "name": "struct",
+   "files": 1,
+   "lines": 15,
+   "style": 0,
+   "kind": "module",
+   "per_k": 0.0,
+   "vendored": null
+  },
+  {
+   "name": "this",
+   "files": 1,
+   "lines": 28,
+   "style": 0,
+   "kind": "module",
+   "per_k": 0.0,
+   "vendored": null
+  },
+  {
+   "name": "warnings",
+   "files": 1,
+   "lines": 99,
+   "style": 0,
+   "kind": "module",
+   "per_k": 0.0,
+   "vendored": null
+  }
+ ]
+}

@@ -4,7 +4,9 @@
     uv run harness/measure.py [--jobs N] 3.14.0 3.13.0 ...
 
 Reads work/Python-<v>/Lib, writes data/measurements/<v>.json and the raw
-diagnostics to work/raw/<v>.<instrument>.tsv (code, file, row, col, text). The instrument definitions here
+diagnostics to work/raw/<v>.<instrument>.tsv (code, file, row, col, text).
+Instruments: pycodestyle and ruff for style, ruff's N rules (pep8-naming) for
+naming. The instrument definitions here
 are the ones PROTOCOL.md describes; change both together.
 """
 from __future__ import annotations
@@ -40,8 +42,9 @@ def is_error(code: str) -> bool:
 
 
 def ruff_target(version: str) -> str:
+    """ruff 0.14.4 knows py37 to py314; anything outside is clamped."""
     major, minor = (int(x) for x in version.split('.')[:2])
-    return f'py3{max(minor, 7)}' if major == 3 else 'py37'
+    return f'py3{min(max(minor, 7), 14)}' if major == 3 else 'py37'
 
 
 def inventory(lib: Path) -> dict[str, dict]:
@@ -96,8 +99,9 @@ def run_pycodestyle(lib: Path, files: dict[str, dict], jobs: int) -> list[tuple[
     return rows
 
 
-def run_ruff(lib: Path, files: dict[str, dict], target: str) -> tuple[list[tuple[str, str, int, int, str]], list[str]]:
-    args = ['check', '--isolated', '--no-cache', '--preview', '--select', 'E,W',
+def run_ruff(lib: Path, files: dict[str, dict], target: str, select: str = 'E,W',
+             preview: bool = True) -> tuple[list[tuple[str, str, int, int, str]], list[str]]:
+    args = ['check', '--isolated', '--no-cache', *(['--preview'] if preview else []), '--select', select,
             f'--line-length={LINE_LENGTH}', f'--target-version={target}',
             '--output-format', 'json', '--exit-zero']
     proc = subprocess.run(['ruff', *args, *files], cwd=lib, capture_output=True, text=True)
@@ -146,6 +150,7 @@ def measure(version: str, jobs: int) -> None:
     files = inventory(lib)
     pcs_rows = run_pycodestyle(lib, files, jobs)
     ruff_rows, ruff_args = run_ruff(lib, files, ruff_target(version))
+    naming_rows, naming_args = run_ruff(lib, files, ruff_target(version), select='N', preview=False)
     ruff_version = subprocess.run(['ruff', '--version'], capture_output=True, text=True).stdout.split()[-1]
 
     def per_category(key: str) -> dict[str, int]:
@@ -160,6 +165,8 @@ def measure(version: str, jobs: int) -> None:
                             'args': [f'--max-line-length={LINE_LENGTH}'],
                             'note': 'defaults otherwise, including the default ignore list'},
             'ruff': {'version': ruff_version, 'args': ruff_args},
+            'naming': {'version': ruff_version, 'args': naming_args,
+                       'note': "PEP 8 naming: the pep8-naming rules as ported by ruff (N8xx)"},
         },
         'files': {c: sum(1 for f in files.values() if f['category'] == c) for c in CATEGORIES},
         'lines': per_category('lines'),
@@ -167,16 +174,17 @@ def measure(version: str, jobs: int) -> None:
         'generated_files': sorted(r for r, f in files.items() if f['category'] == 'generated'),
         'pycodestyle': aggregate(pcs_rows, files),
         'ruff': aggregate(ruff_rows, files),
+        'naming': aggregate(naming_rows, files),
     }
     OUT.mkdir(parents=True, exist_ok=True)
     RAW.mkdir(parents=True, exist_ok=True)
     (OUT / f'{version}.json').write_text(json.dumps(result, indent=1) + '\n')
-    for name, rows in (('pycodestyle', pcs_rows), ('ruff', ruff_rows)):
+    for name, rows in (('pycodestyle', pcs_rows), ('ruff', ruff_rows), ('naming', naming_rows)):
         with open(RAW / f'{version}.{name}.tsv', 'w') as fh:
             fh.writelines(f'{c}\t{f}\t{r}\t{col}\t{t}\n' for c, f, r, col, t in sorted(rows))
-    p, r = result['pycodestyle'], result['ruff']
+    p, r, nm = result['pycodestyle'], result['ruff'], result['naming']
     print(f"{version:8} files {sum(result['files'].values()):5}  lines {sum(result['lines'].values()):8}  "
-          f"pycodestyle {p['style']:6} (+{p['errors']:3} non-style)  ruff {r['style']:6} (+{r['errors']:3})  "
+          f"pycodestyle {p['style']:6} (+{p['errors']:3} non-style)  ruff {r['style']:6} (+{r['errors']:3})  naming {nm['style']:5}  "
           f"{time.time() - t0:5.1f}s", flush=True)
 
 

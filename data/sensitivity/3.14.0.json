@@ -1,0 +1,219 @@
+{
+ "version": "3.14.0",
+ "measured": "2026-09-29",
+ "unit": "file",
+ "resamples": 1000,
+ "seed": 20260929,
+ "files": 568,
+ "boundaries": {
+  "earlier": [
+   {
+    "name": "before PEP 8",
+    "from": null
+   },
+   {
+    "name": "PEP 8 to 3.0",
+    "from": "2000-07-05"
+   },
+   {
+    "name": "3.0 to GitHub",
+    "from": "2007-12-04"
+   },
+   {
+    "name": "GitHub to ruff",
+    "from": "2016-02-11"
+   },
+   {
+    "name": "ruff in pre-commit",
+    "from": "2022-09-12"
+   }
+  ],
+  "base": [
+   {
+    "name": "before PEP 8",
+    "from": null
+   },
+   {
+    "name": "PEP 8 to 3.0",
+    "from": "2001-07-05"
+   },
+   {
+    "name": "3.0 to GitHub",
+    "from": "2008-12-03"
+   },
+   {
+    "name": "GitHub to ruff",
+    "from": "2017-02-10"
+   },
+   {
+    "name": "ruff in pre-commit",
+    "from": "2023-09-12"
+   }
+  ],
+  "later": [
+   {
+    "name": "before PEP 8",
+    "from": null
+   },
+   {
+    "name": "PEP 8 to 3.0",
+    "from": "2002-07-05"
+   },
+   {
+    "name": "3.0 to GitHub",
+    "from": "2009-12-03"
+   },
+   {
+    "name": "GitHub to ruff",
+    "from": "2018-02-10"
+   },
+   {
+    "name": "ruff in pre-commit",
+    "from": "2024-09-11"
+   }
+  ]
+ },
+ "eras": {
+  "before PEP 8": {
+   "lines": 23404,
+   "sloc": 16314,
+   "style": 1153,
+   "style_excl_e5": 1106,
+   "per_k": 49.3,
+   "per_k_excl_e5": 47.3,
+   "per_k_sloc": 70.7,
+   "ci95": [
+    40.3,
+    59.2
+   ],
+   "ci95_excl_e5": [
+    38.7,
+    57.7
+   ]
+  },
+  "PEP 8 to 3.0": {
+   "lines": 63419,
+   "sloc": 46863,
+   "style": 4449,
+   "style_excl_e5": 4187,
+   "per_k": 70.2,
+   "per_k_excl_e5": 66.0,
+   "per_k_sloc": 94.9,
+   "ci95": [
+    57.4,
+    87.0
+   ],
+   "ci95_excl_e5": [
+    54.0,
+    82.0
+   ]
+  },
+  "3.0 to GitHub": {
+   "lines": 85418,
+   "sloc": 65663,
+   "style": 3154,
+   "style_excl_e5": 2592,
+   "per_k": 36.9,
+   "per_k_excl_e5": 30.3,
+   "per_k_sloc": 48.0,
+   "ci95": [
+    32.0,
+    42.5
+   ],
+   "ci95_excl_e5": [
+    25.9,
+    35.3
+   ]
+  },
+  "GitHub to ruff": {
+   "lines": 59292,
+   "sloc": 45468,
+   "style": 2421,
+   "style_excl_e5": 1437,
+   "per_k": 40.8,
+   "per_k_excl_e5": 24.2,
+   "per_k_sloc": 53.2,
+   "ci95": [
+    34.8,
+    48.2
+   ],
+   "ci95_excl_e5": [
+    19.4,
+    31.0
+   ]
+  },
+  "ruff in pre-commit": {
+   "lines": 40066,
+   "sloc": 31420,
+   "style": 1899,
+   "style_excl_e5": 783,
+   "per_k": 47.4,
+   "per_k_excl_e5": 19.5,
+   "per_k_sloc": 60.4,
+   "ci95": [
+    41.1,
+    55.1
+   ],
+   "ci95_excl_e5": [
+    14.9,
+    25.6
+   ]
+  }
+ },
+ "shifted": {
+  "earlier": {
+   "before PEP 8": {
+    "lines": 8916,
+    "per_k": 53.6,
+    "per_k_excl_e5": 53.1
+   },
+   "PEP 8 to 3.0": {
+    "lines": 62942,
+    "per_k": 66.3,
+    "per_k_excl_e5": 62.3
+   },
+   "3.0 to GitHub": {
+    "lines": 94681,
+    "per_k": 41.3,
+    "per_k_excl_e5": 35.4
+   },
+   "GitHub to ruff": {
+    "lines": 56455,
+    "per_k": 39.1,
+    "per_k_excl_e5": 24.9
+   },
+   "ruff in pre-commit": {
+    "lines": 48605,
+    "per_k": 47.4,
+    "per_k_excl_e5": 19.7
+   }
+  },
+  "later": {
+   "before PEP 8": {
+    "lines": 29244,
+    "per_k": 54.7,
+    "per_k_excl_e5": 52.5
+   },
+   "PEP 8 to 3.0": {
+    "lines": 65136,
+    "per_k": 68.6,
+    "per_k_excl_e5": 64.1
+   },
+   "3.0 to GitHub": {
+    "lines": 88419,
+    "per_k": 33.4,
+    "per_k_excl_e5": 26.3
+   },
+   "GitHub to ruff": {
+    "lines": 69546,
+    "per_k": 45.4,
+    "per_k_excl_e5": 24.2
+   },
+   "ruff in pre-commit": {
+    "lines": 19254,
+    "per_k": 47.1,
+    "per_k_excl_e5": 20.2
+   }
+  }
+ }
+}

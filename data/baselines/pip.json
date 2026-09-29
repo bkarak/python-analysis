@@ -1,0 +1,394 @@
+{
+ "project": "pip",
+ "pypi": "pip",
+ "version": "26.2.1",
+ "sdist": {
+  "url": "https://files.pythonhosted.org/packages/ae/15/4500e320e6b101ec3b719ae85b697d9940b6cda672bc555bd6016fc60c6f/pip-26.2.1.tar.gz",
+  "sha256": "f6ad667e89a1fe78046c8f13232b247200f5258d7828f3f7883d660878e0813f"
+ },
+ "source_dir": "src/pip",
+ "dropped": [
+  "_vendor"
+ ],
+ "measured": "2026-09-29",
+ "instruments": {
+  "pycodestyle": {
+   "version": "2.15.0",
+   "args": [
+    "--max-line-length=79"
+   ]
+  },
+  "ruff": {
+   "version": "0.14.4",
+   "args": [
+    "check",
+    "--isolated",
+    "--no-cache",
+    "--preview",
+    "--select",
+    "E,W",
+    "--line-length=79",
+    "--target-version=py310",
+    "--output-format",
+    "json",
+    "--exit-zero"
+   ]
+  },
+  "naming": {
+   "version": "0.14.4",
+   "args": [
+    "check",
+    "--isolated",
+    "--no-cache",
+    "--select",
+    "N",
+    "--line-length=79",
+    "--target-version=py310",
+    "--output-format",
+    "json",
+    "--exit-zero"
+   ]
+  }
+ },
+ "files": {
+  "stdlib": 156,
+  "tests": 0,
+  "generated": 0
+ },
+ "lines": {
+  "stdlib": 34347,
+  "tests": 0,
+  "generated": 0
+ },
+ "sloc": {
+  "stdlib": 26329,
+  "tests": 0,
+  "generated": 0
+ },
+ "generated_files": [],
+ "pycodestyle": {
+  "total": 891,
+  "style": 891,
+  "errors": 0,
+  "by_code": {
+   "E203": 8,
+   "E501": 883
+  },
+  "by_category": {
+   "stdlib": 891
+  },
+  "by_category_code": {
+   "stdlib": {
+    "E203": 8,
+    "E501": 883
+   }
+  },
+  "top_files": [
+   [
+    "_internal/exceptions.py",
+    44
+   ],
+   [
+    "_internal/operations/prepare.py",
+    41
+   ],
+   [
+    "_internal/resolution/resolvelib/factory.py",
+    36
+   ],
+   [
+    "_internal/req/req_install.py",
+    30
+   ],
+   [
+    "_internal/network/download.py",
+    27
+   ],
+   [
+    "_internal/cli/cmdoptions.py",
+    25
+   ],
+   [
+    "_internal/commands/install.py",
+    25
+   ],
+   [
+    "_internal/models/link.py",
+    23
+   ],
+   [
+    "_internal/metadata/base.py",
+    23
+   ],
+   [
+    "_internal/operations/install/wheel.py",
+    21
+   ],
+   [
+    "_internal/req/constructors.py",
+    19
+   ],
+   [
+    "_internal/index/package_finder.py",
+    18
+   ],
+   [
+    "_internal/resolution/legacy/resolver.py",
+    18
+   ],
+   [
+    "_internal/network/session.py",
+    18
+   ],
+   [
+    "_internal/resolution/resolvelib/candidates.py",
+    17
+   ],
+   [
+    "_internal/network/auth.py",
+    16
+   ],
+   [
+    "_internal/req/req_uninstall.py",
+    16
+   ],
+   [
+    "_internal/build_env/venv.py",
+    14
+   ],
+   [
+    "_internal/utils/misc.py",
+    14
+   ],
+   [
+    "_internal/resolution/resolvelib/provider.py",
+    13
+   ],
+   [
+    "_internal/commands/list.py",
+    13
+   ],
+   [
+    "_internal/locations/__init__.py",
+    13
+   ],
+   [
+    "_internal/vcs/git.py",
+    12
+   ],
+   [
+    "_internal/resolution/resolvelib/resolver.py",
+    12
+   ],
+   [
+    "_internal/utils/pylock.py",
+    11
+   ]
+  ],
+  "messages": {
+   "E203": "whitespace before ':'",
+   "E501": "line too long (85 > 79 characters)"
+  }
+ },
+ "ruff": {
+  "total": 867,
+  "style": 867,
+  "errors": 0,
+  "by_code": {
+   "E226": 1,
+   "E501": 866
+  },
+  "by_category": {
+   "stdlib": 867
+  },
+  "by_category_code": {
+   "stdlib": {
+    "E226": 1,
+    "E501": 866
+   }
+  },
+  "top_files": [
+   [
+    "_internal/exceptions.py",
+    42
+   ],
+   [
+    "_internal/operations/prepare.py",
+    41
+   ],
+   [
+    "_internal/resolution/resolvelib/factory.py",
+    36
+   ],
+   [
+    "_internal/req/req_install.py",
+    29
+   ],
+   [
+    "_internal/network/download.py",
+    27
+   ],
+   [
+    "_internal/commands/install.py",
+    24
+   ],
+   [
+    "_internal/cli/cmdoptions.py",
+    23
+   ],
+   [
+    "_internal/metadata/base.py",
+    23
+   ],
+   [
+    "_internal/models/link.py",
+    23
+   ],
+   [
+    "_internal/operations/install/wheel.py",
+    20
+   ],
+   [
+    "_internal/index/package_finder.py",
+    18
+   ],
+   [
+    "_internal/req/constructors.py",
+    18
+   ],
+   [
+    "_internal/network/session.py",
+    17
+   ],
+   [
+    "_internal/resolution/legacy/resolver.py",
+    17
+   ],
+   [
+    "_internal/resolution/resolvelib/candidates.py",
+    17
+   ],
+   [
+    "_internal/network/auth.py",
+    16
+   ],
+   [
+    "_internal/req/req_uninstall.py",
+    16
+   ],
+   [
+    "_internal/utils/misc.py",
+    14
+   ],
+   [
+    "_internal/build_env/venv.py",
+    13
+   ],
+   [
+    "_internal/commands/list.py",
+    13
+   ],
+   [
+    "_internal/locations/__init__.py",
+    13
+   ],
+   [
+    "_internal/resolution/resolvelib/provider.py",
+    13
+   ],
+   [
+    "_internal/resolution/resolvelib/resolver.py",
+    12
+   ],
+   [
+    "_internal/distributions/sdist.py",
+    11
+   ],
+   [
+    "_internal/vcs/git.py",
+    11
+   ]
+  ],
+  "messages": {
+   "E226": "Missing whitespace around arithmetic operator",
+   "E501": "Line too long (81 > 79)"
+  }
+ },
+ "naming": {
+  "total": 40,
+  "style": 40,
+  "errors": 0,
+  "by_code": {
+   "N802": 4,
+   "N804": 1,
+   "N806": 1,
+   "N818": 33,
+   "N999": 1
+  },
+  "by_category": {
+   "stdlib": 40
+  },
+  "by_category_code": {
+   "stdlib": {
+    "N802": 4,
+    "N804": 1,
+    "N806": 1,
+    "N818": 33,
+    "N999": 1
+   }
+  },
+  "top_files": [
+   [
+    "_internal/exceptions.py",
+    27
+   ],
+   [
+    "__pip-runner__.py",
+    2
+   ],
+   [
+    "_internal/index/collector.py",
+    2
+   ],
+   [
+    "_internal/operations/install/wheel.py",
+    2
+   ],
+   [
+    "_internal/metadata/importlib/_compat.py",
+    1
+   ],
+   [
+    "_internal/network/auth.py",
+    1
+   ],
+   [
+    "_internal/network/lazy_wheel.py",
+    1
+   ],
+   [
+    "_internal/req/pep723.py",
+    1
+   ],
+   [
+    "_internal/utils/_log.py",
+    1
+   ],
+   [
+    "_internal/utils/entrypoints.py",
+    1
+   ],
+   [
+    "_internal/utils/logging.py",
+    1
+   ]
+  ],
+  "messages": {
+   "N802": "Function name `PATH_as_shutil_which_determines_it` should be lowercase",
+   "N804": "First argument of a class method should be named `cls`",
+   "N806": "Variable `exe_are_in_PATH` in function should be lowercase",
+   "N818": "Exception name `FailedToPrepareCandidate` should be named with an Error suffix",
+   "N999": "Invalid module name: '__pip-runner__'"
+  }
+ }
+}
