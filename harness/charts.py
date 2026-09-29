@@ -387,8 +387,9 @@ def hero(data: dict, c: dict = DARK) -> str:
     def Y(v: float) -> float:
         return T + (H - T - B) * (1 - v / ymax)
 
-    body = [text(L, 92, 'Python PEP8: Practice what you preach, take two', 44, c['ink'], weight='700'),
-            text(L, 138, 'The same standard library, two rulers. Both series start at 100 in Python 3.0.', 22, c['ink2']),
+    body = [text(L, 58, 'PEP 8 and the standard library', 22, c['ink2'], weight='600'),
+            text(L, 104, 'Half the violations of 2008, and the one rule it gave up on', 44, c['ink'], weight='700'),
+            text(L, 140, 'The same standard library, two rulers. Both series start at 100 in Python 3.0.', 22, c['ink2']),
             text(L, 168, 'November 2025: a raw count of 25 ruff rules at 88 columns, whole Lib/ · This time: pycodestyle at 79 columns, per thousand lines, library proper', 17, c['muted'])]
     for t in (0, 100, 200, 300, 400):
         body.append(line(L, Y(t), W - R, Y(t), c['grid']))
