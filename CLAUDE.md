@@ -10,7 +10,7 @@ proper, its tests and its generated files. Protocol:
 
 It grew out of the November 2025 post [Python PEP8: Practice what you
 preach](https://bkarak.wizhut.tech/blog/2025/15112025) and the repo
-`bkarak/python-analysis` (private since 2026-09-28; transferred the same day from the `wizhut` organisation to the personal account, so the post's original link redirects), whose git history this tree carries (the old
+`bkarak/python-analysis` (transferred from the `wizhut` organisation to the personal account on 2026-09-28, private for a day and public again since 2026-09-29, so the post's original link redirects and works), whose git history this tree carries (the old
 pipeline is commit `fe6a6fa`). [validation/](validation/README.md) is the
 2026-09-28 check of that post: its numbers reproduce exactly and its trend is
 a ruff configuration artifact. The harness here is the replacement.
