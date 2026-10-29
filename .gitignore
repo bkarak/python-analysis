@@ -6,3 +6,5 @@ __pycache__
 .ruff_cache
 work/*
 !work/.gitkeep
+CLAUDE.md
+.claude/
